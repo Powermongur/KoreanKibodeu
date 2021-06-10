@@ -13,7 +13,7 @@ The font is always easily readable, since it is a fixed size. Different applicat
 
 **Beginner friendly**
 
-No need for stickers, memorizing keyboard layout. Use romanization you already learned.
+No need for stickers, memorizing keyboard layout or cheat sheets. As a beginner having to learn keyboard, is a burden on top of learning the korean language. When learning hanguel you should already be familair with romanization.
 
 **Small screenspace**
 
