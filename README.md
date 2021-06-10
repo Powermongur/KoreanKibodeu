@@ -41,4 +41,4 @@ No need to pay for additional hardware, stickers or covers
 
 **Compatibility**
 
-Im not sure wich keyboard layout the korean keyboard is based off, but if you have a keyboard where special characters are different from the korean keyboard layout you will have a hard time using your native input. So you end up putting stickers on the korean keyboard and you probably bought the keyboard to avoid stickers in the first place. The only other solution is to buy a cover or stickers for your native keyboard that only covers the hangeul keys, unless some of those differ.
+Im not sure wich keyboard layout the korean keyboard is based off, but if you have a keyboard where special characters are different from the korean keyboard layout you will have a hard time using your native input. So you end up putting stickers on the korean keyboard and you probably bought the keyboard to avoid stickers in the first place. The only other solution is to buy a cover or stickers for your native keyboard that only covers the hangeul keys, unless some of those differ. With Kibodeu you can write hangeul without switching your keyboard layout and avoid any issues.
