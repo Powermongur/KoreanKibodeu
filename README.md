@@ -28,17 +28,17 @@ Kibodeu only take up 1 line of text, where Windows On Screen Keybaord takes up 6
 
 With Kibodeu you get all features for free with no ads. Open Source aswell.
 
-## Kibodeu vs Real korean keyboard
+## Kibodeu vs Real korean keyboard / stickers / covers
 
 - No cost
 - Compatibility
 
 **No cost**
 
-No need to pay for additional hardware or software.
+No need to pay for additional hardware, stickers or covers
 
 **Compatibility**
 
-Im not sure wich keyboard layout the korean keyboard is based off, but if you have a keyboard where special characters are in a difference place than the korean keyboard you will have a hard time using your native language. 
+Im not sure wich keyboard layout the korean keyboard is based off, but if you have a keyboard where special characters are different from the korean keyboard layout you will have a hard time using your native language input. So you end up putting stickers on the korean keyboard and you probably bought the keyboard to avoid stickers in the first place. The only other solution is to buy a cover or stickers for your native keyboard that only covers the hangeul keys, unless some of those differ.
 
 # [a link](https://www.google.com/)
