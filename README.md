@@ -21,7 +21,7 @@ Kibodeu only take up 1 line of text, where Windows OSK takes up 6 times the spac
 
 **No cost**
 
-Kibodeu all features for free with no ads. Open Source aswell
+With Kibodeu you get all features for free with no ads. Open Source aswell
 
 ## Kibodeu vs Real korean keyboard
 
