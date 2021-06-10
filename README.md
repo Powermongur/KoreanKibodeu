@@ -21,14 +21,14 @@ This only take up 1 line of text.
 
 ## Kibodeu vs Real korean keyboard
 
-- No cost. 
-- Use native keyboard
+- No cost
+- Compatibility
 
 **No cost**
 
 No need to pay for additional hardware or software.
 
-**Use native keyboard**
+**Compatibility**
 
 Im not sure wich keyboard layout the korean keyboard is based off, but if you have a keyboard where special characters are in a difference place than the korean keyboard you will have a hard time using your native language. 
 
