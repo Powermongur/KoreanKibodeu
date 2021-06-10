@@ -1,5 +1,10 @@
 # KoreanKibodeu
 
+##Features
+
+- Stay on top
+- Romanization input
+
 ## Kibodeu vs Windows OSK / other software keyboards
 
 - Easily readable font
