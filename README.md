@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-##Features
+## Features
 
 - Stay on top
 - Romanization input
