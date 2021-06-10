@@ -5,7 +5,7 @@
 - Easily readable font
 - Beginner friendly
 - Small screenspace
-
+- No cost
 
 **Easily readable font**
 
@@ -18,6 +18,10 @@ No need for stickers, memorizing keyboard layouts or cheat sheets. As a beginner
 **Small screenspace**
 
 Kibodeu only take up 1 line of text, where Windows OSK takes up 6 times the space.
+
+**No cost**
+
+Kibodeu all features for free with no ads. Open Source aswell
 
 ## Kibodeu vs Real korean keyboard
 
