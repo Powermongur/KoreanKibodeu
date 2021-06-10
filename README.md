@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-# [Download (comming soon - proff of concept](https://www.google.com/)
+# [Download (comming soon - prof of concept)](https://www.google.com/)
 
 ## Features
 
