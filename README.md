@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-## Kibodeu vs Windows On Screen Keyboard
+## Kibodeu vs Windows OSK / other software keyboards
 
 - Easily readable font
 - Beginner friendly
@@ -17,7 +17,7 @@ No need for stickers, memorizing keyboard layouts or cheat sheets. As a beginner
 
 **Small screenspace**
 
-Kibodeu only take up 1 line of text, where Windows OSK takes up 6 times the space.
+Kibodeu only take up 1 line of text, where Windows On Screen Keybaord takes up 6 times the space.
 
 **No cost**
 
