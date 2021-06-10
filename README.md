@@ -37,7 +37,7 @@ With Kibodeu you get all features for free with no ads. Open Source aswell.
 
 **No cost**
 
-No need to pay for additional hardware, stickers or covers
+No need to pay for additional hardware, stickers or covers.
 
 **Compatibility**
 
