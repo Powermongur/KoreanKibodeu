@@ -13,7 +13,7 @@ The font is always easily readable, since it is a fixed size. Different applicat
 
 **Beginner friendly**
 
-No need for stickers, memorizing keyboard layouts or cheat sheets. As a beginner having to learn keyboard layouts, is a burden on top of learning the korean language. When learning hangeul you should already be familiar with romanization. Just use romanization and the app will automaticly convert it to korean.
+No need for stickers, memorizing keyboard layouts or cheat sheets. As a beginner having to learn keyboard layouts, is a burden on top of learning the korean language. When learning hangeul you should already be familiar with romanization. Just use romanization and the app will automatically convert it to korean.
 
 **Small screenspace**
 
