@@ -17,7 +17,7 @@ No need for stickers, memorizing keyboard layouts or cheat sheets. As a beginner
 
 **Small screenspace**
 
-Kibodeu only take up 1 line of text, where Windows OSK take up 6 times the space.
+Kibodeu only take up 1 line of text, where Windows OSK takes up 6 times the space.
 
 ## Kibodeu vs Real korean keyboard
 
