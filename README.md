@@ -17,7 +17,7 @@ No need for stickers, memorizing keyboard layout. Use romanization you already l
 
 **Small screenspace**
 
-This only take up 1 line of text.
+This only take up 1 line of text, where Windows OSK take up 6 times the space.
 
 ## Kibodeu vs Real korean keyboard
 
