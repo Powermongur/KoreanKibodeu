@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-## Kibodeu vs Windows On Screen Keyboard /
+## Kibodeu vs Windows On Screen Keyboard
 
 - Easily readable font
 - Beginner friendly
