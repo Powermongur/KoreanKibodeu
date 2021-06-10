@@ -9,7 +9,7 @@
 
 **Easily readable font**
 
-The font is always easily readable, since it is a fixed size. No matter what size the input field is, you can easily read your text before you input it.
+The font is always easily readable, since it is a fixed size. No matter what size the input field is, you can easily read your text before you input it. Different application / websites uses different layout and size, but with Kibodeu you text will always be the same size.
 
 **Beginner friendly**
 
