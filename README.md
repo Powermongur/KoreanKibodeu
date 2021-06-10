@@ -1,10 +1,10 @@
 # KoreanKibodeu
 
-Easily readable font
-Beginner friendly
-No cost. 
-Use native keyboard
-Small screenspace
+- Easily readable font
+- Beginner friendly
+- No cost. 
+- Use native keyboard
+- Small screenspace
 
 Easily readable font
 The font is always easily readable, since it is a fixed size. No matter what size the input field is, you can easily read your text before you input it.
