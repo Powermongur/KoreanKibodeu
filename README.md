@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-# [Download](https://github.com/Powermongur/KoreanKibodeu/blob/master/Installer/setup.exe)
+# [Download](https://github.com/Powermongur/KoreanKibodeu/raw/master/Installer/setup.exe)
 
 ## Features
 
