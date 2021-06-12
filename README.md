@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-# [Download (comming soon - prof of concept)](https://www.google.com/)
+# [Download](https://github.com/Powermongur/KoreanKibodeu/blob/master/Installer/setup.exe)
 
 ## Features
 
