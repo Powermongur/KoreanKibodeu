@@ -23,12 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://github.com/Powermongur/KoreanKibodeu/raw/master/Installer/</InstallUrl>
-    <UpdateUrl>https://github.com/Powermongur/KoreanKibodeu/raw/master/Installer/</UpdateUrl>
+    <InstallUrl>https://raw.githubusercontent.com/Powermongur/KoreanKibodeu/master/Installer/</InstallUrl>
+    <UpdateUrl>https://raw.githubusercontent.com/Powermongur/KoreanKibodeu/master/Installer/</UpdateUrl>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <TrustUrlParameters>true</TrustUrlParameters>
-    <ApplicationRevision>18</ApplicationRevision>
+    <ApplicationRevision>19</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
