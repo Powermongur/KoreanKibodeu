@@ -32,7 +32,6 @@ namespace KoreanKibodeu
             this.helpButton = new System.Windows.Forms.Button();
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.settingsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -83,17 +82,6 @@ namespace KoreanKibodeu
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(915, 41);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // messageTextBox
             // 
             this.messageTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
@@ -101,7 +89,7 @@ namespace KoreanKibodeu
             this.messageTextBox.ForeColor = System.Drawing.Color.White;
             this.messageTextBox.Location = new System.Drawing.Point(12, 28);
             this.messageTextBox.Name = "messageTextBox";
-            this.messageTextBox.Size = new System.Drawing.Size(880, 31);
+            this.messageTextBox.Size = new System.Drawing.Size(948, 31);
             this.messageTextBox.TabIndex = 1;
             this.messageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyDown);
             // 
@@ -136,11 +124,10 @@ namespace KoreanKibodeu
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.ClientSize = new System.Drawing.Size(1083, 94);
+            this.ClientSize = new System.Drawing.Size(1083, 82);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.messageTextBox);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.minimizeButton);
@@ -159,7 +146,6 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button helpButton;
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button closeButton;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Label label1;

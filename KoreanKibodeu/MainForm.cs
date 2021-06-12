@@ -17,6 +17,8 @@ namespace KoreanKibodeu
             InitializeComponent();
         }
 
+        Keys lastKey = Keys.Shift;
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.TopMost = true;
@@ -56,37 +58,24 @@ namespace KoreanKibodeu
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string msg = messageTextBox.Text;
-
-            if (msg.Length < 4)
-                msg = msg.Substring(0, msg.Length);
-            else
-                msg = msg.Substring(msg.Length - 4, 4);
-            //msg = msg.Substring(messageTextBox.SelectionStart - 4, 4);
-
-            char syllableChar = ComposeSyllable(msg);
-
-            button1.Text = syllableChar.ToString();
-        }
-
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (Control.ModifierKeys == Keys.Shift)
             { }
 
-            int selectI = messageTextBox.SelectionStart - 1;
+            int posI = messageTextBox.SelectionStart - 1;
             string msg = messageTextBox.Text;
 
             if (msg.Length > 0)
             {
-                if (selectI < 0)
-                    selectI = 0;
+                if (posI < 0)
+                    posI = 0;
 
                 if(e.KeyCode == Keys.Space)
                 {
-                    //msg = msg.Remove(selectI, 1);
+                    if (lastKey != Keys.Space)
+                        e.SuppressKeyPress = true;
+
                     msg = msg.Replace("ng", "ㅇ");
                     msg = msg.Replace("g", "k");
                     msg = msg.Replace("d", "t");
@@ -108,11 +97,36 @@ namespace KoreanKibodeu
                         msg = msg.Replace(abcRoV[i], abcKrV[i]);
                     }
 
+                    string syllableString = " " + msg + "  ";
+
+                    for (int i = syllableString.Length - 3; i > syllableString.Length - 7 && i > 0; i--)
+                    {
+                        if (IsVowel(syllableString[i]))
+                        {
+                            if(IsVowel(syllableString[i-1]))
+                                syllableString = " " + syllableString.Substring(i, 3);
+                            else
+                                syllableString = syllableString.Substring(i-1, 4);
+                            i = -1;
+                        }
+                    }
+
+                    char syllableChar = ComposeSyllable(syllableString);
+
+                    syllableString = syllableString.Trim();
+
+                    if ((int)syllableChar > 0)
+                    {
+                        msg = msg.Replace(syllableString, syllableChar.ToString());
+                    }
+
                     messageTextBox.Text = msg;
                     //messageTextBox.SelectionStart = i;
                     messageTextBox.SelectionStart = msg.Length;
                 }
             }
+
+            lastKey = e.KeyCode;
         }
 
         private char ComposeSyllable(string syllable)
@@ -121,40 +135,17 @@ namespace KoreanKibodeu
             string medialABC = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
             string finalABC = " ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ";
 
-            int vowelIndex = 0;
+            if (syllable.Length < 1)
+                return (char)0;
+            else if (syllable.Length == 1)
+                syllable = " " + syllable;
 
-            for (int i = 0; i < medialABC.Length; i++)
-            {
-                vowelIndex = syllable.IndexOf(medialABC[i]);
+            syllable += "  ";
 
-                if (vowelIndex != -1)
-                    i = medialABC.Length;
-            }
+            char finalChar = ComposeFinalSyllable(syllable[2], syllable[3]);
 
-            char initialChar = (char)0;
-            char medialChar = (char)0;
-            char finalChar1 = (char)0;
-            char finalChar2 = (char)0;
-
-            if(vowelIndex > -1)
-            {
-                medialChar = syllable[vowelIndex];
-
-                if (vowelIndex > 0)
-                {
-                    initialChar = syllable[vowelIndex - 1];
-                    if (syllable.Length > 2)
-                        finalChar1 = syllable[2];
-
-                    if (syllable.Length > 3)
-                        finalChar2 = syllable[3];
-                }
-            }
-
-            char finalChar = ComposeFinalSyllable(finalChar1, finalChar2);
-
-            int initialIndex = initialABC.IndexOf(initialChar.ToString());
-            int medialIndex = medialABC.IndexOf(medialChar.ToString());
+            int initialIndex = initialABC.IndexOf(syllable[0].ToString());
+            int medialIndex = medialABC.IndexOf(syllable[1].ToString());
             int finalIndex = finalABC.IndexOf(finalChar.ToString());
 
             if (initialIndex < 0)
@@ -173,23 +164,41 @@ namespace KoreanKibodeu
 
         private char ComposeFinalSyllable(char finalChar1, char finalChar2)
         {
-            string basicABC = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
-            string combinedABC = " ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ";
+            string finalABC = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
 
-            int final1Index = basicABC.IndexOf(finalChar1.ToString());
-            int final2Index = basicABC.IndexOf(finalChar2.ToString());
+            int final1Index = finalABC.IndexOf(finalChar1.ToString());
+            int final2Index = finalABC.IndexOf(finalChar2.ToString());
 
             if (final1Index < 0)
                 return (char)0;
 
             if (final2Index < 0)
-                return basicABC[final1Index];
+                return finalABC[final1Index];
 
-            int syllableChar = 4;
+            if (finalChar1.ToString() == "ㄱ")
+                return "012345678ㄳ012345678"[final2Index];
+            else if (finalChar1.ToString() == "ㄴ")
+                return "012345678901ㄵ34567ㄶ"[final2Index];
+            else if (finalChar1.ToString() == "ㄹ")
+                return "ㄺ12345ㄻㄼ8ㄽ012345ㄾㄿㅀ"[final2Index];
+            else if (finalChar1.ToString() == "ㅂ")
+                return "012345678ㅄ012345678"[final2Index];
 
-            return combinedABC[4];
+            return (char)0;
         }
 
+        private bool IsVowel(char letter)
+        {
+            string vowelABC = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+
+            for (int i = 0; i < vowelABC.Length; i++)
+            {
+                if (letter == vowelABC[i])
+                    return true;
+            }
+
+            return false;
+        }
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
