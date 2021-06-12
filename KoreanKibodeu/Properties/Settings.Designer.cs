@@ -22,17 +22,5 @@ namespace KoreanKibodeu.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://www.lexilogos.com/keyboard/korean.htm")]
-        public global::System.Uri LexiLogos {
-            get {
-                return ((global::System.Uri)(this["LexiLogos"]));
-            }
-            set {
-                this["LexiLogos"] = value;
-            }
-        }
     }
 }
