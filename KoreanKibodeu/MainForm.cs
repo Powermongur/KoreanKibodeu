@@ -83,18 +83,18 @@ namespace KoreanKibodeu
                     msg = msg.Replace("l", "r");
 
                     string[] abcRoK = new string[] { "kk", "tt", "pp", "ss", "jj", "k", "n", "t", "r", "m", "p", "s", "j", "ch", "K", "T", "P", "h", "ng" };
-                    string[] abcKrK = new string[] { "ㄲ", "ㄸ", "ㅃ", "ㅆ", "ㅉ", "ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅈ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ", "ㅇ" };
+                    string abcKrK = "ㄲㄸㅃㅆㅉㄱㄴㄷㄹㅁㅂㅅㅈㅊㅋㅌㅍㅎㅇ";
                     string[] abcRoV = new string[] { "yae", "yeo", "wae", "eu", "ui", "ya", "ye", "yu", "yo", "wa", "wi", "wo", "ae", "eo", "oe", "a", "e", "o", "u", "i" };
-                    string[] abcKrV = new string[] { "ㅒ", "ㅕ", "ㅙ", "ㅡ", "ㅢ", "ㅑ", "ㅖ", "ㅠ", "ㅛ", "ㅘ", "ㅟ", "ㅝ", "ㅐ", "ㅓ", "ㅚ", "ㅏ", "ㅔ", "ㅗ", "ㅜ", "ㅣ" };
+                    string abcKrV = "ㅒㅕㅙㅡㅢㅑㅖㅠㅛㅘㅟㅝㅐㅓㅚㅏㅔㅗㅜㅣ";
 
                     for (int i = 0; i < abcRoK.Length; i++)
                     {
-                        msg = msg.Replace(abcRoK[i], abcKrK[i]);
+                        msg = msg.Replace(abcRoK[i], abcKrK[i].ToString());
                     }
 
                     for (int i = 0; i < abcRoV.Length; i++)
                     {
-                        msg = msg.Replace(abcRoV[i], abcKrV[i]);
+                        msg = msg.Replace(abcRoV[i], abcKrV[i].ToString());
                     }
 
                     string syllableString = " " + msg + "  ";
@@ -103,10 +103,15 @@ namespace KoreanKibodeu
                     {
                         if (IsVowel(syllableString[i]))
                         {
-                            if(IsVowel(syllableString[i-1]))
-                                syllableString = " " + syllableString.Substring(i, 3);
-                            else
-                                syllableString = syllableString.Substring(i-1, 4);
+                            syllableString = syllableString.Substring(i - 1, 4);
+
+                            if (!abcKrK.Contains(syllableString[0]))
+                                syllableString = " " + syllableString[1].ToString() + syllableString[2].ToString() + syllableString[3].ToString();
+                            if (!abcKrK.Contains(syllableString[2]))
+                                syllableString = syllableString[0].ToString() + syllableString[1].ToString() + " " + syllableString[3].ToString();
+                            if (!abcKrK.Contains(syllableString[3]))
+                                syllableString = syllableString[0].ToString() + syllableString[1].ToString() + syllableString[2].ToString() + " ";
+
                             i = -1;
                         }
                     }
@@ -117,7 +122,9 @@ namespace KoreanKibodeu
 
                     if ((int)syllableChar > 0)
                     {
-                        msg = msg.Replace(syllableString, syllableChar.ToString());
+                        msg = msg.Remove(msg.Length - syllableString.Length, syllableString.Length);
+                        msg += syllableChar.ToString();
+                        //msg = msg.Replace(syllableString, syllableChar.ToString());
                     }
 
                     messageTextBox.Text = msg;
