@@ -44,8 +44,7 @@ namespace KoreanKibodeu
         private void helpButton_Click(object sender, EventArgs e)
         {
             HelpForm helpDialog = new HelpForm();
-            helpDialog.ShowDialog(this);
-            helpDialog.Dispose();
+            helpDialog.Show();
         }
 
         private void closeButton_Click(object sender, EventArgs e)
@@ -76,6 +75,13 @@ namespace KoreanKibodeu
                     if (lastKey != Keys.Space)
                         e.SuppressKeyPress = true;
 
+                    if (msg.Contains("!help"))
+                    {
+                        HelpForm helpDialog = new HelpForm();
+                        helpDialog.Show();
+                        msg = msg.Replace("!help", "");
+                    }
+
                     msg = msg.Replace("ng", "ㅇ");
                     msg = msg.Replace("g", "k");
                     msg = msg.Replace("d", "t");
@@ -84,8 +90,8 @@ namespace KoreanKibodeu
 
                     string[] abcRoK = new string[] { "kk", "tt", "pp", "ss", "jj", "k", "n", "t", "r", "m", "p", "s", "j", "ch", "K", "T", "P", "h", "ng" };
                     string abcKrK = "ㄲㄸㅃㅆㅉㄱㄴㄷㄹㅁㅂㅅㅈㅊㅋㅌㅍㅎㅇ";
-                    string[] abcRoV = new string[] { "yae", "yeo", "wae", "eu", "ui", "ya", "ye", "yu", "yo", "wa", "wi", "wo", "ae", "eo", "oe", "a", "e", "o", "u", "i" };
-                    string abcKrV = "ㅒㅕㅙㅡㅢㅑㅖㅠㅛㅘㅟㅝㅐㅓㅚㅏㅔㅗㅜㅣ";
+                    string[] abcRoV = new string[] { "yae", "yeo", "wae", "eu", "ui", "ya", "ye", "yu", "yo", "wa", "wi", "wo", "ae", "eo", "oe", "a", "e", "o", "u", "i", "we" };
+                    string abcKrV = "ㅒㅕㅙㅡㅢㅑㅖㅠㅛㅘㅟㅝㅐㅓㅚㅏㅔㅗㅜㅣㅞ";
 
                     for (int i = 0; i < abcRoK.Length; i++)
                     {
@@ -209,7 +215,9 @@ namespace KoreanKibodeu
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-
+            SettingsForm settingsDialog = new SettingsForm();
+            settingsDialog.ShowDialog(this);
+            settingsDialog.Dispose();
         }
     }
 }

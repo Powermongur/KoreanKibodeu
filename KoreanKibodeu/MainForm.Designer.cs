@@ -54,6 +54,7 @@ namespace KoreanKibodeu
             // 
             // minimizeButton
             // 
+            this.minimizeButton.AccessibleDescription = "";
             this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.minimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.minimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
@@ -71,7 +72,8 @@ namespace KoreanKibodeu
             // 
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.closeButton.ForeColor = System.Drawing.Color.White;
             this.closeButton.Location = new System.Drawing.Point(1052, 10);
@@ -131,6 +133,7 @@ namespace KoreanKibodeu
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.minimizeButton);
+            this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "Korean Kibodeu";
