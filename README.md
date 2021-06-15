@@ -1,6 +1,6 @@
 # KoreanKibodeu
 
-# [Download](https://powermongur.com/kibodeu/publish.htm)
+# [Download](https://powermongur.com/kibodeu/install.htm)
 
 ## Features
 
