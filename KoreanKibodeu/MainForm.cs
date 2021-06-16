@@ -62,25 +62,20 @@ namespace KoreanKibodeu
             if (Control.ModifierKeys == Keys.Shift)
             { }
 
-            int posI = messageTextBox.SelectionStart - 1;
+            int cursorI = messageTextBox.SelectionStart - 1;
             string msg = messageTextBox.Text;
 
             if (msg.Length > 0)
             {
-                if (posI < 0)
-                    posI = 0;
+                if (cursorI < 0)
+                    cursorI = 0;
 
                 if(e.KeyCode == Keys.Space)
                 {
                     if (lastKey != Keys.Space)
                         e.SuppressKeyPress = true;
 
-                    if (msg.Contains("!help"))
-                    {
-                        HelpForm helpDialog = new HelpForm();
-                        helpDialog.Show();
-                        msg = msg.Replace("!help", "");
-                    }
+                    msg = Command(msg);
 
                     msg = msg.Replace("ng", "ㅇ");
                     msg = msg.Replace("g", "k");
@@ -124,10 +119,9 @@ namespace KoreanKibodeu
 
                     char syllableChar = ComposeSyllable(syllableString);
 
-                    syllableString = syllableString.Trim();
-
                     if ((int)syllableChar > 0)
                     {
+                        syllableString = syllableString.Trim();
                         msg = msg.Remove(msg.Length - syllableString.Length, syllableString.Length);
                         msg += syllableChar.ToString();
                         //msg = msg.Replace(syllableString, syllableChar.ToString());
@@ -211,6 +205,22 @@ namespace KoreanKibodeu
             }
 
             return false;
+        }
+
+        private string Command(string msg)
+        {
+            if (msg.Contains("!help"))
+            {
+                HelpForm helpDialog = new HelpForm();
+                helpDialog.Show();
+                msg = msg.Replace("!help", "");
+            }
+            if (msg.Contains("!quit") || msg.Contains("!exit"))
+            {
+                this.Dispose();
+            }
+
+            return msg;
         }
 
         private void settingsButton_Click(object sender, EventArgs e)

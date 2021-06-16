@@ -23,16 +23,16 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://github.com/Powermongur/KoreanKibodeu/raw/master/Installer/</InstallUrl>
-    <UpdateUrl>https://github.com/Powermongur/KoreanKibodeu/raw/master/Installer/</UpdateUrl>
-    <ProductName>Powermongur</ProductName>
+    <InstallUrl>https://powermongur.com/kibodeu/</InstallUrl>
+    <UpdateUrl>https://powermongur.com/kibodeu/</UpdateUrl>
+    <ProductName>IXI Kibodeu</ProductName>
     <PublisherName>Powermongur</PublisherName>
     <SuiteName>Powermongur</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>33</ApplicationRevision>
+    <ApplicationRevision>36</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -59,10 +59,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>73EF21C663D011B9B4971970191AAB16138B3436</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>977756FA9FAC06F06694F97ABE4C9929C383472A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>KoreanKibodeu_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>KoreanKibodeu_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -71,11 +71,15 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
     <TargetZone>Internet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KoreanKibodeu_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -129,7 +133,6 @@
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="KoreanKibodeu_1_TemporaryKey.pfx" />
     <None Include="KoreanKibodeu_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
