@@ -1,3 +1,5 @@
+![pic1](/Installer/5.png)
+
 # IXI Kibodeu
 
 # [Download](https://powermongur.com/kibodeu/install.htm)
