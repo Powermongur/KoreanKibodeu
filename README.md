@@ -1,4 +1,4 @@
-![pic1](/Installer/5.png)
+![pic1](/power.jpg)
 
 # IXI Kibodeu
 
