@@ -1,4 +1,4 @@
-![pic1](/power.jpg)
+![pic1](/power.jpeg)
 
 # IXI Kibodeu
 
