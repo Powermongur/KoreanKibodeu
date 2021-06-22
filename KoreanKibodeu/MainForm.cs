@@ -57,15 +57,69 @@ namespace KoreanKibodeu
             this.WindowState = FormWindowState.Minimized;
         }
 
+        bool hanguelMode = true;
+
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Shift)
-            { }
+            if (e.KeyCode == Keys.Space && Control.ModifierKeys == Keys.Shift)
+            {
+                hanguelMode = !hanguelMode;
+                if(hanguelMode)
+                    statusLabel2.Text = "Mode: 한";
+                else
+                    statusLabel2.Text = "Mode: abc";
+
+                return;
+            }
+
+            if (!hanguelMode)
+            {
+                //de
+                if (messageTextBox.Text.Contains("sss"))
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("sss", "ß");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+
+                //dk no
+                if (messageTextBox.Text.Contains("ae"))
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("ae", "æ");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+                if (messageTextBox.Text.Contains("AE"))
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("AE", "Æ");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+                if (messageTextBox.Text.Contains("oe"))
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("oe", "ø");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+                if (messageTextBox.Text.Contains("OE"))
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("OE", "Ø");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+                if (messageTextBox.Text.Contains("aaa")) //se
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("aaa", "å");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+                if (messageTextBox.Text.Contains("AAA")) //se
+                {
+                    messageTextBox.Text = messageTextBox.Text.Replace("AAA", "Å");
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
+
+                messageTextBox.Text = Command(messageTextBox.Text);
+            }
 
             int cursorI = messageTextBox.SelectionStart - 1;
             string msg = messageTextBox.Text;
 
-            if (msg.Length > 0)
+            if (msg.Length > 0 && hanguelMode)
             {
                 if (cursorI < 0)
                     cursorI = 0;
@@ -118,6 +172,7 @@ namespace KoreanKibodeu
                     }
 
                     char syllableChar = ComposeSyllable(syllableString);
+                    label2.Text = DecomposeSyllable(syllableChar).ToString();
 
                     if ((int)syllableChar > 0)
                     {
@@ -194,6 +249,24 @@ namespace KoreanKibodeu
             return (char)0;
         }
 
+        private string DecomposeSyllable(char syllable)
+        {
+            string initialABC = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ";
+            string medialABC = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
+            string finalABC = " ㄱㄲㄳㄴㄵㄶㄷㄹㄺㄻㄼㄽㄾㄿㅀㅁㅂㅄㅅㅆㅇㅈㅊㅋㅌㅍㅎ";
+
+            int syllableChar = (int)syllable;
+
+            if (syllableChar > 44032)
+                syllableChar -= 44032;
+
+            int initialIndex = syllableChar / 588;
+            int medialIndex = (syllableChar % 588) / 28;
+            int finalIndex = (syllableChar % 588) % 28;
+
+            return initialABC[initialIndex].ToString() + medialABC[medialIndex].ToString() + finalABC[finalIndex].ToString();
+        }
+
         private bool IsVowel(char letter)
         {
             string vowelABC = "ㅏㅐㅑㅒㅓㅔㅕㅖㅗㅘㅙㅚㅛㅜㅝㅞㅟㅠㅡㅢㅣ";
@@ -209,15 +282,49 @@ namespace KoreanKibodeu
 
         private string Command(string msg)
         {
-            if (msg.Contains("!help"))
+            if (msg.Length > 1)
             {
-                HelpForm helpDialog = new HelpForm();
-                helpDialog.Show();
-                msg = msg.Replace("!help", "");
-            }
-            if (msg.Contains("!quit") || msg.Contains("!exit"))
-            {
-                this.Dispose();
+                if (msg.Contains("!help"))
+                {
+                    HelpForm helpDialog = new HelpForm();
+                    helpDialog.Show();
+                    msg = msg.Replace("!help", "");
+                }
+                if (msg.Contains("!quit") || msg.Contains("!exit"))
+                {
+                    this.Dispose();
+                }
+
+                hanguelMode = false;
+
+                if (msg.Contains("!en"))
+                {
+                    msg = msg.Replace("!en", "");
+                }
+                if (msg.Contains("!dk"))
+                {
+                    msg = msg.Replace("!dk", "");
+                }
+                if (msg.Contains("!se"))
+                {
+                    msg = msg.Replace("!se", "");
+                }
+                if (msg.Contains("!no"))
+                {
+                    msg = msg.Replace("!no", "");
+                }
+                if (msg.Contains("!de"))
+                {
+                    msg = msg.Replace("!de", "");
+                }
+
+                if (msg.Contains("!kr"))
+                {
+                    msg = msg.Replace("!kr", "");
+                    hanguelMode = true;
+                }
+
+                messageTextBox.SelectionStart = messageTextBox.Text.Length;                
             }
 
             return msg;

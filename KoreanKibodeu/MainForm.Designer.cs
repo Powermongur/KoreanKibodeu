@@ -35,12 +35,16 @@ namespace KoreanKibodeu
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.settingsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.statusLabel2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // helpButton
             // 
             this.helpButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.helpButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.helpButton.FlatAppearance.BorderSize = 0;
             this.helpButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.helpButton.ForeColor = System.Drawing.Color.White;
@@ -57,6 +61,7 @@ namespace KoreanKibodeu
             this.minimizeButton.AccessibleDescription = "";
             this.minimizeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.minimizeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.minimizeButton.FlatAppearance.BorderSize = 0;
             this.minimizeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.minimizeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.minimizeButton.ForeColor = System.Drawing.Color.White;
@@ -72,6 +77,7 @@ namespace KoreanKibodeu
             // 
             this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -87,9 +93,10 @@ namespace KoreanKibodeu
             // messageTextBox
             // 
             this.messageTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.messageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.messageTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.messageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageTextBox.ForeColor = System.Drawing.Color.White;
-            this.messageTextBox.Location = new System.Drawing.Point(12, 28);
+            this.messageTextBox.Location = new System.Drawing.Point(12, 12);
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.Size = new System.Drawing.Size(948, 31);
             this.messageTextBox.TabIndex = 1;
@@ -99,6 +106,7 @@ namespace KoreanKibodeu
             // 
             this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.settingsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.settingsButton.FlatAppearance.BorderSize = 0;
             this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsButton.ForeColor = System.Drawing.Color.White;
@@ -121,22 +129,61 @@ namespace KoreanKibodeu
             this.label1.TabIndex = 8;
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
+            // statusLabel
+            // 
+            this.statusLabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.statusLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.statusLabel.Location = new System.Drawing.Point(12, 48);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Padding = new System.Windows.Forms.Padding(20, 4, 0, 0);
+            this.statusLabel.Size = new System.Drawing.Size(772, 23);
+            this.statusLabel.TabIndex = 101;
+            this.statusLabel.Text = "💡Tip of the day: Press <space> after each syllable to convert";
+            // 
+            // statusLabel2
+            // 
+            this.statusLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.statusLabel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.statusLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.statusLabel2.Location = new System.Drawing.Point(784, 48);
+            this.statusLabel2.Name = "statusLabel2";
+            this.statusLabel2.Padding = new System.Windows.Forms.Padding(20, 4, 0, 0);
+            this.statusLabel2.Size = new System.Drawing.Size(176, 23);
+            this.statusLabel2.TabIndex = 101;
+            this.statusLabel2.Text = "Mode: 한";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(971, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 31);
+            this.label2.TabIndex = 102;
+            this.label2.Text = "label2";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(1083, 82);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.statusLabel2);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.minimizeButton);
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
-            this.Text = "Korean Kibodeu";
+            this.Text = "IXI Kibodeu";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             this.ResumeLayout(false);
@@ -152,6 +199,9 @@ namespace KoreanKibodeu
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Button settingsButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label statusLabel2;
+        private System.Windows.Forms.Label label2;
     }
 }
 
