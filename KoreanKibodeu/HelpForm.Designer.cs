@@ -30,7 +30,6 @@ namespace KoreanKibodeu
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.labelSsangjieut = new System.Windows.Forms.Label();
             this.labelSsangsiot = new System.Windows.Forms.Label();
             this.labelSsangbieup = new System.Windows.Forms.Label();
@@ -152,9 +151,9 @@ namespace KoreanKibodeu
             this.panel9 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -164,7 +163,7 @@ namespace KoreanKibodeu
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -178,16 +177,6 @@ namespace KoreanKibodeu
             this.label1.TabIndex = 0;
             this.label1.Text = "Type romanized letters and press <space> after each syllable to convert\r\n\r\nExampl" +
     "e:\r\ndae<space>bak<space>";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(225, 104);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "아리아님 대단하다";
             // 
             // labelSsangjieut
             // 
@@ -1226,12 +1215,13 @@ namespace KoreanKibodeu
             // 
             // closeButton
             // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
             this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.closeButton.Location = new System.Drawing.Point(934, 12);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(19, 23);
@@ -1254,7 +1244,7 @@ namespace KoreanKibodeu
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel1.Controls.Add(this.label110);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label109);
@@ -1288,7 +1278,7 @@ namespace KoreanKibodeu
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel2.Controls.Add(this.label87);
             this.panel2.Controls.Add(this.label69);
             this.panel2.Controls.Add(this.label85);
@@ -1318,7 +1308,7 @@ namespace KoreanKibodeu
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label53);
             this.panel3.Controls.Add(this.labelChieut);
@@ -1341,7 +1331,7 @@ namespace KoreanKibodeu
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel4.Controls.Add(this.labelSsangjieut);
             this.panel4.Controls.Add(this.label38);
             this.panel4.Controls.Add(this.labelSsangsiot);
@@ -1366,7 +1356,7 @@ namespace KoreanKibodeu
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel5.Controls.Add(this.labelJjeut);
             this.panel5.Controls.Add(this.label11);
             this.panel5.Controls.Add(this.labelHieut);
@@ -1406,7 +1396,7 @@ namespace KoreanKibodeu
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel6.Controls.Add(this.label3);
             this.panel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1417,7 +1407,7 @@ namespace KoreanKibodeu
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel7.Controls.Add(this.label5);
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1428,7 +1418,7 @@ namespace KoreanKibodeu
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel8.Controls.Add(this.label10);
             this.panel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -1439,10 +1429,9 @@ namespace KoreanKibodeu
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.panel9.Controls.Add(this.label9);
             this.panel9.Controls.Add(this.label1);
-            this.panel9.Controls.Add(this.label2);
             this.panel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel9.Location = new System.Drawing.Point(12, 157);
             this.panel9.Name = "panel9";
@@ -1463,30 +1452,18 @@ namespace KoreanKibodeu
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 41);
             this.button1.TabIndex = 20;
             this.button1.Text = "Help";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button2);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 42);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(941, 47);
-            this.flowLayoutPanel1.TabIndex = 21;
-            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(107, 3);
+            this.button2.Location = new System.Drawing.Point(98, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(121, 41);
             this.button2.TabIndex = 20;
@@ -1497,12 +1474,26 @@ namespace KoreanKibodeu
             // 
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(234, 3);
+            this.button3.Location = new System.Drawing.Point(213, 0);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(145, 41);
             this.button3.TabIndex = 20;
             this.button3.Text = "Advanced";
             this.button3.UseVisualStyleBackColor = true;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
+            this.panel10.Controls.Add(this.button3);
+            this.panel10.Controls.Add(this.button2);
+            this.panel10.Controls.Add(this.button1);
+            this.panel10.Controls.Add(this.closeButton);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(965, 47);
+            this.panel10.TabIndex = 22;
             // 
             // HelpForm
             // 
@@ -1511,7 +1502,7 @@ namespace KoreanKibodeu
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 1023);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.panel9);
             this.Controls.Add(this.panel8);
@@ -1523,7 +1514,6 @@ namespace KoreanKibodeu
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.longNamesCheckBox);
-            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1533,6 +1523,7 @@ namespace KoreanKibodeu
             this.Name = "HelpForm";
             this.Text = "Help";
             this.Load += new System.EventHandler(this.HelpForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HelpForm_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HelpForm_MouseDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -1552,7 +1543,7 @@ namespace KoreanKibodeu
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1561,7 +1552,6 @@ namespace KoreanKibodeu
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label labelJjeut;
@@ -1683,8 +1673,8 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel10;
     }
 }

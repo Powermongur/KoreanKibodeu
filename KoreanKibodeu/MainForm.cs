@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Diagnostics;
+using System.Web;
+
 namespace KoreanKibodeu
 {
     public partial class MainForm : Form
@@ -17,13 +20,6 @@ namespace KoreanKibodeu
             InitializeComponent();
         }
 
-        Keys lastKey = Keys.Shift;
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            this.TopMost = true;
-        }
-
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -31,6 +27,17 @@ namespace KoreanKibodeu
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        Keys lastKey = Keys.Shift;
+        bool conversionMode = true;
+        public enum languageCode : ushort
+        { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7 }
+        AppSettings appSet = new AppSettings();
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            TopMost = true;
+        }
 
         private void MainForm_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
         {
@@ -49,7 +56,7 @@ namespace KoreanKibodeu
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            Dispose();
         }
 
         private void minimizebutton_Click(object sender, EventArgs e)
@@ -57,69 +64,132 @@ namespace KoreanKibodeu
             this.WindowState = FormWindowState.Minimized;
         }
 
-        bool hanguelMode = true;
-
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Space && Control.ModifierKeys == Keys.Shift)
             {
-                hanguelMode = !hanguelMode;
-                if(hanguelMode)
-                    statusLabel2.Text = "Mode: 한";
+                statusLabel2.Text = "Mode: ひらがな";
+
+                conversionMode = !conversionMode;
+                if(conversionMode)
+                    statusLabel2.Text = "Mode: 한글";
                 else
                     statusLabel2.Text = "Mode: abc";
 
                 return;
             }
 
-            if (!hanguelMode)
-            {
-                //de
-                if (messageTextBox.Text.Contains("sss"))
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("sss", "ß");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-
-                //dk no
-                if (messageTextBox.Text.Contains("ae"))
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("ae", "æ");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (messageTextBox.Text.Contains("AE"))
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("AE", "Æ");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (messageTextBox.Text.Contains("oe"))
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("oe", "ø");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (messageTextBox.Text.Contains("OE"))
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("OE", "Ø");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (messageTextBox.Text.Contains("aaa")) //se
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("aaa", "å");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (messageTextBox.Text.Contains("AAA")) //se
-                {
-                    messageTextBox.Text = messageTextBox.Text.Replace("AAA", "Å");
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-
-                messageTextBox.Text = Command(messageTextBox.Text);
-            }
-
             int cursorI = messageTextBox.SelectionStart - 1;
             string msg = messageTextBox.Text;
 
-            if (msg.Length > 0 && hanguelMode)
+
+            if (!conversionMode)
+            {
+                if (appSet.Language == (int)languageCode.de)
+                {
+                    if (msg.Contains("sss"))
+                    {
+                        msg = msg.Replace("sss", "ß");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                }
+                if (appSet.Language == (int)languageCode.dk || appSet.Language == (int)languageCode.no)
+                {
+                    if (msg.Contains("ae"))
+                    {
+                        msg = msg.Replace("ae", "æ");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                    if (msg.Contains("AE"))
+                    {
+                        msg = msg.Replace("AE", "Æ");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                    if (msg.Contains("oe"))
+                    {
+                        msg = msg.Replace("oe", "ø");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                    if (msg.Contains("OE"))
+                    {
+                        msg = msg.Replace("OE", "Ø");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+
+                }
+                if (appSet.Language == (int)languageCode.dk || appSet.Language == (int)languageCode.no || appSet.Language == (int)languageCode.se)
+                {
+                    if (msg.Contains("aaa")) //se
+                    {
+                        msg = msg.Replace("aaa", "å");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                    if (msg.Contains("AAA")) //se
+                    {
+                        msg = msg.Replace("AAA", "Å");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
+                }
+
+
+                messageTextBox.Text = Command(msg);
+            }
+
+            if (false)
+            {
+                string[] numbersDK = new string[] { "nul", "en", "to", "tre", "fire", "fem", "seks", "syv", "otte", "ni", "ti" };
+            }
+
+            if (appSet.Language == (int)languageCode.jp)
+            {
+                msg = msg.Replace("shi", "si");
+                msg = msg.Replace("chi", "ti");
+                msg = msg.Replace("tsu", "tu");
+                msg = msg.Replace("ji", "zi");
+                msg = msg.Replace("dji", "di");
+                msg = msg.Replace("dzu", "du");
+
+
+                //Hiragana
+                string rowa1 = "あかさたなはまやらわん";
+                string rowi1 = "いきしちにひみり"; ;
+                string rowu1 = "うくすつぬふむゆる";
+                string rowe1 = "えけせてねへめれ";
+                string rowo1 = "おこそとのほもよろを";
+
+                //Dakuten 
+                string rowa2 = "ばだざが";
+                string rowi2 = "びぢじぎ";
+                string rowu2 = "ぶづずぐ";
+                string rowe2 = "べでぜげ";
+                string rowo2 = "ぼどぞご";
+
+                //Handakuten
+                string rowa3 = "ぱ";
+                string rowi3 = "ぴ";
+                string rowu3 = "ぷ";
+                string rowe3 = "ぺ";
+                string rowo3 = "ぽ";
+
+                //Sutegana
+                //MANGLER!
+
+
+
+                string toprow = "kstnhmyrwgzdbp";
+                string firstrow = "aiueo";
+
+                for (int x = 0; x < toprow.Length; x++)
+                {
+                    for (int y = 0; y < firstrow.Length; y++)
+                    {
+                        msg = msg.Replace(toprow[x].ToString() + firstrow[y].ToString(), "");
+                    }
+                }
+            }
+
+
+            if (msg.Length > 0 && conversionMode)
             {
                 if (cursorI < 0)
                     cursorI = 0;
@@ -137,14 +207,14 @@ namespace KoreanKibodeu
                     msg = msg.Replace("b", "p");
                     msg = msg.Replace("l", "r");
 
-                    string[] abcRoK = new string[] { "kk", "tt", "pp", "ss", "jj", "k", "n", "t", "r", "m", "p", "s", "j", "ch", "K", "T", "P", "h", "ng" };
+                    string[] abcRoC = new string[] { "kk", "tt", "pp", "ss", "jj", "k", "n", "t", "r", "m", "p", "s", "j", "ch", "K", "T", "P", "h", "ng" };
                     string abcKrK = "ㄲㄸㅃㅆㅉㄱㄴㄷㄹㅁㅂㅅㅈㅊㅋㅌㅍㅎㅇ";
                     string[] abcRoV = new string[] { "yae", "yeo", "wae", "eu", "ui", "ya", "ye", "yu", "yo", "wa", "wi", "wo", "ae", "eo", "oe", "a", "e", "o", "u", "i", "we" };
                     string abcKrV = "ㅒㅕㅙㅡㅢㅑㅖㅠㅛㅘㅟㅝㅐㅓㅚㅏㅔㅗㅜㅣㅞ";
 
-                    for (int i = 0; i < abcRoK.Length; i++)
+                    for (int i = 0; i < abcRoC.Length; i++)
                     {
-                        msg = msg.Replace(abcRoK[i], abcKrK[i].ToString());
+                        msg = msg.Replace(abcRoC[i], abcKrK[i].ToString());
                     }
 
                     for (int i = 0; i < abcRoV.Length; i++)
@@ -172,7 +242,6 @@ namespace KoreanKibodeu
                     }
 
                     char syllableChar = ComposeSyllable(syllableString);
-                    label2.Text = DecomposeSyllable(syllableChar).ToString();
 
                     if ((int)syllableChar > 0)
                     {
@@ -295,39 +364,130 @@ namespace KoreanKibodeu
                     this.Dispose();
                 }
 
-                hanguelMode = false;
+                /*
+                 string tester = "string%20%20%25amp%25lt%25gt%5C%25%2339%2C%3A";
+
+                string rawString = "string  &<>\"',:;";
+                //string rawString = @"this & that";
+                var uriEncoded = Uri.EscapeDataString(rawString);
+                var httpUtilityEncoded = HttpUtility.UrlEncode(rawString); //,Encoding.UTF8
+                var httpUtilityEncoded2 = HttpUtility.HtmlEncode(rawString);
+
+                statusLabel.Text = httpUtilityEncoded2;
+                statusLabel.Text = Uri.EscapeDataString(statusLabel.Text);
+                statusLabel.Text = statusLabel.Text.Replace("%3B", "");
+                statusLabel.Text = statusLabel.Text.Replace("%26", "%25");
+                statusLabel.Text = statusLabel.Text.Replace("%25quot", "%5C");
+
+                if (tester == statusLabel.Text)
+                    statusLabel.Text = "true";
+
+                //statusLabel.Text = uriEncoded;
+                // uriEncoded = "this%20%26%20that"
+
+                //statusLabel.Text = httpUtilityEncoded;
+                // httpUtilityEncoded = "this+%26+that"
+
+                //statusLabel.Text = httpUtilityEncoded2;
+                // httpUtilityEncoded = "this amp; that"
+
+                //this%20%25amp%20that
+                */
+
+                int tran = 0;
+
+                if (msg.Contains("!trans"))
+                {
+                    msg = msg.Replace("!trans", "");
+                    if (tran == 0)
+                        OpenBrowser("https://papago.naver.com/?sk=en&tk=ko&hn=1&st=" + PapagoURL(msg));
+                    else
+                        OpenBrowser("https://translate.google.com/?sl=en&tl=ko&text=" + msg + "&op=translate");
+                }
+                if (msg.Contains("!tts"))
+                {
+                    msg = msg.Replace("!tts", "");
+                    if (tran == 0)
+                        OpenBrowser("https://papago.naver.com/?sk=ko&tk=en&st=" + PapagoURL(msg));
+                    else
+                        OpenBrowser("https://translate.google.com/?sl=ko&tl=en&text=" + msg + "&op=translate");
+                }
+
+
+                if (msg.Contains("!search"))
+                {
+                    msg = msg.Replace("!search", "");
+                    OpenBrowser("https://www.google.com");
+                }
+
+                if (msg.Contains("!yt"))
+                {
+                    msg = msg.Replace("!yt", "");
+                    OpenBrowser("https://www.youtube.com");
+                }
+
+                conversionMode = false;
 
                 if (msg.Contains("!en"))
                 {
+                    appSet.Language = (int)languageCode.en;
                     msg = msg.Replace("!en", "");
+                    statusLabel2.Text = "Mode: abc en";
                 }
                 if (msg.Contains("!dk"))
                 {
+                    appSet.Language = (int)languageCode.dk;
                     msg = msg.Replace("!dk", "");
+                    statusLabel2.Text = "Mode: abc dk";
                 }
                 if (msg.Contains("!se"))
                 {
+                    appSet.Language = (int)languageCode.se;
                     msg = msg.Replace("!se", "");
+                    statusLabel2.Text = "Mode: abc se";
                 }
                 if (msg.Contains("!no"))
                 {
+                    appSet.Language = (int)languageCode.no;
                     msg = msg.Replace("!no", "");
+                    statusLabel2.Text = "Mode: abc no";
                 }
                 if (msg.Contains("!de"))
                 {
+                    appSet.Language = (int)languageCode.de;
                     msg = msg.Replace("!de", "");
+                    statusLabel2.Text = "Mode: abc de";
                 }
-
+                if (msg.Contains("!jp"))
+                {
+                    appSet.Language = (int)languageCode.jp;
+                    msg = msg.Replace("!jp", "");
+                    statusLabel2.Text = "Mode: abc jp";
+                }
                 if (msg.Contains("!kr"))
                 {
+                    appSet.Language = (int)languageCode.kr;
                     msg = msg.Replace("!kr", "");
-                    hanguelMode = true;
+                    statusLabel2.Text = "Mode: abc kr";
+                    conversionMode = true;
                 }
 
+                appSet.Save();
                 messageTextBox.SelectionStart = messageTextBox.Text.Length;                
             }
 
             return msg;
+        }
+
+        private void OpenBrowser(string url)
+        {
+            ProcessStartInfo psInfo = new ProcessStartInfo
+            { FileName = url, UseShellExecute = true };
+
+            try
+            { Process.Start(psInfo); }
+            catch (Exception ex)
+            { Process.Start("iexplore.exe", psInfo.FileName); }
         }
 
         private void settingsButton_Click(object sender, EventArgs e)
@@ -335,6 +495,26 @@ namespace KoreanKibodeu
             SettingsForm settingsDialog = new SettingsForm();
             settingsDialog.ShowDialog(this);
             settingsDialog.Dispose();
+        }
+
+        private void translateButton_Click(object sender, EventArgs e)
+        {
+            Command(messageTextBox.Text + "!trans");
+        }
+
+        private void ttsButton_Click(object sender, EventArgs e)
+        {
+            Command(messageTextBox.Text + "!tts");
+        }
+
+        private string PapagoURL(string url)
+        {
+            url = HttpUtility.HtmlEncode(url);
+            url = Uri.EscapeDataString(url);
+            url = url.Replace("%3B", "");
+            url = url.Replace("%26", "%25");
+            url = url.Replace("%25quot", "%5C");
+            return url;
         }
     }
 }

@@ -25,9 +25,21 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        private void closeButton_Click(object sender, EventArgs e)
+
+        AppSettings appSet = new AppSettings();
+
+        private void HelpForm_Load(object sender, EventArgs e)
         {
-            this.Dispose();
+            TopMost = true;
+            KeyPreview = true;
+            longNamesCheckBox.Checked = appSet.ShowLongNames;
+
+            ShowLongNames(longNamesCheckBox.Checked);
+
+            for (int i = 0; i < Controls.Count; i++)
+            {
+                Controls[i].MouseDown += new System.Windows.Forms.MouseEventHandler(HelpForm_MouseDown);
+            }
         }
 
         private void HelpForm_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
@@ -39,14 +51,16 @@ namespace KoreanKibodeu
             }
         }
 
-        private void HelpForm_Load(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
-            this.TopMost = true;
-            ShowLongNames(false);
+            Dispose();
         }
 
         private void longNamesCheckBox_CheckStateChanged(object sender, EventArgs e)
         {
+            appSet.ShowLongNames = longNamesCheckBox.Checked;
+            appSet.Save();
+
             ShowLongNames(longNamesCheckBox.Checked);
         }
 
@@ -71,6 +85,12 @@ namespace KoreanKibodeu
             labelTieut.Visible = value;
             labelPieup.Visible = value;
             labelChieut.Visible = value;
+        }
+
+        private void HelpForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                Dispose();
         }
     }
 }
