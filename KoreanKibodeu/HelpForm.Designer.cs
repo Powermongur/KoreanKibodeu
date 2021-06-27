@@ -174,7 +174,7 @@ namespace KoreanKibodeu
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(513, 80);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 1000;
             this.label1.Text = "Type romanized letters and press <space> after each syllable to convert\r\n\r\nExampl" +
     "e:\r\ndae<space>bak<space>";
             // 
@@ -520,7 +520,7 @@ namespace KoreanKibodeu
             this.label9.Location = new System.Drawing.Point(13, 104);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 31);
-            this.label9.TabIndex = 2;
+            this.label9.TabIndex = 1002;
             this.label9.Text = "대박";
             // 
             // labelJjeut
@@ -945,7 +945,7 @@ namespace KoreanKibodeu
             this.label7.Location = new System.Drawing.Point(12, 313);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 29);
-            this.label7.TabIndex = 5;
+            this.label7.TabIndex = 1005;
             this.label7.Text = "Consonants";
             // 
             // label8
@@ -955,7 +955,7 @@ namespace KoreanKibodeu
             this.label8.Location = new System.Drawing.Point(12, 696);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 29);
-            this.label8.TabIndex = 6;
+            this.label8.TabIndex = 1006;
             this.label8.Text = "Vowels";
             // 
             // label110
@@ -1192,7 +1192,7 @@ namespace KoreanKibodeu
             this.label10.Location = new System.Drawing.Point(21, 13);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 24);
-            this.label10.TabIndex = 0;
+            this.label10.TabIndex = 1000;
             this.label10.Text = "Plain";
             // 
             // label5
@@ -1201,7 +1201,7 @@ namespace KoreanKibodeu
             this.label5.Location = new System.Drawing.Point(22, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 24);
-            this.label5.TabIndex = 0;
+            this.label5.TabIndex = 1000;
             this.label5.Text = "Tense";
             // 
             // label3
@@ -1274,7 +1274,7 @@ namespace KoreanKibodeu
             this.panel1.Location = new System.Drawing.Point(12, 834);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(941, 100);
-            this.panel1.TabIndex = 11;
+            this.panel1.TabIndex = 1011;
             // 
             // panel2
             // 
@@ -1304,7 +1304,7 @@ namespace KoreanKibodeu
             this.panel2.Location = new System.Drawing.Point(12, 728);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(941, 100);
-            this.panel2.TabIndex = 13;
+            this.panel2.TabIndex = 1013;
             // 
             // panel3
             // 
@@ -1327,7 +1327,7 @@ namespace KoreanKibodeu
             this.panel3.Location = new System.Drawing.Point(148, 581);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(805, 112);
-            this.panel3.TabIndex = 14;
+            this.panel3.TabIndex = 1014;
             // 
             // panel4
             // 
@@ -1352,7 +1352,7 @@ namespace KoreanKibodeu
             this.panel4.Location = new System.Drawing.Point(148, 463);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(805, 112);
-            this.panel4.TabIndex = 0;
+            this.panel4.TabIndex = 1000;
             // 
             // panel5
             // 
@@ -1392,7 +1392,7 @@ namespace KoreanKibodeu
             this.panel5.Location = new System.Drawing.Point(148, 345);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(805, 112);
-            this.panel5.TabIndex = 15;
+            this.panel5.TabIndex = 1015;
             // 
             // panel6
             // 
@@ -1403,7 +1403,7 @@ namespace KoreanKibodeu
             this.panel6.Location = new System.Drawing.Point(12, 581);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(130, 112);
-            this.panel6.TabIndex = 16;
+            this.panel6.TabIndex = 1016;
             // 
             // panel7
             // 
@@ -1414,7 +1414,7 @@ namespace KoreanKibodeu
             this.panel7.Location = new System.Drawing.Point(12, 463);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(130, 112);
-            this.panel7.TabIndex = 17;
+            this.panel7.TabIndex = 1017;
             // 
             // panel8
             // 
@@ -1425,7 +1425,7 @@ namespace KoreanKibodeu
             this.panel8.Location = new System.Drawing.Point(12, 345);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(130, 112);
-            this.panel8.TabIndex = 18;
+            this.panel8.TabIndex = 1018;
             // 
             // panel9
             // 
@@ -1436,7 +1436,7 @@ namespace KoreanKibodeu
             this.panel9.Location = new System.Drawing.Point(12, 157);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(941, 150);
-            this.panel9.TabIndex = 3;
+            this.panel9.TabIndex = 1003;
             // 
             // label13
             // 
@@ -1445,7 +1445,7 @@ namespace KoreanKibodeu
             this.label13.Location = new System.Drawing.Point(17, 119);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(133, 29);
-            this.label13.TabIndex = 19;
+            this.label13.TabIndex = 1019;
             this.label13.Text = "How to use";
             // 
             // button1
@@ -1493,7 +1493,7 @@ namespace KoreanKibodeu
             this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(965, 47);
-            this.panel10.TabIndex = 22;
+            this.panel10.TabIndex = 1022;
             // 
             // HelpForm
             // 

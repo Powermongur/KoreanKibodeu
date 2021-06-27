@@ -38,7 +38,8 @@ namespace KoreanKibodeu
 
             for (int i = 0; i < Controls.Count; i++)
             {
-                Controls[i].MouseDown += new System.Windows.Forms.MouseEventHandler(HelpForm_MouseDown);
+                if (Controls[i].TabIndex >= 1000)
+                    Controls[i].MouseDown += new System.Windows.Forms.MouseEventHandler(HelpForm_MouseDown);
             }
         }
 

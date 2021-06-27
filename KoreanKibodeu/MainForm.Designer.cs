@@ -108,6 +108,7 @@ namespace KoreanKibodeu
             this.messageTextBox.Size = new System.Drawing.Size(948, 31);
             this.messageTextBox.TabIndex = 1;
             this.messageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyDown);
+            this.messageTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyUp);
             // 
             // settingsButton
             // 
@@ -147,7 +148,7 @@ namespace KoreanKibodeu
             this.statusLabel.Name = "statusLabel";
             this.statusLabel.Padding = new System.Windows.Forms.Padding(20, 4, 0, 0);
             this.statusLabel.Size = new System.Drawing.Size(772, 23);
-            this.statusLabel.TabIndex = 101;
+            this.statusLabel.TabIndex = 1001;
             this.statusLabel.Text = "💡Tip of the day: Press <space> after each syllable to convert";
             // 
             // statusLabel2
@@ -160,27 +161,28 @@ namespace KoreanKibodeu
             this.statusLabel2.Name = "statusLabel2";
             this.statusLabel2.Padding = new System.Windows.Forms.Padding(20, 4, 0, 0);
             this.statusLabel2.Size = new System.Drawing.Size(176, 23);
-            this.statusLabel2.TabIndex = 101;
+            this.statusLabel2.TabIndex = 1001;
             this.statusLabel2.Text = "Mode: 한";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Silver;
+            this.label2.ForeColor = System.Drawing.Color.Gray;
             this.label2.Location = new System.Drawing.Point(977, 34);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 102;
+            this.label2.TabIndex = 1002;
             this.label2.Text = "IXI Kibodeu";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.panel1.ForeColor = System.Drawing.Color.Gray;
             this.panel1.Location = new System.Drawing.Point(977, 51);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(75, 2);
-            this.panel1.TabIndex = 103;
+            this.panel1.TabIndex = 1003;
             // 
             // commandsButton
             // 
