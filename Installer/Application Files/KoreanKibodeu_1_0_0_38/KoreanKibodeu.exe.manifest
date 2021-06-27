@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="KoreanKibodeu.exe" version="1.0.0.38" publicKeyToken="db5e9b3813b1015c" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="KoreanKibodeu" version="1.0.0.0" publicKeyToken="DB5E9B3813B1015C" language="neutral" processorArchitecture="msil" />
+    <commandLine file="KoreanKibodeu.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="Internet" Description="Default rights given to Internet applications" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="KoreanKibodeu.exe" size="97256">
+      <assemblyIdentity name="KoreanKibodeu" version="1.0.0.0" publicKeyToken="DB5E9B3813B1015C" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>0y2fRJyI5mIFfspCsx5KGrMtUrsDXNyRSkUi5b90YMY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="keyboard3.png" size="15324">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ERw+gFJhpGpLf62CgI60bRh2olwW4MC0lSTefEHzGAA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="KoreanKibodeu.exe.config" size="1181">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>AUf3a+ZZAKWr6vfvNNy44VnpcVRg0Gt0Ig94J82KVVo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=SHADOW-6PL47U2O\Shadow" issuerKeyHash="27a981f98fe87a6720b5ee74fea56ff08fd23c9c" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>Zz53LiPv1PaV0ujO5T+jv3oIR9UYXIkzQAY3NCRrTvU=</DigestValue></Reference></SignedInfo><SignatureValue>a3M5AdxTt9TYMe5/dn07vodv218NC+d0U0l9VrRs4zp9UAsSIwR5b8NXrNLxKn73vHDyp5ew+iE9v/p4G1nGMKpitDPcMmIKbdVWe98IMNWtydMXua0imU0qrPE+c/6O2m/8rih1nKpZJ9/fDM2n9WY+phkh/XeaMVpFsslEMJs=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wk0Fe/zAuM4g3ThqFTH/pFKvGxEr0SULQ7rS5ekgx2FOhoqXFqsfbUNzgC+dXWZHIK/fZ4WsqNCvS2P90gLphc+Cb3Te5qiEomZReElzUAfwV5aF/g7nvVMKuQEuTyShJauW/uGuYOS+JQLVDrC18SKZjtj6H0F7AI33KPZi8pE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="f54e6b243437064033895c18d547087abfa33fe5cee8d295f6d4ef232e773e67" Description="" Url=""><as:assemblyIdentity name="KoreanKibodeu.exe" version="1.0.0.38" publicKeyToken="db5e9b3813b1015c" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=SHADOW-6PL47U2O\Shadow</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>8VVckqCGqFdw2GdfHzk4STJ8M6SFrudCDcapGPnHwmQ=</DigestValue></Reference></SignedInfo><SignatureValue>rXLFuirjqtpEVnJcYh7T3ik+6yVQCuxGBs0PUzkiuC+MP+tWpZ8Lid2grPTK+JXS+mi/ET6eVX8vBaUcgdWqcsuQ/yVHli3eH4SYSfPxXmZpTpAKTW4ymWJghL1v9y6JE4cqU9snU7o1TDmyAXVXmSY82+zCas2Aiiw6jfL7jK8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wk0Fe/zAuM4g3ThqFTH/pFKvGxEr0SULQ7rS5ekgx2FOhoqXFqsfbUNzgC+dXWZHIK/fZ4WsqNCvS2P90gLphc+Cb3Te5qiEomZReElzUAfwV5aF/g7nvVMKuQEuTyShJauW/uGuYOS+JQLVDrC18SKZjtj6H0F7AI33KPZi8pE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB8TCCAVqgAwIBAgIQIFSdHJH2z4NCLeAUabfb2zANBgkqhkiG9w0BAQsFADA3MTUwMwYDVQQDHiwAUwBIAEEARABPAFcALQA2AFAATAA0ADcAVQAyAE8AXABTAGgAYQBkAG8AdzAeFw0yMTA2MTQxMzEzMDJaFw0yMjA2MTQxOTEzMDJaMDcxNTAzBgNVBAMeLABTAEgAQQBEAE8AVwAtADYAUABMADQANwBVADIATwBcAFMAaABhAGQAbwB3MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDCTQV7/MC4ziDdOGoVMf+kUq8bESvRJQtDutLl6SDHYU6GipcWqx9tQ3OAL51dZkcgr99nhayo0K9LY/3SAumFz4JvdN7mqISiZlF4SXNQB/BXloX+Due9Uwq5AS5PJKElq5b+4a5g5L4lAtUOsLXxIpmO2PofQXsAjfco9mLykQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAJe6D19RnK3Rd/bJl4sm+FxhjlxN70kBb9Xofdnet0QkFqT/f2NT1jZJYfV+pz4iMx+hzLCoHzBKY/aYQZMo1c7ujn3AfbEPpuPaTslm/t7of6p2ZSyek7fM+s+ybQ7zo0ftr3jYuJcH/2E8wVnsZUn0lxdFpHDQ2qlAAxpfnHGl</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
