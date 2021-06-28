@@ -31,14 +31,14 @@ namespace KoreanKibodeu
         Keys lastKey = Keys.Shift;
         bool conversionMode = true;
         public enum languageCode : ushort
-        { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7 }
+        { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
         AppSettings appSet = new AppSettings();
         List<string> history = new List<string>();
         int historyIndex = -1;
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            TopMost = true;
+            TopMost = appSet.StayOnTop;
 
             for (int i = 0; i < Controls.Count; i++)
             {
@@ -161,15 +161,6 @@ namespace KoreanKibodeu
 
             if (conversionMode)
             {
-                if (appSet.Language == (int)languageCode.de)
-                {
-                    if (msg.Contains("sss"))
-                        msg = msg.Replace("sss", "ß");
-
-                    msg = ReplaceSpecialChar("„“‚‘»«›‹—–…", msg);
-
-                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
                 if (appSet.Language == (int)languageCode.dk || appSet.Language == (int)languageCode.no)
                 {
                     if (msg.Contains("ae"))
@@ -212,7 +203,15 @@ namespace KoreanKibodeu
                         messageTextBox.SelectionStart = messageTextBox.Text.Length;
                     }
                 }
+                if (appSet.Language == (int)languageCode.de)
+                {
+                    if (msg.Contains("sss"))
+                        msg = msg.Replace("sss", "ß");
 
+                    msg = ReplaceSpecialChar("„“‚‘»«›‹—–…", msg);
+
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                }
                 if (appSet.Language == (int)languageCode.jp)
                 {                   
                     msg = msg.Replace("shi", "si");
@@ -275,6 +274,8 @@ namespace KoreanKibodeu
 
                     msg = msg.Replace("v", "ゔ");
                     msg = ReplaceSpecialChar("ーゝゞ、。", msg);
+
+                    messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
 
                 if (appSet.Language == (int)languageCode.kr)
@@ -330,16 +331,90 @@ namespace KoreanKibodeu
                             msg += syllableChar.ToString();
                             //msg = msg.Replace(syllableString, syllableChar.ToString());
                         }
+                    }
+                }
+                if (appSet.Language == (int)languageCode.fr)
+                {
+                    msg = msg.Replace("ae", "æ");
+                    msg = msg.Replace("AE", "Æ");
+                    msg = msg.Replace("oe", "œ");
+                    msg = msg.Replace("OE", "Œ");
 
+                    string[] frenchABC = new string[] { "àâ", "ÀÂ", "éèê", "ÉÈÊ", "ùû", "ÙÛ", "ç", "Ç", "î", "Î", "ô", "Ô" };
+                    string inputABC = "aAeEuUcCiIoO";
+
+                    for (int x = 0; x < frenchABC.Length; x++)
+                    {
+                        msg = msg.Replace(inputABC[x].ToString() + "..", frenchABC[x][0].ToString());
+                        msg = msg.Replace(inputABC[x].ToString() + ",,", frenchABC[x][frenchABC[x].Length - 1].ToString());
+
+                        if (frenchABC[x].Length > 1)
+                        {
+                            for (int y = 0; y < frenchABC[x].Length; y++)
+                            {
+                                if (y == frenchABC[x].Length - 1)
+                                    msg = msg.Replace(frenchABC[x][y].ToString() + ".", frenchABC[x][0].ToString());
+                                else
+                                    msg = msg.Replace(frenchABC[x][y].ToString() + ".", frenchABC[x][y + 1].ToString());
+                                if (y == 0)
+                                    msg = msg.Replace(frenchABC[x][y].ToString() + ",", frenchABC[x][frenchABC[x].Length - 1].ToString());
+                                else
+                                    msg = msg.Replace(frenchABC[x][y].ToString() + ",", frenchABC[x][y - 1].ToString());
+                            }
+                        }
                     }
 
+                    msg = ReplaceSpecialChar("«»“”’—–… ", msg);
+                }
+                if (appSet.Language == (int)languageCode.es)
+                {
+                    string spanishABC = "áÁéÉíÍñÑóÓúÚ";
+                    string inputAB2C = "aAeEiInNoOuU";
+
+                    for (int i = 0; i < spanishABC.Length; i++)
+                    {
+                        msg = msg.Replace(inputAB2C[i].ToString() + "..", spanishABC[i].ToString());
+                        msg = msg.Replace(inputAB2C[i].ToString() + ",,", spanishABC[i].ToString());
+                    }
+
+                    msg = ReplaceSpecialChar("¿¡«»“”‘’—–…", msg);
+                }
+                if (appSet.Language == (int)languageCode.it)
+                {
+                    string[] italienhABC = new string[] { "à", "À", "éè", "ÉÈ", "ìî", "ÌÎ", "óò", "ÓÒ", "ù", "Ù" };
+                    string inputABC = "aAeEiIoOuU";
+
+                    for (int x = 0; x < italienhABC.Length; x++)
+                    {
+                        msg = msg.Replace(inputABC[x].ToString() + "..", italienhABC[x][0].ToString());
+                        msg = msg.Replace(inputABC[x].ToString() + ",,", italienhABC[x][italienhABC[x].Length - 1].ToString());
+
+                        if (italienhABC[x].Length > 1)
+                        {
+                            for (int y = 0; y < italienhABC[x].Length; y++)
+                            {
+                                if (y == italienhABC[x].Length - 1)
+                                    msg = msg.Replace(italienhABC[x][y].ToString() + ".", italienhABC[x][0].ToString());
+                                else
+                                    msg = msg.Replace(italienhABC[x][y].ToString() + ".", italienhABC[x][y + 1].ToString());
+                                if (y == 0)
+                                    msg = msg.Replace(italienhABC[x][y].ToString() + ",", italienhABC[x][italienhABC[x].Length - 1].ToString());
+                                else
+                                    msg = msg.Replace(italienhABC[x][y].ToString() + ",", italienhABC[x][y - 1].ToString());
+                            }
+                        }
+                    }
+
+                    msg = ReplaceSpecialChar("«»“”‘’—–…", msg);
                 }
 
-                messageTextBox.Text = msg;
-                //messageTextBox.SelectionStart = i;
-                messageTextBox.SelectionStart = msg.Length;
+                if (messageTextBox.Text != msg)
+                {
+                    messageTextBox.Text = msg;
+                    //messageTextBox.SelectionStart = i;
+                    messageTextBox.SelectionStart = msg.Length;
+                }
             }
-
         }
 
         private char ComposeSyllable(string syllable)
@@ -445,7 +520,18 @@ namespace KoreanKibodeu
                 {
                     this.Dispose();
                 }
-
+                if (msg.Contains("!topon"))
+                {
+                    appSet.StayOnTop = true;
+                    TopMost = appSet.StayOnTop;
+                    msg = msg.Replace("!topon", "");
+                }
+                if (msg.Contains("!topoff"))
+                {
+                    appSet.StayOnTop = false;
+                    TopMost = appSet.StayOnTop;
+                    msg = msg.Replace("!topoff", "");
+                }
                 /*
                  string tester = "string%20%20%25amp%25lt%25gt%5C%25%2339%2C%3A";
 
@@ -551,6 +637,24 @@ namespace KoreanKibodeu
                     msg = msg.Replace("!kr", "");
                     statusLabel2.Text = "Mode: 한글";
                 }
+                if (msg.Contains("!fr"))
+                {
+                    appSet.Language = (int)languageCode.fr;
+                    msg = msg.Replace("!fr", "");
+                    statusLabel2.Text = "Mode: abc fr";
+                }
+                if (msg.Contains("!es"))
+                {
+                    appSet.Language = (int)languageCode.es;
+                    msg = msg.Replace("!es", "");
+                    statusLabel2.Text = "Mode: abc es";
+                }
+                if (msg.Contains("!it"))
+                {
+                    appSet.Language = (int)languageCode.it;
+                    msg = msg.Replace("!it", "");
+                    statusLabel2.Text = "Mode: abc it";
+                }
 
                 if (convertCheck != msg.Length)
                     conversionMode = true;
@@ -574,15 +678,8 @@ namespace KoreanKibodeu
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            /*
-            SettingsForm settingsDialog = new SettingsForm();
-            settingsDialog.ShowDialog(this);
-            settingsDialog.Dispose();
-            */
-
             HiraganaHelpForm hiraganaHelpDialog = new HiraganaHelpForm();
-            hiraganaHelpDialog.ShowDialog(this);
-            hiraganaHelpDialog.Dispose();
+            hiraganaHelpDialog.Show();
         }
 
         private void translateButton_Click(object sender, EventArgs e)

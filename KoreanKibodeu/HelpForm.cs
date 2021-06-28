@@ -30,7 +30,7 @@ namespace KoreanKibodeu
 
         private void HelpForm_Load(object sender, EventArgs e)
         {
-            TopMost = true;
+            TopMost = appSet.StayOnTop;
             KeyPreview = true;
             longNamesCheckBox.Checked = appSet.ShowLongNames;
 

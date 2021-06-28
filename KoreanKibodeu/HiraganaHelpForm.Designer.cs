@@ -247,12 +247,12 @@ namespace KoreanKibodeu
             this.panel10 = new System.Windows.Forms.Panel();
             this.label219 = new System.Windows.Forms.Label();
             this.label195 = new System.Windows.Forms.Label();
-            this.label196 = new System.Windows.Forms.Label();
-            this.label197 = new System.Windows.Forms.Label();
-            this.label199 = new System.Windows.Forms.Label();
             this.label200 = new System.Windows.Forms.Label();
+            this.label196 = new System.Windows.Forms.Label();
             this.label201 = new System.Windows.Forms.Label();
             this.label208 = new System.Windows.Forms.Label();
+            this.label197 = new System.Windows.Forms.Label();
+            this.label199 = new System.Windows.Forms.Label();
             this.label209 = new System.Windows.Forms.Label();
             this.label210 = new System.Windows.Forms.Label();
             this.label211 = new System.Windows.Forms.Label();
@@ -260,6 +260,7 @@ namespace KoreanKibodeu
             this.panel12 = new System.Windows.Forms.Panel();
             this.label221 = new System.Windows.Forms.Label();
             this.label222 = new System.Windows.Forms.Label();
+            this.closeButton = new System.Windows.Forms.Button();
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2615,37 +2616,6 @@ namespace KoreanKibodeu
             this.label195.TabIndex = 126;
             this.label195.Text = "。";
             // 
-            // label196
-            // 
-            this.label196.AutoSize = true;
-            this.label196.ForeColor = System.Drawing.Color.White;
-            this.label196.Location = new System.Drawing.Point(65, 193);
-            this.label196.Name = "label196";
-            this.label196.Size = new System.Drawing.Size(30, 24);
-            this.label196.TabIndex = 130;
-            this.label196.Text = "x5";
-            // 
-            // label197
-            // 
-            this.label197.AutoSize = true;
-            this.label197.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label197.ForeColor = System.Drawing.Color.White;
-            this.label197.Location = new System.Drawing.Point(17, 157);
-            this.label197.Name = "label197";
-            this.label197.Size = new System.Drawing.Size(43, 42);
-            this.label197.TabIndex = 118;
-            this.label197.Text = "、";
-            // 
-            // label199
-            // 
-            this.label199.AutoSize = true;
-            this.label199.ForeColor = System.Drawing.Color.White;
-            this.label199.Location = new System.Drawing.Point(19, 193);
-            this.label199.Name = "label199";
-            this.label199.Size = new System.Drawing.Size(30, 24);
-            this.label199.TabIndex = 122;
-            this.label199.Text = "x4";
-            // 
             // label200
             // 
             this.label200.AutoSize = true;
@@ -2656,6 +2626,16 @@ namespace KoreanKibodeu
             this.label200.Size = new System.Drawing.Size(44, 42);
             this.label200.TabIndex = 110;
             this.label200.Text = "ゞ";
+            // 
+            // label196
+            // 
+            this.label196.AutoSize = true;
+            this.label196.ForeColor = System.Drawing.Color.White;
+            this.label196.Location = new System.Drawing.Point(65, 193);
+            this.label196.Name = "label196";
+            this.label196.Size = new System.Drawing.Size(30, 24);
+            this.label196.TabIndex = 130;
+            this.label196.Text = "x5";
             // 
             // label201
             // 
@@ -2677,6 +2657,27 @@ namespace KoreanKibodeu
             this.label208.Size = new System.Drawing.Size(45, 42);
             this.label208.TabIndex = 102;
             this.label208.Text = "ゝ";
+            // 
+            // label197
+            // 
+            this.label197.AutoSize = true;
+            this.label197.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
+            this.label197.ForeColor = System.Drawing.Color.White;
+            this.label197.Location = new System.Drawing.Point(17, 157);
+            this.label197.Name = "label197";
+            this.label197.Size = new System.Drawing.Size(43, 42);
+            this.label197.TabIndex = 118;
+            this.label197.Text = "、";
+            // 
+            // label199
+            // 
+            this.label199.AutoSize = true;
+            this.label199.ForeColor = System.Drawing.Color.White;
+            this.label199.Location = new System.Drawing.Point(19, 193);
+            this.label199.Name = "label199";
+            this.label199.Size = new System.Drawing.Size(30, 24);
+            this.label199.TabIndex = 122;
+            this.label199.Text = "x4";
             // 
             // label209
             // 
@@ -2764,12 +2765,30 @@ namespace KoreanKibodeu
             this.label222.TabIndex = 137;
             this.label222.Text = "v";
             // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(934, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(19, 23);
+            this.closeButton.TabIndex = 1;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // HiraganaHelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 993);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.panel10);
@@ -2789,6 +2808,8 @@ namespace KoreanKibodeu
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "HiraganaHelpForm";
             this.Text = "Help";
+            this.Load += new System.EventHandler(this.HiraganaHelpForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HiraganaHelpForm_MouseDown);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -3050,5 +3071,6 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label221;
         private System.Windows.Forms.Label label222;
+        private System.Windows.Forms.Button closeButton;
     }
 }
