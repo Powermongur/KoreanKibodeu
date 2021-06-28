@@ -1,5 +1,3 @@
-![pic1](/power.jpeg)
-
 # IXI Kibodeu
 
 # [Download](https://powermongur.com/kibodeu/install.htm)
