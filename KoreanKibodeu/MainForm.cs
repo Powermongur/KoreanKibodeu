@@ -28,6 +28,20 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        const int WS_MINIMIZEBOX = 0x20000;
+        const int CS_DBLCLKS = 0x8;
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.Style |= WS_MINIMIZEBOX;
+                cp.ClassStyle |= CS_DBLCLKS;
+                return cp;
+            }
+        }
+
         Keys lastKey = Keys.Shift;
         bool conversionMode = true;
         public enum languageCode : ushort
@@ -69,7 +83,7 @@ namespace KoreanKibodeu
 
         private void minimizebutton_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Minimized;
         }
 
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
@@ -277,7 +291,34 @@ namespace KoreanKibodeu
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
+                if (appSet.Language == (int)languageCode.jp)
+                {
+                    //Katakana
 
+                    string hiraganaABC1 = "わらやまはなたさかばだざがぱ";
+                    string katakanaABC1 = "ワラヤマハナタサカバダザガパ";
+
+                    string hiraganaABC2 = "りみひにちしきびぢじぎぴ";
+                    string katakanaABC2 = "リミヒニチシキビヂジギピ";
+
+                    string hiraganaABC3 = "るゆむふぬつすくぶづずぐぷ";
+                    string katakanaABC3 = "ルユムフヌツスクブヅズグプ";
+
+                    string hiraganaABC4 = "れめへねてせけべでぜげぺ";
+                    string katakanaABC4 = "レメヘネテセケベデゼゲペ";
+
+                    string hiraganaABC5 = "をろよもほのとそこぼどぞごぽ";
+                    string katakanaABC5 = "ヲロヨモホノトソコボドゾゴポ";
+
+                    string hiraganaABCA = "あいうえお";
+                    string katakanaABCA = "アイウエオ";
+
+                    string hiraganaABCn = "んゔ";
+                    string katakanaABCn = "ンヴ";
+
+                    string hiraganaABCsutegana = "ゃゅょっぁぃぅぇぉ";
+                    string katakanaABCsutegana = "ャュョッァィゥェォ";                    
+                }
                 if (appSet.Language == (int)languageCode.kr)
                 {
                     if (e.KeyCode == Keys.Space)
@@ -518,7 +559,7 @@ namespace KoreanKibodeu
                 }
                 if (msg.Contains("!quit") || msg.Contains("!exit"))
                 {
-                    this.Dispose();
+                    Dispose();
                 }
                 if (msg.Contains("!topon"))
                 {
