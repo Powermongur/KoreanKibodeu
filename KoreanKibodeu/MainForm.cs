@@ -227,7 +227,9 @@ namespace KoreanKibodeu
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
                 if (appSet.Language == (int)languageCode.jp)
-                {                   
+                {
+                    //Hiragana
+
                     msg = msg.Replace("shi", "si");
                     msg = msg.Replace("chi", "ti");
                     msg = msg.Replace("tsu", "tu");
@@ -293,31 +295,44 @@ namespace KoreanKibodeu
                 }
                 if (appSet.Language == (int)languageCode.jp)
                 {
-                    //Katakana
+                    //Katakana   
 
-                    string hiraganaABC1 = "わらやまはなたさかばだざがぱ";
-                    string katakanaABC1 = "ワラヤマハナタサカバダザガパ";
+                    //wrymhntskbdzgp
+                    string hiraganaABC 
+                        = "わらやまはなたさかばだざがぱ" //a
+                        + "りみひにちしきびぢじぎぴ" //i
+                        + "るゆむふぬつすくぶづずぐぷ" //u
+                        + "れめへねてせけべでぜげぺ" //e
+                        + "をろよもほのとそこぼどぞごぽ" //o
+                        + "あいうえお" //A
+                        + "ん" //N
+                        + "ゔ" //v
+                        + "ゃゅょっぁぃぅぇぉ"; //Sutegana
 
-                    string hiraganaABC2 = "りみひにちしきびぢじぎぴ";
-                    string katakanaABC2 = "リミヒニチシキビヂジギピ";
+                    //wrymhntskbdzgp     
+                    string katakanaABC 
+                        = "ワラヤマハナタサカバダザガパ" //a
+                        + "リミヒニチシキビヂジギピ" //i
+                        + "ルユムフヌツスクブヅズグプ" //u
+                        + "レメヘネテセケベデゼゲペ" //e
+                        + "ヲロヨモホノトソコボドゾゴポ" //o
+                        + "アイウエオ" //A
+                        + "ン" //N
+                        + "ヴ" //v
+                        + "ャュョッァィゥェォ"; //Sutegana
 
-                    string hiraganaABC3 = "るゆむふぬつすくぶづずぐぷ";
-                    string katakanaABC3 = "ルユムフヌツスクブヅズグプ";
+                    for (int i = 0; i < hiraganaABC.Length; i++)
+                    {
+                        msg = msg.Replace(hiraganaABC[i], katakanaABC[i]);
+                    }
 
-                    string hiraganaABC4 = "れめへねてせけべでぜげぺ";
-                    string katakanaABC4 = "レメヘネテセケベデゼゲペ";
+                    string katakanaN = "アイウエオ";
+                    string katakanaNX = "ナニヌネノ";
 
-                    string hiraganaABC5 = "をろよもほのとそこぼどぞごぽ";
-                    string katakanaABC5 = "ヲロヨモホノトソコボドゾゴポ";
-
-                    string hiraganaABCA = "あいうえお";
-                    string katakanaABCA = "アイウエオ";
-
-                    string hiraganaABCn = "んゔ";
-                    string katakanaABCn = "ンヴ";
-
-                    string hiraganaABCsutegana = "ゃゅょっぁぃぅぇぉ";
-                    string katakanaABCsutegana = "ャュョッァィゥェォ";                    
+                    for (int i = 0; i < katakanaN.Length; i++)
+                    {
+                        msg = msg.Replace("ン" + katakanaN[i].ToString(), katakanaNX[i].ToString());
+                    }
                 }
                 if (appSet.Language == (int)languageCode.kr)
                 {
