@@ -43,6 +43,7 @@ namespace KoreanKibodeu
             this.commandsButton = new System.Windows.Forms.Button();
             this.translateButton = new System.Windows.Forms.Button();
             this.ttsButton = new System.Windows.Forms.Button();
+            this.keysButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // helpButton
@@ -54,7 +55,7 @@ namespace KoreanKibodeu
             this.helpButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.helpButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpButton.ForeColor = System.Drawing.Color.White;
-            this.helpButton.Location = new System.Drawing.Point(977, 53);
+            this.helpButton.Location = new System.Drawing.Point(965, 53);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(19, 23);
             this.helpButton.TabIndex = 2;
@@ -120,7 +121,7 @@ namespace KoreanKibodeu
             this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settingsButton.ForeColor = System.Drawing.Color.White;
-            this.settingsButton.Location = new System.Drawing.Point(1002, 53);
+            this.settingsButton.Location = new System.Drawing.Point(990, 53);
             this.settingsButton.Name = "settingsButton";
             this.settingsButton.Size = new System.Drawing.Size(19, 23);
             this.settingsButton.TabIndex = 100;
@@ -194,7 +195,7 @@ namespace KoreanKibodeu
             this.commandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.commandsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commandsButton.ForeColor = System.Drawing.Color.White;
-            this.commandsButton.Location = new System.Drawing.Point(1027, 53);
+            this.commandsButton.Location = new System.Drawing.Point(1015, 53);
             this.commandsButton.Name = "commandsButton";
             this.commandsButton.Size = new System.Drawing.Size(19, 23);
             this.commandsButton.TabIndex = 2;
@@ -232,6 +233,23 @@ namespace KoreanKibodeu
             this.ttsButton.UseVisualStyleBackColor = false;
             this.ttsButton.Click += new System.EventHandler(this.ttsButton_Click);
             // 
+            // keysButton
+            // 
+            this.keysButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.keysButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.keysButton.FlatAppearance.BorderSize = 0;
+            this.keysButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keysButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.keysButton.ForeColor = System.Drawing.Color.White;
+            this.keysButton.Location = new System.Drawing.Point(1040, 54);
+            this.keysButton.Name = "keysButton";
+            this.keysButton.Size = new System.Drawing.Size(19, 23);
+            this.keysButton.TabIndex = 2;
+            this.keysButton.Text = "🔑";
+            this.keysButton.UseVisualStyleBackColor = false;
+            this.keysButton.Click += new System.EventHandler(this.helpButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,6 +266,7 @@ namespace KoreanKibodeu
             this.Controls.Add(this.settingsButton);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.keysButton);
             this.Controls.Add(this.commandsButton);
             this.Controls.Add(this.helpButton);
             this.Controls.Add(this.minimizeButton);
@@ -279,6 +298,7 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Button translateButton;
         private System.Windows.Forms.Button ttsButton;
+        private System.Windows.Forms.Button keysButton;
     }
 }
 

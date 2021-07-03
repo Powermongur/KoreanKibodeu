@@ -150,9 +150,9 @@ namespace KoreanKibodeu
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.keysButton = new System.Windows.Forms.Button();
+            this.optionsButton = new System.Windows.Forms.Button();
+            this.commandsButton = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -1448,45 +1448,45 @@ namespace KoreanKibodeu
             this.label13.TabIndex = 1019;
             this.label13.Text = "How to use";
             // 
-            // button1
+            // keysButton
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 41);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Help";
-            this.button1.UseVisualStyleBackColor = true;
+            this.keysButton.FlatAppearance.BorderSize = 0;
+            this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keysButton.Location = new System.Drawing.Point(0, 0);
+            this.keysButton.Name = "keysButton";
+            this.keysButton.Size = new System.Drawing.Size(98, 41);
+            this.keysButton.TabIndex = 20;
+            this.keysButton.Text = "Keys";
+            this.keysButton.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // optionsButton
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(98, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 41);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Options";
-            this.button2.UseVisualStyleBackColor = true;
+            this.optionsButton.FlatAppearance.BorderSize = 0;
+            this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionsButton.Location = new System.Drawing.Point(98, 0);
+            this.optionsButton.Name = "optionsButton";
+            this.optionsButton.Size = new System.Drawing.Size(121, 41);
+            this.optionsButton.TabIndex = 20;
+            this.optionsButton.Text = "Options";
+            this.optionsButton.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // commandsButton
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(213, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 41);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Advanced";
-            this.button3.UseVisualStyleBackColor = true;
+            this.commandsButton.FlatAppearance.BorderSize = 0;
+            this.commandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.commandsButton.Location = new System.Drawing.Point(213, 0);
+            this.commandsButton.Name = "commandsButton";
+            this.commandsButton.Size = new System.Drawing.Size(145, 41);
+            this.commandsButton.TabIndex = 20;
+            this.commandsButton.Text = "Commands";
+            this.commandsButton.UseVisualStyleBackColor = true;
             // 
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
-            this.panel10.Controls.Add(this.button3);
-            this.panel10.Controls.Add(this.button2);
-            this.panel10.Controls.Add(this.button1);
+            this.panel10.Controls.Add(this.commandsButton);
+            this.panel10.Controls.Add(this.optionsButton);
+            this.panel10.Controls.Add(this.keysButton);
             this.panel10.Controls.Add(this.closeButton);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
@@ -1495,7 +1495,7 @@ namespace KoreanKibodeu
             this.panel10.Size = new System.Drawing.Size(965, 47);
             this.panel10.TabIndex = 1022;
             // 
-            // HelpForm
+            // KoreanKeysForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1520,8 +1520,8 @@ namespace KoreanKibodeu
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.Name = "HelpForm";
-            this.Text = "Help";
+            this.Name = "KoreanKeysForm";
+            this.Text = "Keys";
             this.Load += new System.EventHandler(this.HelpForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.HelpForm_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HelpForm_MouseDown);
@@ -1672,9 +1672,9 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button keysButton;
+        private System.Windows.Forms.Button optionsButton;
+        private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Panel panel10;
     }
 }
