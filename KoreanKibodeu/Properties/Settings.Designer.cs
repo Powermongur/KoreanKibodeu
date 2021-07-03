@@ -58,5 +58,29 @@ namespace KoreanKibodeu.Properties {
                 this["StayOnTop"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JPlanguage {
+            get {
+                return ((int)(this["JPlanguage"]));
+            }
+            set {
+                this["JPlanguage"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Qwertz {
+            get {
+                return ((bool)(this["Qwertz"]));
+            }
+            set {
+                this["Qwertz"] = value;
+            }
+        }
     }
 }

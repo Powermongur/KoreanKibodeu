@@ -1,7 +1,7 @@
 ﻿
 namespace KoreanKibodeu
 {
-    partial class HelpForm
+    partial class KoreanKeysForm
     {
         /// <summary>
         /// Required designer variable.

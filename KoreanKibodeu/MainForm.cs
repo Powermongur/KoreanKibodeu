@@ -47,8 +47,7 @@ namespace KoreanKibodeu
         public enum languageCode : ushort
         { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
         AppSettings appSet = new AppSettings();
-        List<string> history = new List<string>();
-        int historyIndex = -1;
+        HistoryClass history = new HistoryClass();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -72,7 +71,7 @@ namespace KoreanKibodeu
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            HelpForm helpDialog = new HelpForm();
+            KoreanKeysForm helpDialog = new KoreanKeysForm();
             helpDialog.Show();
         }
 
@@ -123,29 +122,29 @@ namespace KoreanKibodeu
 
             if (e.KeyCode == Keys.Up)
             {
-                if (historyIndex > 0)
+                if (history.index > 0)
                 {
-                    historyIndex--;
-                    msg = history[historyIndex];
+                    history.index--;
+                    msg = history.msg;
                 }
             }
             if (e.KeyCode == Keys.Down)
             {
-                if (historyIndex < history.Count - 1)
+                if (history.index < history.Count - 1)
                 {
-                    historyIndex++;
-                    msg = history[historyIndex];
+                    history.index++;
+                    msg = history.msg;
                 }
             }
 
-            if (historyIndex == -1)
+            if (history.index == -1)
             {
-                history.Add(msg);
-                historyIndex = history.Count - 1;
+                history.AddMsg(msg);
+                history.index = history.Count - 1;
             }
-            else if (history[historyIndex].Length > msg.Length)
+            else if (history.msg.Length > msg.Length)
             {
-                if (!history[historyIndex].Contains(msg))
+                if (!history.msg.Contains(msg))
                 {
                     //history.Add(msg);
                     //historyIndex = history.Count - 1;
@@ -153,14 +152,14 @@ namespace KoreanKibodeu
             }
             else
             {
-                if (!msg.Contains(history[historyIndex]))
+                if (!msg.Contains(history.msg))
                 {
-                    history[historyIndex] = msg;
+                    history.msg = msg;
                 }
                 else
                 {
-                    history.Add(msg);
-                    historyIndex = history.Count - 1;
+                    history.AddMsg(msg);
+                    history.index = history.Count - 1;
                 }
             }
 
@@ -228,111 +227,13 @@ namespace KoreanKibodeu
                 }
                 if (appSet.Language == (int)languageCode.jp)
                 {
-                    //Hiragana
+                    KanaConvertClass converter = new KanaConvertClass();
+                    msg = converter.Convert(msg, true);
 
-                    msg = msg.Replace("shi", "si");
-                    msg = msg.Replace("chi", "ti");
-                    msg = msg.Replace("tsu", "tu");
-                    msg = msg.Replace("fu", "hu");
-                    msg = msg.Replace("ji", "zi");
-                    msg = msg.Replace("dji", "di");
-                    msg = msg.Replace("dzu", "du");
-
-                    string abcJpC = "wrymhntskbdzgp";
-                    string abcJpV = "aiueo";
-
-                    List<string> hiraganaABC = new List<string>();
-                    hiraganaABC.Add("わらやまはなたさかばだざがぱ");
-                    hiraganaABC.Add(" り みひにちしきびぢじぎぴ");
-                    hiraganaABC.Add(" るゆむふぬつすくぶづずぐぷ");
-                    hiraganaABC.Add(" れ めへねてせけべでぜげぺ");
-                    hiraganaABC.Add("をろよもほのとそこぼどぞごぽ");
-
-                    for (int v = 0; v < abcJpV.Length; v++)
-                    {
-                        for (int c = 0; c < abcJpC.Length; c++)
-                        {
-                            if (hiraganaABC[v][c].ToString() != " ")
-                                msg = msg.Replace(abcJpC[c].ToString() + abcJpV[v].ToString(), hiraganaABC[v][c].ToString());
-                        }
-                    }
-
-                    string hiraganaN = "なにぬねの";
-
-                    for (int i = 0; i < hiraganaN.Length; i++)
-                    {
-                        msg = msg.Replace("ん" + abcJpV[i].ToString(), hiraganaN[i].ToString());
-                    }
-
-                    string hiraganaA = "あいうえお";
-
-                    for (int a = 0; a < hiraganaA.Length; a++)
-                    {
-                        msg = msg.Replace(abcJpV[a], hiraganaA[a]);
-                    }
-
-                    msg = msg.Replace("n", "ん");
-
-                    //Sutegana
-                    msg = msg.Replace("YA", "ゃ");
-                    msg = msg.Replace("YU", "ゅ");
-                    msg = msg.Replace("YO", "ょ");
-
-                    msg = msg.Replace("TSU", "TU");
-                    msg = msg.Replace("TU", "っ");
-
-                    string suteganaABCa = "ぁぃぅぇぉ";
-
-                    for (int i = 0; i < suteganaABCa.Length; i++)
-                    {
-                        msg = msg.Replace(abcJpV[i].ToString().ToUpper(), suteganaABCa[i].ToString());
-                    }
-
-                    msg = msg.Replace("v", "ゔ");
                     msg = ReplaceSpecialChar("ーゝゞ、。", msg);
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
-                }
-                if (appSet.Language == (int)languageCode.jp)
-                {
-                    //Katakana   
 
-                    //wrymhntskbdzgp
-                    string hiraganaABC 
-                        = "わらやまはなたさかばだざがぱ" //a
-                        + "りみひにちしきびぢじぎぴ" //i
-                        + "るゆむふぬつすくぶづずぐぷ" //u
-                        + "れめへねてせけべでぜげぺ" //e
-                        + "をろよもほのとそこぼどぞごぽ" //o
-                        + "あいうえお" //A
-                        + "ん" //N
-                        + "ゔ" //v
-                        + "ゃゅょっぁぃぅぇぉ"; //Sutegana
-
-                    //wrymhntskbdzgp     
-                    string katakanaABC 
-                        = "ワラヤマハナタサカバダザガパ" //a
-                        + "リミヒニチシキビヂジギピ" //i
-                        + "ルユムフヌツスクブヅズグプ" //u
-                        + "レメヘネテセケベデゼゲペ" //e
-                        + "ヲロヨモホノトソコボドゾゴポ" //o
-                        + "アイウエオ" //A
-                        + "ン" //N
-                        + "ヴ" //v
-                        + "ャュョッァィゥェォ"; //Sutegana
-
-                    for (int i = 0; i < hiraganaABC.Length; i++)
-                    {
-                        msg = msg.Replace(hiraganaABC[i], katakanaABC[i]);
-                    }
-
-                    string katakanaN = "アイウエオ";
-                    string katakanaNX = "ナニヌネノ";
-
-                    for (int i = 0; i < katakanaN.Length; i++)
-                    {
-                        msg = msg.Replace("ン" + katakanaN[i].ToString(), katakanaNX[i].ToString());
-                    }
                 }
                 if (appSet.Language == (int)languageCode.kr)
                 {
@@ -568,7 +469,7 @@ namespace KoreanKibodeu
             {
                 if (msg.Contains("!help"))
                 {
-                    HelpForm helpDialog = new HelpForm();
+                    KoreanKeysForm helpDialog = new KoreanKeysForm();
                     helpDialog.Show();
                     msg = msg.Replace("!help", "");
                 }
@@ -647,6 +548,32 @@ namespace KoreanKibodeu
                 {
                     msg = msg.Replace("!yt", "");
                     OpenBrowser("https://www.youtube.com");
+                }
+                if (msg.Contains("!qwertz"))
+                {
+                    appSet.Qwertz = true;
+                    msg = msg.Replace("!qwertz", "");
+                }
+                if (msg.Contains("!qwerty"))
+                {
+                    appSet.Qwertz = false;
+                    msg = msg.Replace("!qwertz", "");
+                }
+                if (msg.Contains("!hira") || msg.Contains("!hiragana"))
+                {
+                    appSet.JPlanguage = 0;
+                    msg = msg.Replace("!hira", "");
+                }
+                if (msg.Contains("!kata") || msg.Contains("!katakana"))
+                {
+                    appSet.JPlanguage = 1;
+                    msg = msg.Replace("!kata", "");
+                }
+                if (msg.Contains("!kanji"))
+                {
+                    appSet.JPlanguage = 2;
+                    msg = msg.Replace("!kanji", "");
+                    OpenBrowser("https://jisho.org/");
                 }
 
                 int convertCheck = msg.Length;
@@ -734,7 +661,7 @@ namespace KoreanKibodeu
 
         private void settingsButton_Click(object sender, EventArgs e)
         {
-            HiraganaHelpForm hiraganaHelpDialog = new HiraganaHelpForm();
+            KanaKeysForm hiraganaHelpDialog = new KanaKeysForm();
             hiraganaHelpDialog.Show();
         }
 

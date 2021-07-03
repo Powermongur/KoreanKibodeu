@@ -100,23 +100,55 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
-    <Compile Include="HiraganaHelpForm.cs">
+    <Compile Include="DanishKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HiraganaHelpForm.Designer.cs">
-      <DependentUpon>HiraganaHelpForm.cs</DependentUpon>
+    <Compile Include="DanishKeysForm.Designer.cs">
+      <DependentUpon>DanishKeysForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrenchKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrenchKeysForm.Designer.cs">
+      <DependentUpon>FrenchKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GermanKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GermanKeysForm.Designer.cs">
+      <DependentUpon>GermanKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItalienKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItalienKeysForm.Designer.cs">
+      <DependentUpon>ItalienKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KanaConvertClass.cs" />
+    <Compile Include="KanaKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KanaKeysForm.Designer.cs">
+      <DependentUpon>KanaKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryClass.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="HelpForm.cs">
+    <Compile Include="KoreanKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelpForm.Designer.cs">
-      <DependentUpon>HelpForm.cs</DependentUpon>
+    <Compile Include="KoreanKeysForm.Designer.cs">
+      <DependentUpon>KoreanKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NorwegianKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NorwegianKeysForm.Designer.cs">
+      <DependentUpon>NorwegianKeysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -126,14 +158,41 @@
     <Compile Include="SettingsForm.Designer.cs">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="HiraganaHelpForm.resx">
-      <DependentUpon>HiraganaHelpForm.cs</DependentUpon>
+    <Compile Include="SpanishKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpanishKeysForm.Designer.cs">
+      <DependentUpon>SpanishKeysForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SwedishKeysForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SwedishKeysForm.Designer.cs">
+      <DependentUpon>SwedishKeysForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DanishKeysForm.resx">
+      <DependentUpon>DanishKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrenchKeysForm.resx">
+      <DependentUpon>FrenchKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GermanKeysForm.resx">
+      <DependentUpon>GermanKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItalienKeysForm.resx">
+      <DependentUpon>ItalienKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KanaKeysForm.resx">
+      <DependentUpon>KanaKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HelpForm.resx">
-      <DependentUpon>HelpForm.cs</DependentUpon>
+    <EmbeddedResource Include="KoreanKeysForm.resx">
+      <DependentUpon>KoreanKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NorwegianKeysForm.resx">
+      <DependentUpon>NorwegianKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -146,6 +205,12 @@
     </Compile>
     <EmbeddedResource Include="SettingsForm.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpanishKeysForm.resx">
+      <DependentUpon>SpanishKeysForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SwedishKeysForm.resx">
+      <DependentUpon>SwedishKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="KoreanKibodeu_TemporaryKey.pfx" />
     <None Include="Properties\app.manifest" />

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KoreanKibodeu
 {
-    public partial class HiraganaHelpForm : Form
+    public partial class KanaKeysForm : Form
     {
-        public HiraganaHelpForm()
+        public KanaKeysForm()
         {
             InitializeComponent();
         }
@@ -26,6 +26,8 @@ namespace KoreanKibodeu
         public static extern bool ReleaseCapture();
 
         AppSettings appSet = new AppSettings();
+        List<Control> formControls = new List<Control>();
+
         private void HiraganaHelpForm_Load(object sender, EventArgs e)
         {
             TopMost = appSet.StayOnTop;
@@ -35,6 +37,14 @@ namespace KoreanKibodeu
                 if (Controls[i].TabIndex >= 1000)
                     Controls[i].MouseDown += new System.Windows.Forms.MouseEventHandler(HiraganaHelpForm_MouseDown);
             }
+
+            FormControlsAdd(kanaBasicPanel.Controls);
+            FormControlsAdd(kanaBasicPanel2.Controls);
+            FormControlsAdd(kanaDakutenPanel.Controls);
+            FormControlsAdd(kanaHandakutenPanel.Controls);
+            FormControlsAdd(kanaSuteganaPanel.Controls);
+            FormControlsAdd(kanaSpecialPanel.Controls);
+            FormControlsAdd(kanaSpecialPanel2.Controls);
         }
 
         private void HiraganaHelpForm_MouseDown(object sender, MouseEventArgs e)
@@ -51,6 +61,28 @@ namespace KoreanKibodeu
             Dispose();
         }
 
+        private void FormControlsAdd(Control.ControlCollection controlCol)
+        {
+            for (int i = 0; i < controlCol.Count; i++)
+            {
+                formControls.Add(controlCol[i]);
+            }
+        }
 
+        private void hiraganaRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if(hiraganaRadioButton.Checked)
+                kanaLanguageLabel.Text = "Hiragana";
+            else
+                kanaLanguageLabel.Text = "Katagana";
+
+            KanaConvertClass converter = new KanaConvertClass();
+
+            for (int i = 0; i < formControls.Count; i++)
+            {
+                if (formControls[i].Name.Contains("kana") && !formControls[i].Name.Contains("Key"))
+                    formControls[i].Text = converter.Convert(formControls[i].Text, hiraganaRadioButton.Checked);
+            }
+        }
     }
 }
