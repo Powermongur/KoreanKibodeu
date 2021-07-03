@@ -5,13 +5,13 @@
     <Setting Name="ShowLongNames" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Language" Type="System.Int32" Scope="User">
+    <Setting Name="Language" Type="System.UInt16" Scope="User">
       <Value Profile="(Default)">7</Value>
     </Setting>
     <Setting Name="StayOnTop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="JPlanguage" Type="System.Int32" Scope="User">
+    <Setting Name="JPlanguage" Type="System.UInt16" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="Qwertz" Type="System.Boolean" Scope="User">

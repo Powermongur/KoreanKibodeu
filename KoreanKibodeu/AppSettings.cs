@@ -9,16 +9,16 @@ namespace KoreanKibodeu
     class AppSettings
     {
         public bool ShowLongNames;
-        public int Language;
-        public int JPlanguage;
+        public ushort Language;
+        public ushort JPlanguage;
         public bool StayOnTop;
         public bool Qwertz;
 
         public AppSettings()
         {
             ShowLongNames = (bool)Properties.Settings.Default["ShowLongNames"];
-            Language = (int)Properties.Settings.Default["Language"];
-            JPlanguage = (int)Properties.Settings.Default["JPlanguage"];
+            Language = (ushort)Properties.Settings.Default["Language"];
+            JPlanguage = (ushort)Properties.Settings.Default["JPlanguage"];
             StayOnTop = (bool)Properties.Settings.Default["StayOnTop"];
             Qwertz = (bool)Properties.Settings.Default["Qwertz"];
         }

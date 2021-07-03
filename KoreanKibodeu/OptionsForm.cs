@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace KoreanKibodeu
 {
-    public partial class SettingsForm : Form
+    public partial class OptionsForm : Form
     {
-        public SettingsForm()
+        public OptionsForm()
         {
             InitializeComponent();
         }

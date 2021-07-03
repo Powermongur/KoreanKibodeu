@@ -1,7 +1,7 @@
 ﻿
 namespace KoreanKibodeu
 {
-    partial class SettingsForm
+    partial class OptionsForm
     {
         /// <summary>
         /// Required designer variable.

@@ -34,7 +34,7 @@ namespace KoreanKibodeu
             this.minimizeButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
-            this.settingsButton = new System.Windows.Forms.Button();
+            this.optionsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.statusLabel2 = new System.Windows.Forms.Label();
@@ -112,23 +112,23 @@ namespace KoreanKibodeu
             this.messageTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyDown);
             this.messageTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.messageTextBox_KeyUp);
             // 
-            // settingsButton
+            // optionsButton
             // 
-            this.settingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.settingsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.settingsButton.FlatAppearance.BorderSize = 0;
-            this.settingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
-            this.settingsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.settingsButton.ForeColor = System.Drawing.Color.White;
-            this.settingsButton.Location = new System.Drawing.Point(990, 53);
-            this.settingsButton.Name = "settingsButton";
-            this.settingsButton.Size = new System.Drawing.Size(19, 23);
-            this.settingsButton.TabIndex = 100;
-            this.settingsButton.TabStop = false;
-            this.settingsButton.Text = "⚙️";
-            this.settingsButton.UseVisualStyleBackColor = false;
-            this.settingsButton.Click += new System.EventHandler(this.settingsButton_Click);
+            this.optionsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.optionsButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.optionsButton.FlatAppearance.BorderSize = 0;
+            this.optionsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Teal;
+            this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionsButton.ForeColor = System.Drawing.Color.White;
+            this.optionsButton.Location = new System.Drawing.Point(990, 53);
+            this.optionsButton.Name = "optionsButton";
+            this.optionsButton.Size = new System.Drawing.Size(19, 23);
+            this.optionsButton.TabIndex = 100;
+            this.optionsButton.TabStop = false;
+            this.optionsButton.Text = "⚙️";
+            this.optionsButton.UseVisualStyleBackColor = false;
+            this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
             // 
             // label1
             // 
@@ -201,7 +201,7 @@ namespace KoreanKibodeu
             this.commandsButton.TabIndex = 2;
             this.commandsButton.Text = "+";
             this.commandsButton.UseVisualStyleBackColor = false;
-            this.commandsButton.Click += new System.EventHandler(this.helpButton_Click);
+            this.commandsButton.Click += new System.EventHandler(this.commandsButton_Click);
             // 
             // translateButton
             // 
@@ -242,13 +242,13 @@ namespace KoreanKibodeu
             this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.keysButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.keysButton.ForeColor = System.Drawing.Color.White;
-            this.keysButton.Location = new System.Drawing.Point(1040, 54);
+            this.keysButton.Location = new System.Drawing.Point(1033, 53);
             this.keysButton.Name = "keysButton";
             this.keysButton.Size = new System.Drawing.Size(19, 23);
             this.keysButton.TabIndex = 2;
             this.keysButton.Text = "🔑";
             this.keysButton.UseVisualStyleBackColor = false;
-            this.keysButton.Click += new System.EventHandler(this.helpButton_Click);
+            this.keysButton.Click += new System.EventHandler(this.keysButton_Click);
             // 
             // MainForm
             // 
@@ -263,7 +263,7 @@ namespace KoreanKibodeu
             this.Controls.Add(this.statusLabel2);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.settingsButton);
+            this.Controls.Add(this.optionsButton);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.keysButton);
@@ -289,7 +289,7 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button minimizeButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.TextBox messageTextBox;
-        private System.Windows.Forms.Button settingsButton;
+        private System.Windows.Forms.Button optionsButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label statusLabel2;

@@ -38,9 +38,9 @@ namespace KoreanKibodeu.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("7")]
-        public int Language {
+        public ushort Language {
             get {
-                return ((int)(this["Language"]));
+                return ((ushort)(this["Language"]));
             }
             set {
                 this["Language"] = value;
@@ -62,9 +62,9 @@ namespace KoreanKibodeu.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JPlanguage {
+        public ushort JPlanguage {
             get {
-                return ((int)(this["JPlanguage"]));
+                return ((ushort)(this["JPlanguage"]));
             }
             set {
                 this["JPlanguage"] = value;
