@@ -25,7 +25,6 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-
         AppSettings appSet = new AppSettings();
 
         private void HelpForm_Load(object sender, EventArgs e)

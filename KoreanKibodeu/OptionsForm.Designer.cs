@@ -58,7 +58,7 @@ namespace KoreanKibodeu
             this.label1.TabIndex = 1;
             this.label1.Text = "Nothing here yet";
             // 
-            // SettingsForm
+            // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,7 +68,7 @@ namespace KoreanKibodeu
             this.Controls.Add(this.CloseButton);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "SettingsForm";
+            this.Name = "OptionsForm";
             this.Text = "SettingsForm";
             this.ResumeLayout(false);
             this.PerformLayout();

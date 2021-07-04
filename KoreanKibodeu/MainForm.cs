@@ -690,12 +690,14 @@ namespace KoreanKibodeu
 
         private void optionsButton_Click(object sender, EventArgs e)
         {
-
+            OptionsForm optionsDialog = new OptionsForm();
+            optionsDialog.Show();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
-
+            CommandsForm commandsDialog = new CommandsForm();
+            commandsDialog.Show();
         }
 
         private void keysButton_Click(object sender, EventArgs e)

@@ -2790,10 +2790,10 @@ namespace KoreanKibodeu
             // 
             this.hiraganaRadioButton.AutoSize = true;
             this.hiraganaRadioButton.Checked = true;
-            this.hiraganaRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.hiraganaRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.hiraganaRadioButton.Location = new System.Drawing.Point(3, 3);
             this.hiraganaRadioButton.Name = "hiraganaRadioButton";
-            this.hiraganaRadioButton.Size = new System.Drawing.Size(104, 28);
+            this.hiraganaRadioButton.Size = new System.Drawing.Size(92, 24);
             this.hiraganaRadioButton.TabIndex = 1033;
             this.hiraganaRadioButton.TabStop = true;
             this.hiraganaRadioButton.Text = "Hiragana";
@@ -2803,10 +2803,10 @@ namespace KoreanKibodeu
             // kataganaRadioButton
             // 
             this.kataganaRadioButton.AutoSize = true;
-            this.kataganaRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.kataganaRadioButton.Location = new System.Drawing.Point(113, 3);
+            this.kataganaRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.kataganaRadioButton.Location = new System.Drawing.Point(106, 3);
             this.kataganaRadioButton.Name = "kataganaRadioButton";
-            this.kataganaRadioButton.Size = new System.Drawing.Size(106, 28);
+            this.kataganaRadioButton.Size = new System.Drawing.Size(96, 24);
             this.kataganaRadioButton.TabIndex = 1033;
             this.kataganaRadioButton.Text = "Katagana";
             this.kataganaRadioButton.UseVisualStyleBackColor = true;
@@ -2815,12 +2815,12 @@ namespace KoreanKibodeu
             // 
             this.panel4.Controls.Add(this.kataganaRadioButton);
             this.panel4.Controls.Add(this.hiraganaRadioButton);
-            this.panel4.Location = new System.Drawing.Point(726, 83);
+            this.panel4.Location = new System.Drawing.Point(744, 81);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(219, 33);
+            this.panel4.Size = new System.Drawing.Size(201, 33);
             this.panel4.TabIndex = 1035;
             // 
-            // KanaHelpForm
+            // KanaKeysForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -2845,7 +2845,7 @@ namespace KoreanKibodeu
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.Name = "KanaHelpForm";
+            this.Name = "KanaKeysForm";
             this.Text = "Help";
             this.Load += new System.EventHandler(this.HiraganaHelpForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HiraganaHelpForm_MouseDown);

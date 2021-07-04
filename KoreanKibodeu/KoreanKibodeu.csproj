@@ -106,35 +106,35 @@
     <Compile Include="CommandsForm.Designer.cs">
       <DependentUpon>CommandsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DanishKeysForm.cs">
+    <Compile Include="KeyForms\DanishKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DanishKeysForm.Designer.cs">
+    <Compile Include="KeyForms\DanishKeysForm.Designer.cs">
       <DependentUpon>DanishKeysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrenchKeysForm.cs">
+    <Compile Include="KeyForms\FrenchKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrenchKeysForm.Designer.cs">
+    <Compile Include="KeyForms\FrenchKeysForm.Designer.cs">
       <DependentUpon>FrenchKeysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GermanKeysForm.cs">
+    <Compile Include="KeyForms\GermanKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GermanKeysForm.Designer.cs">
+    <Compile Include="KeyForms\GermanKeysForm.Designer.cs">
       <DependentUpon>GermanKeysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItalienKeysForm.cs">
+    <Compile Include="KeyForms\ItalienKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItalienKeysForm.Designer.cs">
+    <Compile Include="KeyForms\ItalienKeysForm.Designer.cs">
       <DependentUpon>ItalienKeysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KanaConvertClass.cs" />
-    <Compile Include="KanaKeysForm.cs">
+    <Compile Include="KeyForms\KanaKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KanaKeysForm.Designer.cs">
+    <Compile Include="KeyForms\KanaKeysForm.Designer.cs">
       <DependentUpon>KanaKeysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HistoryClass.cs" />
@@ -144,16 +144,16 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="KoreanKeysForm.cs">
+    <Compile Include="KeyForms\KoreanKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KoreanKeysForm.Designer.cs">
+    <Compile Include="KeyForms\KoreanKeysForm.Designer.cs">
       <DependentUpon>KoreanKeysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NorwegianKeysForm.cs">
+    <Compile Include="KeyForms\NorwegianKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NorwegianKeysForm.Designer.cs">
+    <Compile Include="KeyForms\NorwegianKeysForm.Designer.cs">
       <DependentUpon>NorwegianKeysForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -164,43 +164,43 @@
     <Compile Include="OptionsForm.Designer.cs">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SpanishKeysForm.cs">
+    <Compile Include="KeyForms\SpanishKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpanishKeysForm.Designer.cs">
+    <Compile Include="KeyForms\SpanishKeysForm.Designer.cs">
       <DependentUpon>SpanishKeysForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="SwedishKeysForm.cs">
+    <Compile Include="KeyForms\SwedishKeysForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SwedishKeysForm.Designer.cs">
+    <Compile Include="KeyForms\SwedishKeysForm.Designer.cs">
       <DependentUpon>SwedishKeysForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CommandsForm.resx">
       <DependentUpon>CommandsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DanishKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\DanishKeysForm.resx">
       <DependentUpon>DanishKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrenchKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\FrenchKeysForm.resx">
       <DependentUpon>FrenchKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GermanKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\GermanKeysForm.resx">
       <DependentUpon>GermanKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItalienKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\ItalienKeysForm.resx">
       <DependentUpon>ItalienKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KanaKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\KanaKeysForm.resx">
       <DependentUpon>KanaKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="KoreanKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\KoreanKeysForm.resx">
       <DependentUpon>KoreanKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NorwegianKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\NorwegianKeysForm.resx">
       <DependentUpon>NorwegianKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -215,10 +215,10 @@
     <EmbeddedResource Include="OptionsForm.resx">
       <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpanishKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\SpanishKeysForm.resx">
       <DependentUpon>SpanishKeysForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SwedishKeysForm.resx">
+    <EmbeddedResource Include="KeyForms\SwedishKeysForm.resx">
       <DependentUpon>SwedishKeysForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="KoreanKibodeu_TemporaryKey.pfx" />
