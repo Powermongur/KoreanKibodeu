@@ -31,6 +31,7 @@ namespace KoreanKibodeu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommandsForm));
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.closeButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -45,12 +46,30 @@ namespace KoreanKibodeu
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
+            // closeButton
+            // 
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(934, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(19, 23);
+            this.closeButton.TabIndex = 9;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // CommandsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 1023);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.richTextBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.ForeColor = System.Drawing.Color.White;
@@ -58,6 +77,8 @@ namespace KoreanKibodeu
             this.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
             this.Name = "CommandsForm";
             this.Text = "CommandsForm";
+            this.Load += new System.EventHandler(this.CommandsForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CommandsForm_MouseDown);
             this.ResumeLayout(false);
 
         }
@@ -65,5 +86,6 @@ namespace KoreanKibodeu
         #endregion
 
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button closeButton;
     }
 }

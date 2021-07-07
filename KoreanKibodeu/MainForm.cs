@@ -46,12 +46,19 @@ namespace KoreanKibodeu
         bool conversionMode = true;
         public enum languageCode : ushort
         { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
-        AppSettings appSet = new AppSettings();
+        AppSettingsClass appSet = new AppSettingsClass();
         HistoryClass history = new HistoryClass();
 
         private void MainForm_Load(object sender, EventArgs e)
         {
             TopMost = appSet.StayOnTop;
+
+            if (appSet.LocationX != 0 || appSet.LocationY != 0)
+                Location = new Point(appSet.LocationX, appSet.LocationY);
+
+            appSet.LocationX = 0;
+            appSet.LocationY = 0;
+            appSet.Save();
 
             for (int i = 0; i < Controls.Count; i++)
             {
@@ -71,6 +78,9 @@ namespace KoreanKibodeu
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            appSet.LocationX = Location.X;
+            appSet.LocationY = Location.Y;
+            appSet.Save();
             Dispose();
         }
 
@@ -94,6 +104,19 @@ namespace KoreanKibodeu
                 }
             }
             lastKey = e.KeyCode;
+
+            if (Control.ModifierKeys == Keys.Alt)
+            {
+                string msg = messageTextBox.Text;
+                msg = msg.Replace("I", "[I-i]");
+                msg = msg.Replace("l", "[l-L]");
+
+                if (messageTextBox.Text != msg)
+                {
+                    messageTextBox.Text = msg;
+                    messageTextBox.SelectionStart = msg.Length;
+                }
+            }
         }
 
         private void messageTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -209,13 +232,18 @@ namespace KoreanKibodeu
                         msg = msg.Replace("AAA", "Å");
                         messageTextBox.SelectionStart = messageTextBox.Text.Length;
                     }
+                    if (msg.Contains("euro"))
+                    {
+                        msg = msg.Replace("euro ", "€");
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                    }
                 }
                 if (appSet.Language == (ushort)languageCode.de)
                 {
-                    if (msg.Contains("sss"))
-                        msg = msg.Replace("sss", "ß");
+                    msg = msg.Replace("sss", "ß");
+                    msg = msg.Replace("euro ", "€");
 
-                    msg = ReplaceSpecialChar("„“‚‘»«›‹—–…", msg);
+                    msg = ReplaceSpecialChar("“„‘‚«»‹›—–…", msg);
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
@@ -224,10 +252,12 @@ namespace KoreanKibodeu
                     KanaConvertClass converter = new KanaConvertClass();
                     msg = converter.Convert(msg, true);
 
+                    msg = msg.Replace("yen ", "¥");
+                    msg = msg.Replace("yenw ", "￥");
+
                     msg = ReplaceSpecialChar("ーゝゞ、。", msg);
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
-
                 }
                 if (appSet.Language == (ushort)languageCode.kr)
                 {
@@ -283,6 +313,8 @@ namespace KoreanKibodeu
                             //msg = msg.Replace(syllableString, syllableChar.ToString());
                         }
                     }
+                    msg = msg.Replace("won ", "￦");
+
                 }
                 if (appSet.Language == (ushort)languageCode.fr)
                 {
@@ -315,6 +347,8 @@ namespace KoreanKibodeu
                         }
                     }
 
+                    msg = msg.Replace("euro ", "€");
+
                     msg = ReplaceSpecialChar("«»“”’—–… ", msg);
                 }
                 if (appSet.Language == (ushort)languageCode.es)
@@ -327,6 +361,8 @@ namespace KoreanKibodeu
                         msg = msg.Replace(inputAB2C[i].ToString() + "..", spanishABC[i].ToString());
                         msg = msg.Replace(inputAB2C[i].ToString() + ",,", spanishABC[i].ToString());
                     }
+
+                    msg = msg.Replace("euro ", "€");
 
                     msg = ReplaceSpecialChar("¿¡«»“”‘’—–…", msg);
                 }
@@ -356,6 +392,8 @@ namespace KoreanKibodeu
                         }
                     }
 
+                    msg = msg.Replace("euro ", "€");
+
                     msg = ReplaceSpecialChar("«»“”‘’—–…", msg);
                 }
 
@@ -365,6 +403,18 @@ namespace KoreanKibodeu
                     //messageTextBox.SelectionStart = i;
                     messageTextBox.SelectionStart = msg.Length;
                 }
+            }
+
+            if (Control.ModifierKeys == Keys.Alt)
+            {
+                msg = msg.Replace("[I-i]", "I");
+                msg = msg.Replace("[l-L]", "l");
+            }
+
+            if (messageTextBox.Text != msg)
+            {
+                messageTextBox.Text = msg;
+                messageTextBox.SelectionStart = msg.Length;
             }
         }
 

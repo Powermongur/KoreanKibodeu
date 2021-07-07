@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 
 namespace KoreanKibodeu
 {
-    class AppSettings
+    class AppSettingsClass
     {
         public bool ShowLongNames;
         public ushort Language;
         public ushort JPlanguage;
         public bool StayOnTop;
         public bool Qwertz;
+        public int LocationX;
+        public int LocationY;
 
-        public AppSettings()
+        public AppSettingsClass()
         {
             ShowLongNames = (bool)Properties.Settings.Default["ShowLongNames"];
             Language = (ushort)Properties.Settings.Default["Language"];
             JPlanguage = (ushort)Properties.Settings.Default["JPlanguage"];
             StayOnTop = (bool)Properties.Settings.Default["StayOnTop"];
             Qwertz = (bool)Properties.Settings.Default["Qwertz"];
+            LocationX = (int)Properties.Settings.Default["LocationX"];
+            LocationY = (int)Properties.Settings.Default["LocationY"];
         }
 
         public void Save()
@@ -30,6 +34,8 @@ namespace KoreanKibodeu
             Properties.Settings.Default["JPlanguage"] = JPlanguage;
             Properties.Settings.Default["StayOnTop"] = StayOnTop;
             Properties.Settings.Default["Qwertz"] = Qwertz;
+            Properties.Settings.Default["LocationX"] = LocationX;
+            Properties.Settings.Default["LocationY"] = LocationY;
             Properties.Settings.Default.Save();
         }
     }

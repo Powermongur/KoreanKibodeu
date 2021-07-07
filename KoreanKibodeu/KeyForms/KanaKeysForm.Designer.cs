@@ -258,12 +258,16 @@ namespace KoreanKibodeu
             this.kanaX1KeyLabel = new System.Windows.Forms.Label();
             this.kanaBasicPanel2 = new System.Windows.Forms.Panel();
             this.kanaSpecialPanel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.kanaVLabel = new System.Windows.Forms.Label();
             this.kanaVKeyLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
             this.hiraganaRadioButton = new System.Windows.Forms.RadioButton();
             this.kataganaRadioButton = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
             this.kanaBasicPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -2739,6 +2743,10 @@ namespace KoreanKibodeu
             // kanaSpecialPanel2
             // 
             this.kanaSpecialPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.kanaSpecialPanel2.Controls.Add(this.label11);
+            this.kanaSpecialPanel2.Controls.Add(this.label7);
+            this.kanaSpecialPanel2.Controls.Add(this.label1);
+            this.kanaSpecialPanel2.Controls.Add(this.label5);
             this.kanaSpecialPanel2.Controls.Add(this.kanaVLabel);
             this.kanaSpecialPanel2.Controls.Add(this.kanaVKeyLabel);
             this.kanaSpecialPanel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -2748,12 +2756,33 @@ namespace KoreanKibodeu
             this.kanaSpecialPanel2.Size = new System.Drawing.Size(116, 145);
             this.kanaSpecialPanel2.TabIndex = 1032;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(11, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 42);
+            this.label1.TabIndex = 140;
+            this.label1.Text = "¥";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(12, 115);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(41, 24);
+            this.label5.TabIndex = 139;
+            this.label5.Text = "yen";
+            // 
             // kanaVLabel
             // 
             this.kanaVLabel.AutoSize = true;
             this.kanaVLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
             this.kanaVLabel.ForeColor = System.Drawing.Color.White;
-            this.kanaVLabel.Location = new System.Drawing.Point(14, 27);
+            this.kanaVLabel.Location = new System.Drawing.Point(11, 9);
             this.kanaVLabel.Name = "kanaVLabel";
             this.kanaVLabel.Size = new System.Drawing.Size(48, 42);
             this.kanaVLabel.TabIndex = 138;
@@ -2763,7 +2792,7 @@ namespace KoreanKibodeu
             // 
             this.kanaVKeyLabel.AutoSize = true;
             this.kanaVKeyLabel.ForeColor = System.Drawing.Color.White;
-            this.kanaVKeyLabel.Location = new System.Drawing.Point(25, 63);
+            this.kanaVKeyLabel.Location = new System.Drawing.Point(22, 45);
             this.kanaVKeyLabel.Name = "kanaVKeyLabel";
             this.kanaVKeyLabel.Size = new System.Drawing.Size(19, 24);
             this.kanaVKeyLabel.TabIndex = 137;
@@ -2819,6 +2848,27 @@ namespace KoreanKibodeu
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(201, 33);
             this.panel4.TabIndex = 1035;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(54, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 24);
+            this.label7.TabIndex = 139;
+            this.label7.Text = "yenw";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(53, 76);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 42);
+            this.label11.TabIndex = 140;
+            this.label11.Text = "￥";
             // 
             // KanaKeysForm
             // 
@@ -3116,5 +3166,9 @@ namespace KoreanKibodeu
         private System.Windows.Forms.RadioButton hiraganaRadioButton;
         private System.Windows.Forms.RadioButton kataganaRadioButton;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label7;
     }
 }

@@ -142,6 +142,8 @@ namespace KoreanKibodeu
             this.longNamesCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -1279,6 +1281,7 @@ namespace KoreanKibodeu
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label87);
             this.panel2.Controls.Add(this.label69);
             this.panel2.Controls.Add(this.label85);
@@ -1298,6 +1301,7 @@ namespace KoreanKibodeu
             this.panel2.Controls.Add(this.label71);
             this.panel2.Controls.Add(this.label84);
             this.panel2.Controls.Add(this.label68);
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label86);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -1305,6 +1309,27 @@ namespace KoreanKibodeu
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(941, 100);
             this.panel2.TabIndex = 1013;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(807, 66);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 24);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "won";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(797, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 42);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "￦";
             // 
             // panel3
             // 
@@ -1676,5 +1701,7 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button optionsButton;
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -25,7 +25,7 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        AppSettings appSet = new AppSettings();
+        AppSettingsClass appSet = new AppSettingsClass();
 
         private void DanishKeysForm_Load(object sender, EventArgs e)
         {

@@ -70,6 +70,8 @@ namespace KoreanKibodeu
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OptionsForm";
             this.Text = "SettingsForm";
+            this.Load += new System.EventHandler(this.OptionsForm_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OptionsForm_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

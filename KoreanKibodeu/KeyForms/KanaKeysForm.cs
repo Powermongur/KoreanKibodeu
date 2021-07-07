@@ -25,7 +25,7 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
-        AppSettings appSet = new AppSettings();
+        AppSettingsClass appSet = new AppSettingsClass();
         List<Control> formControls = new List<Control>();
 
         private void HiraganaHelpForm_Load(object sender, EventArgs e)

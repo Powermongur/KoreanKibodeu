@@ -82,5 +82,29 @@ namespace KoreanKibodeu.Properties {
                 this["Qwertz"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LocationX {
+            get {
+                return ((int)(this["LocationX"]));
+            }
+            set {
+                this["LocationX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int LocationY {
+            get {
+                return ((int)(this["LocationY"]));
+            }
+            set {
+                this["LocationY"] = value;
+            }
+        }
     }
 }
