@@ -7,7 +7,7 @@
 ## Features
 
 - Stay on top
-- Romanization input
+- Romanization input - Korean, Japanese
 
 ## IXI Kibodeu vs Windows OSK / other software keyboards
 
