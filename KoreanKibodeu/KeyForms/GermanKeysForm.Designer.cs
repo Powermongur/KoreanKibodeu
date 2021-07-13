@@ -29,11 +29,7 @@ namespace KoreanKibodeu
         /// </summary>
         private void InitializeComponent()
         {
-            this.qwertyToQwertzCheckBox = new System.Windows.Forms.CheckBox();
-            this.qwertyRadioButton = new System.Windows.Forms.RadioButton();
-            this.qwertzRadioButton = new System.Windows.Forms.RadioButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.qwertzCheckBox = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
             this.kanaSpecialPanel = new System.Windows.Forms.Panel();
@@ -70,67 +66,29 @@ namespace KoreanKibodeu
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.keyMenuSelectlabel = new System.Windows.Forms.Label();
+            this.optionsMenuSelectlabel = new System.Windows.Forms.Label();
+            this.commandMenuSelectlabel = new System.Windows.Forms.Label();
+            this.commandsButton = new System.Windows.Forms.Button();
+            this.optionsButton = new System.Windows.Forms.Button();
+            this.keysButton = new System.Windows.Forms.Button();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
-            // qwertyToQwertzCheckBox
+            // qwertzCheckBox
             // 
-            this.qwertyToQwertzCheckBox.AutoSize = true;
-            this.qwertyToQwertzCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.qwertyToQwertzCheckBox.Location = new System.Drawing.Point(20, 43);
-            this.qwertyToQwertzCheckBox.Name = "qwertyToQwertzCheckBox";
-            this.qwertyToQwertzCheckBox.Size = new System.Drawing.Size(143, 24);
-            this.qwertyToQwertzCheckBox.TabIndex = 1;
-            this.qwertyToQwertzCheckBox.Text = "qwerty -> qwertz";
-            this.qwertyToQwertzCheckBox.UseVisualStyleBackColor = true;
-            this.qwertyToQwertzCheckBox.CheckStateChanged += new System.EventHandler(this.qwertyToQwertzCheckBox_CheckStateChanged);
-            // 
-            // qwertyRadioButton
-            // 
-            this.qwertyRadioButton.AutoSize = true;
-            this.qwertyRadioButton.Checked = true;
-            this.qwertyRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.qwertyRadioButton.Location = new System.Drawing.Point(3, 0);
-            this.qwertyRadioButton.Name = "qwertyRadioButton";
-            this.qwertyRadioButton.Size = new System.Drawing.Size(118, 24);
-            this.qwertyRadioButton.TabIndex = 2;
-            this.qwertyRadioButton.TabStop = true;
-            this.qwertyRadioButton.Text = "Y is next to T";
-            this.qwertyRadioButton.UseVisualStyleBackColor = true;
-            this.qwertyRadioButton.CheckedChanged += new System.EventHandler(this.qwertyRadioButton_CheckedChanged);
-            // 
-            // qwertzRadioButton
-            // 
-            this.qwertzRadioButton.AutoSize = true;
-            this.qwertzRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.qwertzRadioButton.Location = new System.Drawing.Point(4, 30);
-            this.qwertzRadioButton.Name = "qwertzRadioButton";
-            this.qwertzRadioButton.Size = new System.Drawing.Size(117, 24);
-            this.qwertzRadioButton.TabIndex = 3;
-            this.qwertzRadioButton.Text = "Z is next to T";
-            this.qwertzRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(12, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Is Y next to T on your keyboard?";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.qwertzRadioButton);
-            this.panel1.Controls.Add(this.qwertyRadioButton);
-            this.panel1.Location = new System.Drawing.Point(16, 114);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(125, 59);
-            this.panel1.TabIndex = 5;
+            this.qwertzCheckBox.AutoSize = true;
+            this.qwertzCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.qwertzCheckBox.Location = new System.Drawing.Point(140, 26);
+            this.qwertzCheckBox.Name = "qwertzCheckBox";
+            this.qwertzCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.qwertzCheckBox.TabIndex = 1;
+            this.qwertzCheckBox.UseVisualStyleBackColor = true;
+            this.qwertzCheckBox.CheckStateChanged += new System.EventHandler(this.qwertzCheckBox_CheckStateChanged);
             // 
             // label2
             // 
@@ -145,6 +103,7 @@ namespace KoreanKibodeu
             // closeButton
             // 
             this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
             this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.closeButton.FlatAppearance.BorderSize = 0;
             this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
@@ -156,7 +115,7 @@ namespace KoreanKibodeu
             this.closeButton.Size = new System.Drawing.Size(19, 23);
             this.closeButton.TabIndex = 9;
             this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // kanaSpecialPanel
@@ -230,9 +189,7 @@ namespace KoreanKibodeu
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.qwertyToQwertzCheckBox);
-            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.qwertzCheckBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.panel2.ForeColor = System.Drawing.Color.White;
@@ -546,19 +503,95 @@ namespace KoreanKibodeu
             this.label16.TabIndex = 1039;
             this.label16.Text = "Options";
             // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
+            this.panel10.Controls.Add(this.keyMenuSelectlabel);
+            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
+            this.panel10.Controls.Add(this.commandMenuSelectlabel);
+            this.panel10.Controls.Add(this.commandsButton);
+            this.panel10.Controls.Add(this.optionsButton);
+            this.panel10.Controls.Add(this.keysButton);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(965, 47);
+            this.panel10.TabIndex = 1040;
+            // 
+            // keyMenuSelectlabel
+            // 
+            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
+            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
+            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
+            this.keyMenuSelectlabel.TabIndex = 1023;
+            // 
+            // optionsMenuSelectlabel
+            // 
+            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
+            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
+            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
+            this.optionsMenuSelectlabel.TabIndex = 1023;
+            // 
+            // commandMenuSelectlabel
+            // 
+            this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.commandMenuSelectlabel.Location = new System.Drawing.Point(219, 42);
+            this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
+            this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
+            this.commandMenuSelectlabel.TabIndex = 1023;
+            // 
+            // commandsButton
+            // 
+            this.commandsButton.FlatAppearance.BorderSize = 0;
+            this.commandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.commandsButton.Location = new System.Drawing.Point(213, 0);
+            this.commandsButton.Name = "commandsButton";
+            this.commandsButton.Size = new System.Drawing.Size(145, 41);
+            this.commandsButton.TabIndex = 20;
+            this.commandsButton.Text = "Commands";
+            this.commandsButton.UseVisualStyleBackColor = true;
+            this.commandsButton.Click += new System.EventHandler(this.commandsButton_Click);
+            // 
+            // optionsButton
+            // 
+            this.optionsButton.FlatAppearance.BorderSize = 0;
+            this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionsButton.Location = new System.Drawing.Point(98, 0);
+            this.optionsButton.Name = "optionsButton";
+            this.optionsButton.Size = new System.Drawing.Size(121, 41);
+            this.optionsButton.TabIndex = 20;
+            this.optionsButton.Text = "Options";
+            this.optionsButton.UseVisualStyleBackColor = true;
+            this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
+            // 
+            // keysButton
+            // 
+            this.keysButton.FlatAppearance.BorderSize = 0;
+            this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keysButton.Location = new System.Drawing.Point(0, 0);
+            this.keysButton.Name = "keysButton";
+            this.keysButton.Size = new System.Drawing.Size(98, 41);
+            this.keysButton.TabIndex = 20;
+            this.keysButton.Text = "Keys";
+            this.keysButton.UseVisualStyleBackColor = true;
+            // 
             // GermanKeysForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 1023);
+            this.Controls.Add(this.closeButton);
+            this.Controls.Add(this.panel10);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.kanaSpecialPanel);
-            this.Controls.Add(this.closeButton);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -567,25 +600,20 @@ namespace KoreanKibodeu
             this.Text = "GermanKeysForm";
             this.Load += new System.EventHandler(this.GermanKeysForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.GermanKeysForm_MouseDown);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.kanaSpecialPanel.ResumeLayout(false);
             this.kanaSpecialPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.CheckBox qwertyToQwertzCheckBox;
-        private System.Windows.Forms.RadioButton qwertyRadioButton;
-        private System.Windows.Forms.RadioButton qwertzRadioButton;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox qwertzCheckBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Panel kanaSpecialPanel;
@@ -622,5 +650,12 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label keyMenuSelectlabel;
+        private System.Windows.Forms.Label optionsMenuSelectlabel;
+        private System.Windows.Forms.Label commandMenuSelectlabel;
+        private System.Windows.Forms.Button commandsButton;
+        private System.Windows.Forms.Button optionsButton;
+        private System.Windows.Forms.Button keysButton;
     }
 }

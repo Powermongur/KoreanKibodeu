@@ -44,10 +44,203 @@ namespace KoreanKibodeu
 
         Keys lastKey = Keys.Shift;
         bool conversionMode = true;
-        public enum languageCode : ushort
-        { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
         AppSettingsClass appSet = new AppSettingsClass();
         HistoryClass history = new HistoryClass();
+        DanishKeysForm danishDialog = null;
+        FrenchKeysForm frenchDialog = null;
+        GermanKeysForm germanDialog = null;
+        ItalienKeysForm italienDialog = null;
+        KanaKeysForm kanaDialog = null;
+        KoreanKeysForm koreanDialog = null;
+        NorwegianKeysForm norwegianDialog = null;
+        SpanishKeysForm spanishDialog = null;
+        SwedishKeysForm swedishDialog = null;
+        CommandsForm commandDialog = null;
+        OptionsForm optionDialog = null;
+
+        public void OpenKeyDialog(Point position)
+        {
+            if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk)
+            {
+                danishDialog = new DanishKeysForm();
+                if (!position.IsEmpty)
+                    danishDialog.Location = position;
+                danishDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.se)
+            {
+                swedishDialog = new SwedishKeysForm();
+                if (!position.IsEmpty)
+                    swedishDialog.Location = position;
+                swedishDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.no)
+            {
+                norwegianDialog = new NorwegianKeysForm();
+                if (!position.IsEmpty)
+                    norwegianDialog.Location = position;
+                norwegianDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.de)
+            {
+                germanDialog = new GermanKeysForm();
+                if (!position.IsEmpty)
+                    germanDialog.Location = position;
+                germanDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.jp)
+            {
+                kanaDialog = new KanaKeysForm();
+                if (!position.IsEmpty)
+                    kanaDialog.Location = position;
+                kanaDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.kr)
+            {
+                koreanDialog = new KoreanKeysForm();
+                if (!position.IsEmpty)
+                    koreanDialog.Location = position;
+                koreanDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.fr)
+            {
+                frenchDialog = new FrenchKeysForm();
+                if (!position.IsEmpty)
+                    frenchDialog.Location = position;
+                frenchDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.es)
+            {
+                spanishDialog = new SpanishKeysForm();
+                if (!position.IsEmpty)
+                    spanishDialog.Location = position;
+                spanishDialog.Show(this);
+            }
+            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.it)
+            {
+                italienDialog = new ItalienKeysForm();
+                if (!position.IsEmpty)
+                    italienDialog.Location = position;
+                italienDialog.Show(this);
+            }
+        }
+
+        public void CloseKeyDialog()
+        {
+            if (danishDialog != null)
+                danishDialog.Dispose();
+            if (frenchDialog != null)
+                frenchDialog.Dispose();
+            if (germanDialog != null)
+                germanDialog.Dispose();
+            if (italienDialog != null)
+                italienDialog.Dispose();
+            if (kanaDialog != null)
+                kanaDialog.Dispose();
+            if (koreanDialog != null)
+                koreanDialog.Dispose();
+            if (norwegianDialog != null)
+                norwegianDialog.Dispose();
+            if (spanishDialog != null)
+                spanishDialog.Dispose();
+            if (swedishDialog != null)
+                swedishDialog.Dispose();
+
+            danishDialog = null;
+            frenchDialog = null;
+            germanDialog = null;
+            italienDialog = null;
+            kanaDialog = null;
+            koreanDialog = null;
+            norwegianDialog = null;
+            spanishDialog = null;
+            swedishDialog = null;
+        }
+
+        public void OpenCommandDialog(Point position)
+        {
+            commandDialog = new CommandsForm();
+            if (!position.IsEmpty)
+                commandDialog.Location = position;
+            commandDialog.Show(this);
+        }
+
+        public void CloseCommandDialog()
+        {
+            commandDialog.Dispose();
+            commandDialog = null;
+        }
+
+        public void OpenOptionDialog(Point position)
+        {
+            optionDialog = new OptionsForm();
+            if (!position.IsEmpty)
+                optionDialog.Location = position;
+            optionDialog.Show(this);
+        }
+
+        public void CloseOptionDialog()
+        {
+            optionDialog.Dispose();
+            optionDialog = null;
+        }
+
+        public void FocusText()
+        {
+            Focus();
+            messageTextBox.Focus();
+        }
+
+        public void MoveLocation(Point setLocation)
+        {
+            Location = setLocation;
+        }
+
+        public void BlackWhite()
+        {
+            if(messageTextBox.ForeColor == Color.FromArgb(255, 255, 255))
+                messageTextBox.ForeColor = Color.FromArgb(0, 0, 0);
+            else
+                messageTextBox.ForeColor = Color.FromArgb(255, 255, 255);
+
+            this.Refresh();
+        }
+
+        public void HideShow(bool hide)
+        {
+            if(hide)
+            {
+                TransparencyKey = Color.FromArgb(255, 254, 255);
+                BackColor = Color.FromArgb(255, 254, 255);
+                messageTextBox.BackColor = Color.FromArgb(255, 254, 255);
+                messageTextBox.ForeColor = Color.FromArgb(0, 0, 0);
+
+                ToolbarForm toolbarDialog = new ToolbarForm();
+                toolbarDialog.Show(this);
+            }
+            else
+            {
+                BackColor = Color.FromArgb(40, 40, 40);
+                messageTextBox.BackColor = Color.FromArgb(70, 70, 70);
+                messageTextBox.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            topBarlabel.Visible = !hide;
+            translateButton.Visible = !hide;
+            ttsButton.Visible = !hide;
+            statusLabel2.Visible = !hide;
+            statusLabel.Visible = !hide;
+            minimizeButton.Visible = !hide;
+            closeButton.Visible = !hide;
+            nameLabel.Visible = !hide;
+            nameBottomPanel.Visible = !hide;
+            helpButton.Visible = !hide;
+            optionsButton.Visible = !hide;
+            commandsButton.Visible = !hide;
+            keysButton.Visible = !hide;
+
+            this.Refresh();
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -91,21 +284,49 @@ namespace KoreanKibodeu
 
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Delete && Control.ModifierKeys == Keys.Shift)
+            {
+                messageTextBox.Text = "";
+                return;
+            }
+
             if (conversionMode)
             {
-                if (appSet.Language == (ushort)languageCode.kr)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.kr)
                 {
                     if (e.KeyCode == Keys.Space)
                     {
                         if (lastKey != Keys.Space)
                             e.SuppressKeyPress = true;
+                    }
+                }
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.de && appSet.Qwertz)
+                {
+                    if (e.KeyCode == Keys.Y)
+                    {
+                        if(Control.ModifierKeys == Keys.Shift)
+                            messageTextBox.Text = messageTextBox.Text + "Z";
+                        else
+                            messageTextBox.Text = messageTextBox.Text + "z";
+                        
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                        e.SuppressKeyPress = true;
+                    }
+                    if (e.KeyCode == Keys.Z)
+                    {
+                        if (Control.ModifierKeys == Keys.Shift)
+                            messageTextBox.Text = messageTextBox.Text + "Y";
+                        else
+                            messageTextBox.Text = messageTextBox.Text + "y";
 
+                        messageTextBox.SelectionStart = messageTextBox.Text.Length;
+                        e.SuppressKeyPress = true;
                     }
                 }
             }
             lastKey = e.KeyCode;
 
-            if (Control.ModifierKeys == Keys.Alt)
+            if (Control.ModifierKeys == Keys.Alt && false)
             {
                 string msg = messageTextBox.Text;
                 msg = msg.Replace("I", "[I-i]");
@@ -135,7 +356,6 @@ namespace KoreanKibodeu
 
             int cursorI = messageTextBox.SelectionStart - 1;
             string msg = messageTextBox.Text;
-
 
             if (e.KeyCode == Keys.Up)
             {
@@ -191,7 +411,7 @@ namespace KoreanKibodeu
 
             if (conversionMode)
             {
-                if (appSet.Language == (ushort)languageCode.dk || appSet.Language == (ushort)languageCode.no)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk || appSet.Language == (ushort)AppSettingsClass.languageCode.no)
                 {
                     if (msg.Contains("ae"))
                     {
@@ -215,7 +435,7 @@ namespace KoreanKibodeu
                     }
 
                 }
-                if (appSet.Language == (ushort)languageCode.dk || appSet.Language == (ushort)languageCode.no || appSet.Language == (ushort)languageCode.se)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk || appSet.Language == (ushort)AppSettingsClass.languageCode.no || appSet.Language == (ushort)AppSettingsClass.languageCode.se)
                 {
                     if (false)
                     {
@@ -238,7 +458,7 @@ namespace KoreanKibodeu
                         messageTextBox.SelectionStart = messageTextBox.Text.Length;
                     }
                 }
-                if (appSet.Language == (ushort)languageCode.de)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.de)
                 {
                     msg = msg.Replace("sss", "ß");
                     msg = msg.Replace("euro ", "€");
@@ -247,7 +467,7 @@ namespace KoreanKibodeu
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
-                if (appSet.Language == (ushort)languageCode.jp)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.jp)
                 {
                     KanaConvertClass converter = new KanaConvertClass();
                     msg = converter.Convert(msg, true);
@@ -259,7 +479,7 @@ namespace KoreanKibodeu
 
                     messageTextBox.SelectionStart = messageTextBox.Text.Length;
                 }
-                if (appSet.Language == (ushort)languageCode.kr)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.kr)
                 {
                     if (e.KeyCode == Keys.Space)
                     {
@@ -316,7 +536,7 @@ namespace KoreanKibodeu
                     msg = msg.Replace("won ", "￦");
 
                 }
-                if (appSet.Language == (ushort)languageCode.fr)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.fr)
                 {
                     msg = msg.Replace("ae", "æ");
                     msg = msg.Replace("AE", "Æ");
@@ -351,7 +571,7 @@ namespace KoreanKibodeu
 
                     msg = ReplaceSpecialChar("«»“”’—–… ", msg);
                 }
-                if (appSet.Language == (ushort)languageCode.es)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.es)
                 {
                     string spanishABC = "áÁéÉíÍñÑóÓúÚ";
                     string inputAB2C = "aAeEiInNoOuU";
@@ -366,7 +586,7 @@ namespace KoreanKibodeu
 
                     msg = ReplaceSpecialChar("¿¡«»“”‘’—–…", msg);
                 }
-                if (appSet.Language == (ushort)languageCode.it)
+                if (appSet.Language == (ushort)AppSettingsClass.languageCode.it)
                 {
                     string[] italienhABC = new string[] { "à", "À", "éè", "ÉÈ", "ìî", "ÌÎ", "óò", "ÓÒ", "ù", "Ù" };
                     string inputABC = "aAeEiIoOuU";
@@ -514,7 +734,7 @@ namespace KoreanKibodeu
                 if (msg.Contains("!help"))
                 {
                     KoreanKeysForm helpDialog = new KoreanKeysForm();
-                    helpDialog.Show();
+                    helpDialog.Show(this);
                     msg = msg.Replace("!help", "");
                 }
                 if (msg.Contains("!quit") || msg.Contains("!exit"))
@@ -593,14 +813,14 @@ namespace KoreanKibodeu
                     msg = msg.Replace("!yt", "");
                     OpenBrowser("https://www.youtube.com");
                 }
+                if (msg.Contains("!qwertzoff"))
+                {
+                    appSet.Qwertz = false;
+                    msg = msg.Replace("!qwertzoff", "");
+                }
                 if (msg.Contains("!qwertz"))
                 {
                     appSet.Qwertz = true;
-                    msg = msg.Replace("!qwertz", "");
-                }
-                if (msg.Contains("!qwerty"))
-                {
-                    appSet.Qwertz = false;
                     msg = msg.Replace("!qwertz", "");
                 }
                 if (msg.Contains("!hira") || msg.Contains("!hiragana"))
@@ -619,66 +839,71 @@ namespace KoreanKibodeu
                     msg = msg.Replace("!kanji", "");
                     OpenBrowser("https://jisho.org/");
                 }
+                if (msg.Contains("!hide"))
+                {
+                    msg = msg.Replace("!hide", "");
+                    HideShow(true);
+                }
 
                 int convertCheck = msg.Length;
 
                 if (msg.Contains("!en"))
                 {
-                    appSet.Language = (ushort)languageCode.en;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.en;
                     msg = msg.Replace("!en", "");
                     statusLabel2.Text = "Mode: abc en";
                 }
                 if (msg.Contains("!dk"))
                 {
-                    appSet.Language = (ushort)languageCode.dk;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.dk;
                     msg = msg.Replace("!dk", "");
                     statusLabel2.Text = "Mode: abc dk";
                 }
                 if (msg.Contains("!se"))
                 {
-                    appSet.Language = (ushort)languageCode.se;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.se;
                     msg = msg.Replace("!se", "");
                     statusLabel2.Text = "Mode: abc se";
                 }
                 if (msg.Contains("!no"))
                 {
-                    appSet.Language = (ushort)languageCode.no;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.no;
                     msg = msg.Replace("!no", "");
                     statusLabel2.Text = "Mode: abc no";
                 }
                 if (msg.Contains("!de"))
                 {
-                    appSet.Language = (ushort)languageCode.de;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.de;
                     msg = msg.Replace("!de", "");
                     statusLabel2.Text = "Mode: abc de";
                 }
                 if (msg.Contains("!jp"))
                 {
-                    appSet.Language = (ushort)languageCode.jp;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.jp;
                     msg = msg.Replace("!jp", "");
                     statusLabel2.Text = "Mode: ひらがな";
                 }
                 if (msg.Contains("!kr"))
                 {
-                    appSet.Language = (ushort)languageCode.kr;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.kr;
                     msg = msg.Replace("!kr", "");
                     statusLabel2.Text = "Mode: 한글";
                 }
                 if (msg.Contains("!fr"))
                 {
-                    appSet.Language = (ushort)languageCode.fr;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.fr;
                     msg = msg.Replace("!fr", "");
                     statusLabel2.Text = "Mode: abc fr";
                 }
                 if (msg.Contains("!es"))
                 {
-                    appSet.Language = (ushort)languageCode.es;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.es;
                     msg = msg.Replace("!es", "");
                     statusLabel2.Text = "Mode: abc es";
                 }
                 if (msg.Contains("!it"))
                 {
-                    appSet.Language = (ushort)languageCode.it;
+                    appSet.Language = (ushort)AppSettingsClass.languageCode.it;
                     msg = msg.Replace("!it", "");
                     statusLabel2.Text = "Mode: abc it";
                 }
@@ -735,68 +960,30 @@ namespace KoreanKibodeu
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-
         }
 
         private void optionsButton_Click(object sender, EventArgs e)
-        {
-            OptionsForm optionsDialog = new OptionsForm();
-            optionsDialog.Show();
+        {            
+            if (optionDialog == null)
+                OpenOptionDialog(new Point());
+            else
+                CloseOptionDialog();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
-            CommandsForm commandsDialog = new CommandsForm();
-            commandsDialog.Show();
+            if (commandDialog == null)
+                OpenCommandDialog(new Point());
+            else
+                CloseCommandDialog();
         }
 
         private void keysButton_Click(object sender, EventArgs e)
         {
-            if (appSet.Language == (ushort)languageCode.dk)
-            {
-                DanishKeysForm dkDialog = new DanishKeysForm();
-                dkDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.se)
-            {
-                SwedishKeysForm seDialog = new SwedishKeysForm();
-                seDialog.Show();
-            }
-            else if(appSet.Language == (ushort)languageCode.no)
-            {
-                NorwegianKeysForm noDialog = new NorwegianKeysForm();
-                noDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.de)
-            {
-                GermanKeysForm deDialog = new GermanKeysForm();
-                deDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.jp)
-            {
-                KanaKeysForm jpDialog = new KanaKeysForm();
-                jpDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.kr)
-            {
-                KoreanKeysForm krDialog = new KoreanKeysForm();
-                krDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.fr)
-            {
-                FrenchKeysForm frDialog = new FrenchKeysForm();
-                frDialog.Show();
-            }
-            else if (appSet.Language == (ushort)languageCode.es)
-            {
-                SpanishKeysForm esDialog = new SpanishKeysForm();
-                esDialog.Show();
-            }
-            else if(appSet.Language == (ushort)languageCode.it)
-            {
-                ItalienKeysForm itDialog = new ItalienKeysForm();
-                itDialog.Show();
-            }
+            if (danishDialog != null || frenchDialog != null || germanDialog != null || italienDialog != null || kanaDialog != null || koreanDialog != null || norwegianDialog != null || spanishDialog != null || swedishDialog != null)
+                CloseKeyDialog();
+            else
+                OpenKeyDialog(new Point());
         }
     }
 }

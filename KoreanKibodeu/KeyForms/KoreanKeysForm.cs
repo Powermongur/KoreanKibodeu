@@ -33,6 +33,10 @@ namespace KoreanKibodeu
             KeyPreview = true;
             longNamesCheckBox.Checked = appSet.ShowLongNames;
 
+            keyMenuSelectlabel.Visible = true;
+            optionsMenuSelectlabel.Visible = false;
+            commandMenuSelectlabel.Visible = false;
+
             ShowLongNames(longNamesCheckBox.Checked);
 
             for (int i = 0; i < Controls.Count; i++)
@@ -91,6 +95,22 @@ namespace KoreanKibodeu
         {
             if (e.KeyCode == Keys.Escape)
                 Dispose();
+        }
+
+        private void optionsButton_Click(object sender, EventArgs e)
+        {
+            OptionsForm optDialog = new OptionsForm();
+            optDialog.Show();
+            optDialog.Location = Location;
+            Dispose();
+        }
+
+        private void commandsButton_Click(object sender, EventArgs e)
+        {
+            CommandsForm cmdDialog = new CommandsForm();
+            cmdDialog.Show();
+            cmdDialog.Location = Location;
+            Dispose();
         }
     }
 }

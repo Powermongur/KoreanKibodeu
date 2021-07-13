@@ -32,6 +32,10 @@ namespace KoreanKibodeu
         {
             TopMost = appSet.StayOnTop;
 
+            keyMenuSelectlabel.Visible = true;
+            optionsMenuSelectlabel.Visible = false;
+            commandMenuSelectlabel.Visible = false;
+
             for (int i = 0; i < Controls.Count; i++)
             {
                 if (Controls[i].TabIndex >= 1000)
@@ -83,6 +87,22 @@ namespace KoreanKibodeu
                 if (formControls[i].Name.Contains("kana") && !formControls[i].Name.Contains("Key"))
                     formControls[i].Text = converter.Convert(formControls[i].Text, hiraganaRadioButton.Checked);
             }
+        }
+
+        private void optionsButton_Click(object sender, EventArgs e)
+        {
+            OptionsForm optDialog = new OptionsForm();
+            optDialog.Show();
+            optDialog.Location = Location;
+            Dispose();
+        }
+
+        private void commandsButton_Click(object sender, EventArgs e)
+        {
+            CommandsForm cmdDialog = new CommandsForm();
+            cmdDialog.Show();
+            cmdDialog.Location = Location;
+            Dispose();
         }
     }
 }

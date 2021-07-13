@@ -36,11 +36,11 @@ namespace KoreanKibodeu
             this.closeButton = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.optionsButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.topBarlabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.statusLabel2 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.nameBottomPanel = new System.Windows.Forms.Panel();
             this.commandsButton = new System.Windows.Forms.Button();
             this.translateButton = new System.Windows.Forms.Button();
             this.ttsButton = new System.Windows.Forms.Button();
@@ -135,15 +135,15 @@ namespace KoreanKibodeu
             this.optionsButton.UseVisualStyleBackColor = false;
             this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
             // 
-            // label1
+            // topBarlabel
             // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1064, 7);
-            this.label1.TabIndex = 8;
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.topBarlabel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
+            this.topBarlabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topBarlabel.Location = new System.Drawing.Point(0, 0);
+            this.topBarlabel.Name = "topBarlabel";
+            this.topBarlabel.Size = new System.Drawing.Size(1064, 7);
+            this.topBarlabel.TabIndex = 8;
+            this.topBarlabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
             // 
             // statusLabel
             // 
@@ -171,25 +171,25 @@ namespace KoreanKibodeu
             this.statusLabel2.TabIndex = 1001;
             this.statusLabel2.Text = "Mode: 한";
             // 
-            // label2
+            // nameLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(977, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 16);
-            this.label2.TabIndex = 1002;
-            this.label2.Text = "IXI Kibodeu";
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.ForeColor = System.Drawing.Color.Gray;
+            this.nameLabel.Location = new System.Drawing.Point(977, 34);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(75, 16);
+            this.nameLabel.TabIndex = 1002;
+            this.nameLabel.Text = "IXI Kibodeu";
             // 
-            // panel1
+            // nameBottomPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
-            this.panel1.ForeColor = System.Drawing.Color.Gray;
-            this.panel1.Location = new System.Drawing.Point(977, 51);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(75, 2);
-            this.panel1.TabIndex = 1003;
+            this.nameBottomPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
+            this.nameBottomPanel.ForeColor = System.Drawing.Color.Gray;
+            this.nameBottomPanel.Location = new System.Drawing.Point(977, 51);
+            this.nameBottomPanel.Name = "nameBottomPanel";
+            this.nameBottomPanel.Size = new System.Drawing.Size(75, 2);
+            this.nameBottomPanel.TabIndex = 1003;
             // 
             // commandsButton
             // 
@@ -267,11 +267,11 @@ namespace KoreanKibodeu
             this.ClientSize = new System.Drawing.Size(1064, 82);
             this.Controls.Add(this.ttsButton);
             this.Controls.Add(this.translateButton);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.nameBottomPanel);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.statusLabel2);
             this.Controls.Add(this.statusLabel);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.topBarlabel);
             this.Controls.Add(this.optionsButton);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.closeButton);
@@ -299,11 +299,11 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.TextBox messageTextBox;
         private System.Windows.Forms.Button optionsButton;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label topBarlabel;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.Label statusLabel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Panel nameBottomPanel;
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Button translateButton;
         private System.Windows.Forms.Button ttsButton;

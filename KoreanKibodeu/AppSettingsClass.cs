@@ -16,6 +16,9 @@ namespace KoreanKibodeu
         public int LocationX;
         public int LocationY;
 
+        public enum languageCode : ushort
+        { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
+
         public AppSettingsClass()
         {
             ShowLongNames = (bool)Properties.Settings.Default["ShowLongNames"];
