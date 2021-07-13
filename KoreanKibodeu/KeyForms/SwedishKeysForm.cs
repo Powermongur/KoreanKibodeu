@@ -26,9 +26,11 @@ namespace KoreanKibodeu
         public static extern bool ReleaseCapture();
 
         AppSettingsClass appSet = new AppSettingsClass();
+        MainForm mainDialog;
 
         private void SwedishKeysForm_Load(object sender, EventArgs e)
         {
+            mainDialog = (MainForm)Owner;
             TopMost = appSet.StayOnTop;
 
             keyMenuSelectlabel.Visible = true;
@@ -53,23 +55,19 @@ namespace KoreanKibodeu
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Dispose();
+            mainDialog.CloseKeyDialog();
         }
 
         private void optionsButton_Click(object sender, EventArgs e)
         {
-            OptionsForm optDialog = new OptionsForm();
-            optDialog.Show();
-            optDialog.Location = Location;
-            Dispose();
+            mainDialog.OpenOptionDialog(Location);
+            mainDialog.CloseCommandDialog();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
-            CommandsForm cmdDialog = new CommandsForm();
-            cmdDialog.Show();
-            cmdDialog.Location = Location;
-            Dispose();
+            mainDialog.OpenCommandDialog(Location);
+            mainDialog.CloseOptionDialog();
         }
     }
 }

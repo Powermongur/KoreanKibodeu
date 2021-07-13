@@ -31,22 +31,22 @@ namespace KoreanKibodeu
         {
             this.inputLanguagelabel = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.keyMenuSelectlabel = new System.Windows.Forms.Label();
-            this.optionsMenuSelectlabel = new System.Windows.Forms.Label();
-            this.commandMenuSelectlabel = new System.Windows.Forms.Label();
             this.commandsButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.keysButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.kanaSpecialPanel = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.IXILanguageLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.conversionModeCheckBox = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.IXILanguageLabel = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.stayOnTopCheckBox = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.keyMenuSelectlabel = new System.Windows.Forms.Label();
+            this.optionsMenuSelectlabel = new System.Windows.Forms.Label();
+            this.commandMenuSelectlabel = new System.Windows.Forms.Label();
             this.panel10.SuspendLayout();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -67,10 +67,10 @@ namespace KoreanKibodeu
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
             this.panel10.Controls.Add(this.keyMenuSelectlabel);
-            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
-            this.panel10.Controls.Add(this.commandMenuSelectlabel);
             this.panel10.Controls.Add(this.commandsButton);
+            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
             this.panel10.Controls.Add(this.optionsButton);
+            this.panel10.Controls.Add(this.commandMenuSelectlabel);
             this.panel10.Controls.Add(this.keysButton);
             this.panel10.Controls.Add(this.closeButton);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
@@ -79,30 +79,6 @@ namespace KoreanKibodeu
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(965, 47);
             this.panel10.TabIndex = 1023;
-            // 
-            // keyMenuSelectlabel
-            // 
-            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
-            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
-            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
-            this.keyMenuSelectlabel.TabIndex = 1023;
-            // 
-            // optionsMenuSelectlabel
-            // 
-            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
-            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
-            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
-            this.optionsMenuSelectlabel.TabIndex = 1023;
-            // 
-            // commandMenuSelectlabel
-            // 
-            this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.commandMenuSelectlabel.Location = new System.Drawing.Point(219, 42);
-            this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
-            this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
-            this.commandMenuSelectlabel.TabIndex = 1023;
             // 
             // commandsButton
             // 
@@ -183,16 +159,27 @@ namespace KoreanKibodeu
             this.kanaSpecialPanel.Size = new System.Drawing.Size(941, 146);
             this.kanaSpecialPanel.TabIndex = 1033;
             // 
-            // label2
+            // conversionModeCheckBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 1024;
-            this.label2.Text = "IXI language:";
+            this.conversionModeCheckBox.AutoSize = true;
+            this.conversionModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.conversionModeCheckBox.ForeColor = System.Drawing.Color.White;
+            this.conversionModeCheckBox.Location = new System.Drawing.Point(142, 95);
+            this.conversionModeCheckBox.Name = "conversionModeCheckBox";
+            this.conversionModeCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.conversionModeCheckBox.TabIndex = 1027;
+            this.conversionModeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 91);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 20);
+            this.label4.TabIndex = 1026;
+            this.label4.Text = "Comversion:";
             // 
             // IXILanguageLabel
             // 
@@ -204,6 +191,17 @@ namespace KoreanKibodeu
             this.IXILanguageLabel.Size = new System.Drawing.Size(55, 20);
             this.IXILanguageLabel.TabIndex = 1;
             this.IXILanguageLabel.Text = "IXI lan";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 20);
+            this.label2.TabIndex = 1024;
+            this.label2.Text = "IXI language:";
             // 
             // panel1
             // 
@@ -217,16 +215,16 @@ namespace KoreanKibodeu
             this.panel1.Size = new System.Drawing.Size(941, 146);
             this.panel1.TabIndex = 1034;
             // 
-            // label4
+            // stayOnTopCheckBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 20);
-            this.label4.TabIndex = 1026;
-            this.label4.Text = "Comversion:";
+            this.stayOnTopCheckBox.AutoSize = true;
+            this.stayOnTopCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.stayOnTopCheckBox.ForeColor = System.Drawing.Color.White;
+            this.stayOnTopCheckBox.Location = new System.Drawing.Point(142, 37);
+            this.stayOnTopCheckBox.Name = "stayOnTopCheckBox";
+            this.stayOnTopCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.stayOnTopCheckBox.TabIndex = 1027;
+            this.stayOnTopCheckBox.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -239,27 +237,29 @@ namespace KoreanKibodeu
             this.label3.TabIndex = 1026;
             this.label3.Text = "Stay on Top:";
             // 
-            // conversionModeCheckBox
+            // keyMenuSelectlabel
             // 
-            this.conversionModeCheckBox.AutoSize = true;
-            this.conversionModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.conversionModeCheckBox.ForeColor = System.Drawing.Color.White;
-            this.conversionModeCheckBox.Location = new System.Drawing.Point(142, 95);
-            this.conversionModeCheckBox.Name = "conversionModeCheckBox";
-            this.conversionModeCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.conversionModeCheckBox.TabIndex = 1027;
-            this.conversionModeCheckBox.UseVisualStyleBackColor = true;
+            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
+            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
+            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
+            this.keyMenuSelectlabel.TabIndex = 1035;
             // 
-            // stayOnTopCheckBox
+            // optionsMenuSelectlabel
             // 
-            this.stayOnTopCheckBox.AutoSize = true;
-            this.stayOnTopCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.stayOnTopCheckBox.ForeColor = System.Drawing.Color.White;
-            this.stayOnTopCheckBox.Location = new System.Drawing.Point(142, 37);
-            this.stayOnTopCheckBox.Name = "stayOnTopCheckBox";
-            this.stayOnTopCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.stayOnTopCheckBox.TabIndex = 1027;
-            this.stayOnTopCheckBox.UseVisualStyleBackColor = true;
+            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
+            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
+            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
+            this.optionsMenuSelectlabel.TabIndex = 1036;
+            // 
+            // commandMenuSelectlabel
+            // 
+            this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.commandMenuSelectlabel.Location = new System.Drawing.Point(213, 42);
+            this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
+            this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
+            this.commandMenuSelectlabel.TabIndex = 1037;
             // 
             // OptionsForm
             // 
@@ -289,9 +289,6 @@ namespace KoreanKibodeu
         #endregion
         private System.Windows.Forms.Label inputLanguagelabel;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label keyMenuSelectlabel;
-        private System.Windows.Forms.Label optionsMenuSelectlabel;
-        private System.Windows.Forms.Label commandMenuSelectlabel;
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Button optionsButton;
         private System.Windows.Forms.Button keysButton;
@@ -305,5 +302,8 @@ namespace KoreanKibodeu
         private System.Windows.Forms.CheckBox conversionModeCheckBox;
         private System.Windows.Forms.CheckBox stayOnTopCheckBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label keyMenuSelectlabel;
+        private System.Windows.Forms.Label optionsMenuSelectlabel;
+        private System.Windows.Forms.Label commandMenuSelectlabel;
     }
 }

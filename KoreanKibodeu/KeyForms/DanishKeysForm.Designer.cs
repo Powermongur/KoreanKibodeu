@@ -291,7 +291,7 @@ namespace KoreanKibodeu
             // commandMenuSelectlabel
             // 
             this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.commandMenuSelectlabel.Location = new System.Drawing.Point(219, 42);
+            this.commandMenuSelectlabel.Location = new System.Drawing.Point(213, 42);
             this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
             this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
             this.commandMenuSelectlabel.TabIndex = 1023;

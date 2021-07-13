@@ -1515,10 +1515,10 @@ namespace KoreanKibodeu
             // 
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
             this.panel10.Controls.Add(this.keyMenuSelectlabel);
-            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
-            this.panel10.Controls.Add(this.commandMenuSelectlabel);
             this.panel10.Controls.Add(this.commandsButton);
+            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
             this.panel10.Controls.Add(this.optionsButton);
+            this.panel10.Controls.Add(this.commandMenuSelectlabel);
             this.panel10.Controls.Add(this.keysButton);
             this.panel10.Controls.Add(this.closeButton);
             this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1534,7 +1534,7 @@ namespace KoreanKibodeu
             this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
             this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
             this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
-            this.keyMenuSelectlabel.TabIndex = 1023;
+            this.keyMenuSelectlabel.TabIndex = 1024;
             // 
             // optionsMenuSelectlabel
             // 
@@ -1542,15 +1542,15 @@ namespace KoreanKibodeu
             this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
             this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
             this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
-            this.optionsMenuSelectlabel.TabIndex = 1023;
+            this.optionsMenuSelectlabel.TabIndex = 1025;
             // 
             // commandMenuSelectlabel
             // 
             this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.commandMenuSelectlabel.Location = new System.Drawing.Point(219, 42);
+            this.commandMenuSelectlabel.Location = new System.Drawing.Point(213, 42);
             this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
             this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
-            this.commandMenuSelectlabel.TabIndex = 1023;
+            this.commandMenuSelectlabel.TabIndex = 1026;
             // 
             // KoreanKeysForm
             // 
@@ -1735,8 +1735,8 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label keyMenuSelectlabel;
         private System.Windows.Forms.Label optionsMenuSelectlabel;
         private System.Windows.Forms.Label commandMenuSelectlabel;
-        private System.Windows.Forms.Label keyMenuSelectlabel;
     }
 }

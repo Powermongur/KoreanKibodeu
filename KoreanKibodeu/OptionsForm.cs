@@ -26,9 +26,11 @@ namespace KoreanKibodeu
         public static extern bool ReleaseCapture();
 
         AppSettingsClass appSet = new AppSettingsClass();
+        MainForm mainDialog;
 
         private void OptionsForm_Load(object sender, EventArgs e)
         {
+            mainDialog = (MainForm)Owner;
             TopMost = appSet.StayOnTop;
 
             keyMenuSelectlabel.Visible = false;
@@ -58,82 +60,19 @@ namespace KoreanKibodeu
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Dispose();
+            mainDialog.CloseOptionDialog();
         }
 
         private void keysButton_Click(object sender, EventArgs e)
         {
-            if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk)
-            {
-                DanishKeysForm dkDialog = new DanishKeysForm();
-                dkDialog.Show();
-                dkDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.se)
-            {
-                SwedishKeysForm seDialog = new SwedishKeysForm();
-                seDialog.Show();
-                seDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.no)
-            {
-                NorwegianKeysForm noDialog = new NorwegianKeysForm();
-                noDialog.Show();
-                noDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.de)
-            {
-                GermanKeysForm deDialog = new GermanKeysForm();
-                deDialog.Show();
-                deDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.jp)
-            {
-                KanaKeysForm jpDialog = new KanaKeysForm();
-                jpDialog.Show();
-                jpDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.kr)
-            {
-                KoreanKeysForm krDialog = new KoreanKeysForm();
-                krDialog.Show();
-                krDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.fr)
-            {
-                FrenchKeysForm frDialog = new FrenchKeysForm();
-                frDialog.Show();
-                frDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.es)
-            {
-                SpanishKeysForm esDialog = new SpanishKeysForm();
-                esDialog.Show();
-                esDialog.Location = Location;
-                Dispose();
-            }
-            else if (appSet.Language == (ushort)AppSettingsClass.languageCode.it)
-            {
-                ItalienKeysForm itDialog = new ItalienKeysForm();
-                itDialog.Show();
-                itDialog.Location = Location;
-                Dispose();
-            }
+            mainDialog.OpenKeyDialog(Location);
+            mainDialog.CloseOptionDialog();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
-            CommandsForm cmdDialog = new CommandsForm();
-            cmdDialog.Show();
-            cmdDialog.Location = Location;
-            Dispose();
+            mainDialog.OpenCommandDialog(Location);
+            mainDialog.CloseOptionDialog();
         }
 
         private string IXIlanString()

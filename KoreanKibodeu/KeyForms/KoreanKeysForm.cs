@@ -26,9 +26,11 @@ namespace KoreanKibodeu
         public static extern bool ReleaseCapture();
 
         AppSettingsClass appSet = new AppSettingsClass();
+        MainForm mainDialog;
 
         private void HelpForm_Load(object sender, EventArgs e)
         {
+            mainDialog = (MainForm)Owner;
             TopMost = appSet.StayOnTop;
             KeyPreview = true;
             longNamesCheckBox.Checked = appSet.ShowLongNames;
@@ -57,7 +59,7 @@ namespace KoreanKibodeu
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Dispose();
+            mainDialog.CloseKeyDialog();
         }
 
         private void longNamesCheckBox_CheckStateChanged(object sender, EventArgs e)
@@ -94,23 +96,19 @@ namespace KoreanKibodeu
         private void HelpForm_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
-                Dispose();
+                mainDialog.CloseKeyDialog();
         }
 
         private void optionsButton_Click(object sender, EventArgs e)
         {
-            OptionsForm optDialog = new OptionsForm();
-            optDialog.Show();
-            optDialog.Location = Location;
-            Dispose();
+            mainDialog.OpenOptionDialog(Location);
+            mainDialog.CloseCommandDialog();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
-            CommandsForm cmdDialog = new CommandsForm();
-            cmdDialog.Show();
-            cmdDialog.Location = Location;
-            Dispose();
+            mainDialog.OpenCommandDialog(Location);
+            mainDialog.CloseOptionDialog();
         }
     }
 }

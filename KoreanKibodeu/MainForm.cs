@@ -60,6 +60,9 @@ namespace KoreanKibodeu
 
         public void OpenKeyDialog(Point position)
         {
+            CloseCommandDialog();
+            CloseOptionDialog();
+
             if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk)
             {
                 danishDialog = new DanishKeysForm();
@@ -159,6 +162,9 @@ namespace KoreanKibodeu
 
         public void OpenCommandDialog(Point position)
         {
+            CloseKeyDialog();
+            CloseOptionDialog();
+
             commandDialog = new CommandsForm();
             if (!position.IsEmpty)
                 commandDialog.Location = position;
@@ -167,12 +173,18 @@ namespace KoreanKibodeu
 
         public void CloseCommandDialog()
         {
-            commandDialog.Dispose();
-            commandDialog = null;
+            if (commandDialog != null)
+            {
+                commandDialog.Dispose();
+                commandDialog = null;
+            }
         }
 
         public void OpenOptionDialog(Point position)
         {
+            CloseKeyDialog();
+            CloseCommandDialog();
+
             optionDialog = new OptionsForm();
             if (!position.IsEmpty)
                 optionDialog.Location = position;
@@ -181,8 +193,11 @@ namespace KoreanKibodeu
 
         public void CloseOptionDialog()
         {
-            optionDialog.Dispose();
-            optionDialog = null;
+            if (optionDialog != null)
+            {
+                optionDialog.Dispose();
+                optionDialog = null;
+            }
         }
 
         public void FocusText()
