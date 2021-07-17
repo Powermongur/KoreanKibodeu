@@ -53,8 +53,13 @@ namespace KoreanKibodeu
             this.commandsButton = new System.Windows.Forms.Button();
             this.optionsButton = new System.Windows.Forms.Button();
             this.keysButton = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.qwertzCheckBox = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeButton
@@ -285,7 +290,7 @@ namespace KoreanKibodeu
             this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
             this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
             this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
-            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
+            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(115, 5);
             this.optionsMenuSelectlabel.TabIndex = 1023;
             // 
             // commandMenuSelectlabel
@@ -314,7 +319,7 @@ namespace KoreanKibodeu
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsButton.Location = new System.Drawing.Point(98, 0);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(121, 41);
+            this.optionsButton.Size = new System.Drawing.Size(115, 41);
             this.optionsButton.TabIndex = 20;
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = true;
@@ -331,12 +336,56 @@ namespace KoreanKibodeu
             this.keysButton.Text = "Keys";
             this.keysButton.UseVisualStyleBackColor = true;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(9, 402);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(97, 29);
+            this.label16.TabIndex = 1042;
+            this.label16.Text = "Options";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel2.Controls.Add(this.qwertzCheckBox);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(14, 434);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(941, 187);
+            this.panel2.TabIndex = 1041;
+            // 
+            // qwertzCheckBox
+            // 
+            this.qwertzCheckBox.AutoSize = true;
+            this.qwertzCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.qwertzCheckBox.Location = new System.Drawing.Point(147, 24);
+            this.qwertzCheckBox.Name = "qwertzCheckBox";
+            this.qwertzCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.qwertzCheckBox.TabIndex = 1;
+            this.qwertzCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label13.Location = new System.Drawing.Point(16, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(125, 20);
+            this.label13.TabIndex = 6;
+            this.label13.Text = "Swap Æ and Ø?";
+            // 
             // DanishKeysForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 1023);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.label14);
@@ -352,6 +401,8 @@ namespace KoreanKibodeu
             this.kanaSpecialPanel.ResumeLayout(false);
             this.kanaSpecialPanel.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,5 +434,9 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Button optionsButton;
         private System.Windows.Forms.Button keysButton;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox qwertzCheckBox;
+        private System.Windows.Forms.Label label13;
     }
 }

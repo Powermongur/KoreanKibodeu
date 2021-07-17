@@ -61,13 +61,13 @@ namespace KoreanKibodeu
         private void optionsButton_Click(object sender, EventArgs e)
         {
             mainDialog.OpenOptionDialog(Location);
-            mainDialog.CloseCommandDialog();
+            mainDialog.CloseKeyDialog();
         }
 
         private void commandsButton_Click(object sender, EventArgs e)
         {
             mainDialog.OpenCommandDialog(Location);
-            mainDialog.CloseOptionDialog();
+            mainDialog.CloseKeyDialog();
         }
     }
 }

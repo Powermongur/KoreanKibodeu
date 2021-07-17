@@ -1493,7 +1493,7 @@ namespace KoreanKibodeu
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsButton.Location = new System.Drawing.Point(98, 0);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(121, 41);
+            this.optionsButton.Size = new System.Drawing.Size(115, 41);
             this.optionsButton.TabIndex = 20;
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = true;
@@ -1541,7 +1541,7 @@ namespace KoreanKibodeu
             this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
             this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
             this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
-            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
+            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(115, 5);
             this.optionsMenuSelectlabel.TabIndex = 1025;
             // 
             // commandMenuSelectlabel

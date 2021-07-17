@@ -15,6 +15,7 @@ namespace KoreanKibodeu
         public bool Qwertz;
         public int LocationX;
         public int LocationY;
+        public bool SwapAEandOE;
 
         public enum languageCode : ushort
         { norm = 0, en = 1, dk = 2, se = 3, no = 4, de = 5, jp = 6, kr = 7, fr = 8, es = 9, it = 10 }
@@ -28,6 +29,7 @@ namespace KoreanKibodeu
             Qwertz = (bool)Properties.Settings.Default["Qwertz"];
             LocationX = (int)Properties.Settings.Default["LocationX"];
             LocationY = (int)Properties.Settings.Default["LocationY"];
+            SwapAEandOE = (bool)Properties.Settings.Default["SwapAEandOE"];
         }
 
         public void Save()
@@ -39,6 +41,7 @@ namespace KoreanKibodeu
             Properties.Settings.Default["Qwertz"] = Qwertz;
             Properties.Settings.Default["LocationX"] = LocationX;
             Properties.Settings.Default["LocationY"] = LocationY;
+            Properties.Settings.Default["SwapAEandOE"] = SwapAEandOE;
             Properties.Settings.Default.Save();
         }
     }

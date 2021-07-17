@@ -34,7 +34,7 @@ namespace KoreanKibodeu
             TopMost = appSet.StayOnTop;
 
             keyMenuSelectlabel.Visible = false;
-            optionsMenuSelectlabel.Visible = true;
+            optionsMenuSelectlabel1.Visible = true;
             commandMenuSelectlabel.Visible = false;
 
             inputLanguagelabel.Text =  InputLanguage.CurrentInputLanguage.Culture.Name + " " + InputLanguage.CurrentInputLanguage.Culture.EnglishName;

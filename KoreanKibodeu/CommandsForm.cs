@@ -61,7 +61,7 @@ namespace KoreanKibodeu
         private void keysButton_Click(object sender, EventArgs e)
         {
             mainDialog.OpenKeyDialog(Location);
-            mainDialog.CloseOptionDialog();
+            mainDialog.CloseCommandDialog();
         }
 
         private void optionsButton_Click(object sender, EventArgs e)

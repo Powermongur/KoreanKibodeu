@@ -30,11 +30,6 @@ namespace KoreanKibodeu
         private void InitializeComponent()
         {
             this.inputLanguagelabel = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.commandsButton = new System.Windows.Forms.Button();
-            this.optionsButton = new System.Windows.Forms.Button();
-            this.keysButton = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.kanaSpecialPanel = new System.Windows.Forms.Panel();
             this.conversionModeCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,12 +39,17 @@ namespace KoreanKibodeu
             this.panel1 = new System.Windows.Forms.Panel();
             this.stayOnTopCheckBox = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.keyMenuSelectlabel = new System.Windows.Forms.Label();
-            this.optionsMenuSelectlabel = new System.Windows.Forms.Label();
+            this.closeButton = new System.Windows.Forms.Button();
+            this.keysButton = new System.Windows.Forms.Button();
             this.commandMenuSelectlabel = new System.Windows.Forms.Label();
-            this.panel10.SuspendLayout();
+            this.optionsButton = new System.Windows.Forms.Button();
+            this.optionsMenuSelectlabel1 = new System.Windows.Forms.Label();
+            this.commandsButton = new System.Windows.Forms.Button();
+            this.keyMenuSelectlabel = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // inputLanguagelabel
@@ -62,75 +62,6 @@ namespace KoreanKibodeu
             this.inputLanguagelabel.Size = new System.Drawing.Size(69, 20);
             this.inputLanguagelabel.TabIndex = 1;
             this.inputLanguagelabel.Text = "input lan";
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
-            this.panel10.Controls.Add(this.keyMenuSelectlabel);
-            this.panel10.Controls.Add(this.commandsButton);
-            this.panel10.Controls.Add(this.optionsMenuSelectlabel);
-            this.panel10.Controls.Add(this.optionsButton);
-            this.panel10.Controls.Add(this.commandMenuSelectlabel);
-            this.panel10.Controls.Add(this.keysButton);
-            this.panel10.Controls.Add(this.closeButton);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(965, 47);
-            this.panel10.TabIndex = 1023;
-            // 
-            // commandsButton
-            // 
-            this.commandsButton.FlatAppearance.BorderSize = 0;
-            this.commandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.commandsButton.Location = new System.Drawing.Point(213, 0);
-            this.commandsButton.Name = "commandsButton";
-            this.commandsButton.Size = new System.Drawing.Size(145, 41);
-            this.commandsButton.TabIndex = 20;
-            this.commandsButton.Text = "Commands";
-            this.commandsButton.UseVisualStyleBackColor = true;
-            this.commandsButton.Click += new System.EventHandler(this.commandsButton_Click);
-            // 
-            // optionsButton
-            // 
-            this.optionsButton.FlatAppearance.BorderSize = 0;
-            this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.optionsButton.Location = new System.Drawing.Point(98, 0);
-            this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(121, 41);
-            this.optionsButton.TabIndex = 20;
-            this.optionsButton.Text = "Options";
-            this.optionsButton.UseVisualStyleBackColor = true;
-            // 
-            // keysButton
-            // 
-            this.keysButton.FlatAppearance.BorderSize = 0;
-            this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.keysButton.Location = new System.Drawing.Point(0, 0);
-            this.keysButton.Name = "keysButton";
-            this.keysButton.Size = new System.Drawing.Size(98, 41);
-            this.keysButton.TabIndex = 20;
-            this.keysButton.Text = "Keys";
-            this.keysButton.UseVisualStyleBackColor = true;
-            this.keysButton.Click += new System.EventHandler(this.keysButton_Click);
-            // 
-            // closeButton
-            // 
-            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.closeButton.FlatAppearance.BorderSize = 0;
-            this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeButton.Location = new System.Drawing.Point(934, 12);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(19, 23);
-            this.closeButton.TabIndex = 8;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // label1
             // 
@@ -237,21 +168,34 @@ namespace KoreanKibodeu
             this.label3.TabIndex = 1026;
             this.label3.Text = "Stay on Top:";
             // 
-            // keyMenuSelectlabel
+            // closeButton
             // 
-            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
-            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
-            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
-            this.keyMenuSelectlabel.TabIndex = 1035;
+            this.closeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.closeButton.FlatAppearance.BorderSize = 0;
+            this.closeButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(934, 12);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(19, 23);
+            this.closeButton.TabIndex = 8;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
-            // optionsMenuSelectlabel
+            // keysButton
             // 
-            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
-            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
-            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
-            this.optionsMenuSelectlabel.TabIndex = 1036;
+            this.keysButton.FlatAppearance.BorderSize = 0;
+            this.keysButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.keysButton.Location = new System.Drawing.Point(0, 0);
+            this.keysButton.Name = "keysButton";
+            this.keysButton.Size = new System.Drawing.Size(98, 41);
+            this.keysButton.TabIndex = 20;
+            this.keysButton.Text = "Keys";
+            this.keysButton.UseVisualStyleBackColor = true;
+            this.keysButton.Click += new System.EventHandler(this.keysButton_Click);
             // 
             // commandMenuSelectlabel
             // 
@@ -260,6 +204,62 @@ namespace KoreanKibodeu
             this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
             this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
             this.commandMenuSelectlabel.TabIndex = 1037;
+            // 
+            // optionsButton
+            // 
+            this.optionsButton.FlatAppearance.BorderSize = 0;
+            this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.optionsButton.Location = new System.Drawing.Point(98, 0);
+            this.optionsButton.Name = "optionsButton";
+            this.optionsButton.Size = new System.Drawing.Size(115, 41);
+            this.optionsButton.TabIndex = 20;
+            this.optionsButton.Text = "Options";
+            this.optionsButton.UseVisualStyleBackColor = true;
+            // 
+            // optionsMenuSelectlabel1
+            // 
+            this.optionsMenuSelectlabel1.BackColor = System.Drawing.Color.White;
+            this.optionsMenuSelectlabel1.Location = new System.Drawing.Point(98, 42);
+            this.optionsMenuSelectlabel1.Name = "optionsMenuSelectlabel1";
+            this.optionsMenuSelectlabel1.Size = new System.Drawing.Size(115, 5);
+            this.optionsMenuSelectlabel1.TabIndex = 1036;
+            // 
+            // commandsButton
+            // 
+            this.commandsButton.FlatAppearance.BorderSize = 0;
+            this.commandsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.commandsButton.Location = new System.Drawing.Point(213, 0);
+            this.commandsButton.Name = "commandsButton";
+            this.commandsButton.Size = new System.Drawing.Size(145, 41);
+            this.commandsButton.TabIndex = 20;
+            this.commandsButton.Text = "Commands";
+            this.commandsButton.UseVisualStyleBackColor = true;
+            this.commandsButton.Click += new System.EventHandler(this.commandsButton_Click);
+            // 
+            // keyMenuSelectlabel
+            // 
+            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
+            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
+            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
+            this.keyMenuSelectlabel.TabIndex = 1035;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(108)))), ((int)(((byte)(235)))));
+            this.panel10.Controls.Add(this.keyMenuSelectlabel);
+            this.panel10.Controls.Add(this.commandsButton);
+            this.panel10.Controls.Add(this.optionsMenuSelectlabel1);
+            this.panel10.Controls.Add(this.optionsButton);
+            this.panel10.Controls.Add(this.commandMenuSelectlabel);
+            this.panel10.Controls.Add(this.keysButton);
+            this.panel10.Controls.Add(this.closeButton);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(965, 47);
+            this.panel10.TabIndex = 1023;
             // 
             // OptionsForm
             // 
@@ -277,22 +277,17 @@ namespace KoreanKibodeu
             this.Load += new System.EventHandler(this.OptionsForm_Load);
             this.Click += new System.EventHandler(this.closeButton_Click);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OptionsForm_MouseDown);
-            this.panel10.ResumeLayout(false);
             this.kanaSpecialPanel.ResumeLayout(false);
             this.kanaSpecialPanel.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Label inputLanguagelabel;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Button commandsButton;
-        private System.Windows.Forms.Button optionsButton;
-        private System.Windows.Forms.Button keysButton;
-        private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel kanaSpecialPanel;
         private System.Windows.Forms.Label IXILanguageLabel;
@@ -302,8 +297,13 @@ namespace KoreanKibodeu
         private System.Windows.Forms.CheckBox conversionModeCheckBox;
         private System.Windows.Forms.CheckBox stayOnTopCheckBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label keyMenuSelectlabel;
-        private System.Windows.Forms.Label optionsMenuSelectlabel;
+        private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Button keysButton;
         private System.Windows.Forms.Label commandMenuSelectlabel;
+        private System.Windows.Forms.Button optionsButton;
+        private System.Windows.Forms.Label optionsMenuSelectlabel1;
+        private System.Windows.Forms.Button commandsButton;
+        private System.Windows.Forms.Label keyMenuSelectlabel;
+        private System.Windows.Forms.Panel panel10;
     }
 }

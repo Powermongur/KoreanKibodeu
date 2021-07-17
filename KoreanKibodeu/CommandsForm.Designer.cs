@@ -33,12 +33,12 @@ namespace KoreanKibodeu
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.closeButton = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.commandsButton = new System.Windows.Forms.Button();
-            this.optionsButton = new System.Windows.Forms.Button();
-            this.keysButton = new System.Windows.Forms.Button();
             this.keyMenuSelectlabel = new System.Windows.Forms.Label();
+            this.commandsButton = new System.Windows.Forms.Button();
             this.optionsMenuSelectlabel = new System.Windows.Forms.Label();
+            this.optionsButton = new System.Windows.Forms.Button();
             this.commandMenuSelectlabel = new System.Windows.Forms.Label();
+            this.keysButton = new System.Windows.Forms.Button();
             this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +88,14 @@ namespace KoreanKibodeu
             this.panel10.Size = new System.Drawing.Size(965, 47);
             this.panel10.TabIndex = 1023;
             // 
+            // keyMenuSelectlabel
+            // 
+            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
+            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
+            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
+            this.keyMenuSelectlabel.TabIndex = 1024;
+            // 
             // commandsButton
             // 
             this.commandsButton.FlatAppearance.BorderSize = 0;
@@ -99,17 +107,33 @@ namespace KoreanKibodeu
             this.commandsButton.Text = "Commands";
             this.commandsButton.UseVisualStyleBackColor = true;
             // 
+            // optionsMenuSelectlabel
+            // 
+            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
+            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
+            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(115, 5);
+            this.optionsMenuSelectlabel.TabIndex = 1025;
+            // 
             // optionsButton
             // 
             this.optionsButton.FlatAppearance.BorderSize = 0;
             this.optionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.optionsButton.Location = new System.Drawing.Point(98, 0);
             this.optionsButton.Name = "optionsButton";
-            this.optionsButton.Size = new System.Drawing.Size(121, 41);
+            this.optionsButton.Size = new System.Drawing.Size(115, 41);
             this.optionsButton.TabIndex = 20;
             this.optionsButton.Text = "Options";
             this.optionsButton.UseVisualStyleBackColor = true;
             this.optionsButton.Click += new System.EventHandler(this.optionsButton_Click);
+            // 
+            // commandMenuSelectlabel
+            // 
+            this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
+            this.commandMenuSelectlabel.Location = new System.Drawing.Point(213, 42);
+            this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
+            this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
+            this.commandMenuSelectlabel.TabIndex = 1026;
             // 
             // keysButton
             // 
@@ -122,30 +146,6 @@ namespace KoreanKibodeu
             this.keysButton.Text = "Keys";
             this.keysButton.UseVisualStyleBackColor = true;
             this.keysButton.Click += new System.EventHandler(this.keysButton_Click);
-            // 
-            // keyMenuSelectlabel
-            // 
-            this.keyMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.keyMenuSelectlabel.Location = new System.Drawing.Point(0, 42);
-            this.keyMenuSelectlabel.Name = "keyMenuSelectlabel";
-            this.keyMenuSelectlabel.Size = new System.Drawing.Size(98, 5);
-            this.keyMenuSelectlabel.TabIndex = 1024;
-            // 
-            // optionsMenuSelectlabel
-            // 
-            this.optionsMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.optionsMenuSelectlabel.Location = new System.Drawing.Point(98, 42);
-            this.optionsMenuSelectlabel.Name = "optionsMenuSelectlabel";
-            this.optionsMenuSelectlabel.Size = new System.Drawing.Size(121, 5);
-            this.optionsMenuSelectlabel.TabIndex = 1025;
-            // 
-            // commandMenuSelectlabel
-            // 
-            this.commandMenuSelectlabel.BackColor = System.Drawing.Color.White;
-            this.commandMenuSelectlabel.Location = new System.Drawing.Point(213, 42);
-            this.commandMenuSelectlabel.Name = "commandMenuSelectlabel";
-            this.commandMenuSelectlabel.Size = new System.Drawing.Size(145, 5);
-            this.commandMenuSelectlabel.TabIndex = 1026;
             // 
             // CommandsForm
             // 

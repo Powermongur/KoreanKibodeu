@@ -11,6 +11,9 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Web;
 
+using System.Runtime.InteropServices;
+using HWND = System.IntPtr;
+
 namespace KoreanKibodeu
 {
     public partial class MainForm : Form
@@ -20,6 +23,7 @@ namespace KoreanKibodeu
             InitializeComponent();
         }
 
+        //Move window
         public const int WM_NCLBUTTONDOWN = 0xA1;
         public const int HT_CAPTION = 0x2;
 
@@ -28,6 +32,13 @@ namespace KoreanKibodeu
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
 
+        // Activate an application window.
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        //Minimize/Show app from toolbar
         const int WS_MINIMIZEBOX = 0x20000;
         const int CS_DBLCLKS = 0x8;
 
@@ -42,8 +53,52 @@ namespace KoreanKibodeu
             }
         }
 
+
+        /// <summary>Contains functionality to get all the open windows.</summary>
+        public static class OpenWindowGetter
+        {
+            /// <summary>Returns a dictionary that contains the handle and title of all the open windows.</summary>
+            /// <returns>A dictionary that contains the handle and title of all the open windows.</returns>
+            public static IDictionary<HWND, string> GetOpenWindows()
+            {
+                HWND shellWindow = GetShellWindow();
+                Dictionary<HWND, string> windows = new Dictionary<HWND, string>();
+
+                EnumWindows(delegate (HWND hWnd, int lParam)
+                {
+                    if (hWnd == shellWindow) return true;
+                    if (!IsWindowVisible(hWnd)) return true;
+
+                    int length = GetWindowTextLength(hWnd);
+                    if (length == 0) return true;
+
+                    StringBuilder builder = new StringBuilder(length);
+                    GetWindowText(hWnd, builder, length + 1);
+
+                    windows[hWnd] = builder.ToString();
+                    return true;
+
+                }, 0);
+
+                return windows;
+            }
+
+            private delegate bool EnumWindowsProc(HWND hWnd, int lParam);
+            [DllImport("USER32.DLL")]
+            private static extern bool EnumWindows(EnumWindowsProc enumFunc, int lParam);
+            [DllImport("USER32.DLL")]
+            private static extern int GetWindowText(HWND hWnd, StringBuilder lpString, int nMaxCount);
+            [DllImport("USER32.DLL")]
+            private static extern int GetWindowTextLength(HWND hWnd);
+            [DllImport("USER32.DLL")]
+            private static extern bool IsWindowVisible(HWND hWnd);
+            [DllImport("USER32.DLL")]
+            private static extern IntPtr GetShellWindow();
+        }
+
         Keys lastKey = Keys.Shift;
         bool conversionMode = true;
+        string setWindow = "";
         AppSettingsClass appSet = new AppSettingsClass();
         HistoryClass history = new HistoryClass();
         DanishKeysForm danishDialog = null;
@@ -60,72 +115,72 @@ namespace KoreanKibodeu
 
         public void OpenKeyDialog(Point position)
         {
-            CloseCommandDialog();
-            CloseOptionDialog();
-
             if (appSet.Language == (ushort)AppSettingsClass.languageCode.dk)
             {
                 danishDialog = new DanishKeysForm();
+                danishDialog.Show(this);
                 if (!position.IsEmpty)
                     danishDialog.Location = position;
-                danishDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.se)
             {
                 swedishDialog = new SwedishKeysForm();
+                swedishDialog.Show(this);
                 if (!position.IsEmpty)
                     swedishDialog.Location = position;
-                swedishDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.no)
             {
                 norwegianDialog = new NorwegianKeysForm();
+                norwegianDialog.Show(this);
                 if (!position.IsEmpty)
                     norwegianDialog.Location = position;
-                norwegianDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.de)
             {
                 germanDialog = new GermanKeysForm();
+                germanDialog.Show(this);
                 if (!position.IsEmpty)
                     germanDialog.Location = position;
-                germanDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.jp)
             {
                 kanaDialog = new KanaKeysForm();
+                kanaDialog.Show(this);
                 if (!position.IsEmpty)
                     kanaDialog.Location = position;
-                kanaDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.kr)
             {
                 koreanDialog = new KoreanKeysForm();
+                koreanDialog.Show(this);
                 if (!position.IsEmpty)
                     koreanDialog.Location = position;
-                koreanDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.fr)
             {
                 frenchDialog = new FrenchKeysForm();
+                frenchDialog.Show(this);
                 if (!position.IsEmpty)
                     frenchDialog.Location = position;
-                frenchDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.es)
             {
                 spanishDialog = new SpanishKeysForm();
+                spanishDialog.Show(this);
                 if (!position.IsEmpty)
                     spanishDialog.Location = position;
-                spanishDialog.Show(this);
             }
             else if (appSet.Language == (ushort)AppSettingsClass.languageCode.it)
             {
                 italienDialog = new ItalienKeysForm();
+                italienDialog.Show(this);
                 if (!position.IsEmpty)
                     italienDialog.Location = position;
-                italienDialog.Show(this);
             }
+
+            CloseCommandDialog();
+            CloseOptionDialog();
         }
 
         public void CloseKeyDialog()
@@ -162,13 +217,13 @@ namespace KoreanKibodeu
 
         public void OpenCommandDialog(Point position)
         {
-            CloseKeyDialog();
-            CloseOptionDialog();
-
             commandDialog = new CommandsForm();
+            commandDialog.Show(this);
             if (!position.IsEmpty)
                 commandDialog.Location = position;
-            commandDialog.Show(this);
+
+            CloseKeyDialog();
+            CloseOptionDialog();
         }
 
         public void CloseCommandDialog()
@@ -182,13 +237,13 @@ namespace KoreanKibodeu
 
         public void OpenOptionDialog(Point position)
         {
-            CloseKeyDialog();
-            CloseCommandDialog();
-
             optionDialog = new OptionsForm();
+            optionDialog.Show(this);
             if (!position.IsEmpty)
                 optionDialog.Location = position;
-            optionDialog.Show(this);
+
+            CloseKeyDialog();
+            CloseCommandDialog();
         }
 
         public void CloseOptionDialog()
@@ -297,11 +352,54 @@ namespace KoreanKibodeu
             WindowState = FormWindowState.Minimized;
         }
 
+        private IntPtr FindNotepad(string name)
+        {
+            foreach (KeyValuePair<IntPtr, string> window in OpenWindowGetter.GetOpenWindows())
+            {
+                IntPtr handle = window.Key;
+                string title = window.Value;
+
+                if (title.Contains(name))
+                    return handle;
+            }
+
+            return new IntPtr();
+        }
+
+
         private void messageTextBox_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Delete && Control.ModifierKeys == Keys.Shift)
             {
                 messageTextBox.Text = "";
+                return;
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (messageTextBox.Text == "")
+                {
+                    Clipboard.SetText(System.Environment.NewLine);
+                }
+                else
+                {
+                    messageTextBox.Copy();
+                    Clipboard.SetText(messageTextBox.Text);
+                    messageTextBox.Text = "";
+                }
+                if (Control.ModifierKeys == Keys.Shift)
+                {
+                    SetForegroundWindow(FindNotepad(setWindow));
+
+                    SendKeys.SendWait("^v");
+                    if (messageTextBox.Text == "")
+                        SendKeys.SendWait("{ENTER}");
+
+                    SetForegroundWindow(FindNotepad("IXI Kibodeu"));
+                }
+
+                e.Handled = true;
+                e.SuppressKeyPress = true;
                 return;
             }
 
@@ -748,8 +846,10 @@ namespace KoreanKibodeu
             {
                 if (msg.Contains("!help"))
                 {
-                    KoreanKeysForm helpDialog = new KoreanKeysForm();
-                    helpDialog.Show(this);
+                    if (danishDialog != null || frenchDialog != null || germanDialog != null || italienDialog != null || kanaDialog != null || koreanDialog != null || norwegianDialog != null || spanishDialog != null || swedishDialog != null)
+                        CloseKeyDialog();
+                    else
+                        OpenKeyDialog(new Point());
                     msg = msg.Replace("!help", "");
                 }
                 if (msg.Contains("!quit") || msg.Contains("!exit"))
@@ -768,6 +868,12 @@ namespace KoreanKibodeu
                     TopMost = appSet.StayOnTop;
                     msg = msg.Replace("!topoff", "");
                 }
+                if (msg.Contains("!setwindow "))
+                {
+                    msg = msg.Replace("!setwindow ", "");
+                    setWindow = msg;
+                }
+
                 /*
                  string tester = "string%20%20%25amp%25lt%25gt%5C%25%2339%2C%3A";
 
