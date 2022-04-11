@@ -74,7 +74,7 @@ namespace KoreanKibodeu
         private void qwertzCheckBox_CheckStateChanged(object sender, EventArgs e)
         {
             appSet.Qwertz = qwertzCheckBox.Checked;
-            appSet.Save(); //Fix
+            appSet.Save();
         }
     }
 }

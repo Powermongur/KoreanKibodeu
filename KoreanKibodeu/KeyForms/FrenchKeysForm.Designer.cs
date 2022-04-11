@@ -128,9 +128,14 @@ namespace KoreanKibodeu
             this.optionsButton = new System.Windows.Forms.Button();
             this.commandMenuSelectlabel = new System.Windows.Forms.Label();
             this.keysButton = new System.Windows.Forms.Button();
+            this.label90 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.qwertzCheckBox = new System.Windows.Forms.CheckBox();
+            this.label91 = new System.Windows.Forms.Label();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // closeButton
@@ -1278,12 +1283,56 @@ namespace KoreanKibodeu
             this.keysButton.Text = "Keys";
             this.keysButton.UseVisualStyleBackColor = true;
             // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label90.Location = new System.Drawing.Point(12, 793);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(97, 29);
+            this.label90.TabIndex = 1048;
+            this.label90.Text = "Options";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel2.Controls.Add(this.qwertzCheckBox);
+            this.panel2.Controls.Add(this.label91);
+            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.panel2.ForeColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(17, 825);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(941, 187);
+            this.panel2.TabIndex = 1047;
+            // 
+            // qwertzCheckBox
+            // 
+            this.qwertzCheckBox.AutoSize = true;
+            this.qwertzCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.qwertzCheckBox.Location = new System.Drawing.Point(95, 24);
+            this.qwertzCheckBox.Name = "qwertzCheckBox";
+            this.qwertzCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.qwertzCheckBox.TabIndex = 1;
+            this.qwertzCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label91.Location = new System.Drawing.Point(16, 20);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(73, 20);
+            this.label91.TabIndex = 6;
+            this.label91.Text = "AZERTY";
+            // 
             // FrenchKeysForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 37F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(965, 1023);
+            this.Controls.Add(this.label90);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.panel3);
@@ -1303,6 +1352,8 @@ namespace KoreanKibodeu
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel10.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1409,5 +1460,9 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Label keyMenuSelectlabel;
         private System.Windows.Forms.Label optionsMenuSelectlabel;
         private System.Windows.Forms.Label commandMenuSelectlabel;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.CheckBox qwertzCheckBox;
+        private System.Windows.Forms.Label label91;
     }
 }

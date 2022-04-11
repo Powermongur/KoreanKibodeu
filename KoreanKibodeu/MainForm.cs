@@ -213,6 +213,8 @@ namespace KoreanKibodeu
             norwegianDialog = null;
             spanishDialog = null;
             swedishDialog = null;
+
+            appSet = new AppSettingsClass();
         }
 
         public void OpenCommandDialog(Point position)
@@ -232,6 +234,7 @@ namespace KoreanKibodeu
             {
                 commandDialog.Dispose();
                 commandDialog = null;
+                appSet = new AppSettingsClass();
             }
         }
 
@@ -252,6 +255,7 @@ namespace KoreanKibodeu
             {
                 optionDialog.Dispose();
                 optionDialog = null;
+                appSet = new AppSettingsClass();
             }
         }
 
@@ -973,12 +977,22 @@ namespace KoreanKibodeu
                     appSet.Language = (ushort)AppSettingsClass.languageCode.en;
                     msg = msg.Replace("!en", "");
                     statusLabel2.Text = "Mode: abc en";
+
+                    var culture = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+                    var language = InputLanguage.FromCulture(culture);
+                    if (InputLanguage.InstalledInputLanguages.IndexOf(language) >= 0)
+                        InputLanguage.CurrentInputLanguage = language;
                 }
                 if (msg.Contains("!dk"))
                 {
                     appSet.Language = (ushort)AppSettingsClass.languageCode.dk;
                     msg = msg.Replace("!dk", "");
                     statusLabel2.Text = "Mode: abc dk";
+
+                    var culture = System.Globalization.CultureInfo.GetCultureInfo("da-DK");
+                    var language = InputLanguage.FromCulture(culture);
+                    if (InputLanguage.InstalledInputLanguages.IndexOf(language) >= 0)
+                        InputLanguage.CurrentInputLanguage = language;
                 }
                 if (msg.Contains("!se"))
                 {

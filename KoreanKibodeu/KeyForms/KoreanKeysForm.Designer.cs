@@ -127,8 +127,6 @@ namespace KoreanKibodeu
             this.label97 = new System.Windows.Forms.Label();
             this.label96 = new System.Windows.Forms.Label();
             this.label95 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
             this.label92 = new System.Windows.Forms.Label();
             this.label91 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
@@ -967,7 +965,7 @@ namespace KoreanKibodeu
             // 
             this.label110.AutoSize = true;
             this.label110.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label110.Location = new System.Drawing.Point(763, 15);
+            this.label110.Location = new System.Drawing.Point(695, 15);
             this.label110.Name = "label110";
             this.label110.Size = new System.Drawing.Size(48, 42);
             this.label110.TabIndex = 2;
@@ -976,7 +974,7 @@ namespace KoreanKibodeu
             // label109
             // 
             this.label109.AutoSize = true;
-            this.label109.Location = new System.Drawing.Point(770, 57);
+            this.label109.Location = new System.Drawing.Point(702, 57);
             this.label109.Name = "label109";
             this.label109.Size = new System.Drawing.Size(35, 24);
             this.label109.TabIndex = 2;
@@ -986,7 +984,7 @@ namespace KoreanKibodeu
             // 
             this.label108.AutoSize = true;
             this.label108.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label108.Location = new System.Drawing.Point(699, 15);
+            this.label108.Location = new System.Drawing.Point(631, 15);
             this.label108.Name = "label108";
             this.label108.Size = new System.Drawing.Size(48, 42);
             this.label108.TabIndex = 2;
@@ -995,7 +993,7 @@ namespace KoreanKibodeu
             // label107
             // 
             this.label107.AutoSize = true;
-            this.label107.Location = new System.Drawing.Point(701, 57);
+            this.label107.Location = new System.Drawing.Point(633, 57);
             this.label107.Name = "label107";
             this.label107.Size = new System.Drawing.Size(45, 24);
             this.label107.TabIndex = 2;
@@ -1005,7 +1003,7 @@ namespace KoreanKibodeu
             // 
             this.label106.AutoSize = true;
             this.label106.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label106.Location = new System.Drawing.Point(635, 15);
+            this.label106.Location = new System.Drawing.Point(567, 15);
             this.label106.Name = "label106";
             this.label106.Size = new System.Drawing.Size(48, 42);
             this.label106.TabIndex = 2;
@@ -1014,7 +1012,7 @@ namespace KoreanKibodeu
             // label105
             // 
             this.label105.AutoSize = true;
-            this.label105.Location = new System.Drawing.Point(642, 57);
+            this.label105.Location = new System.Drawing.Point(574, 57);
             this.label105.Name = "label105";
             this.label105.Size = new System.Drawing.Size(35, 24);
             this.label105.TabIndex = 2;
@@ -1024,7 +1022,7 @@ namespace KoreanKibodeu
             // 
             this.label104.AutoSize = true;
             this.label104.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label104.Location = new System.Drawing.Point(561, 15);
+            this.label104.Location = new System.Drawing.Point(493, 15);
             this.label104.Name = "label104";
             this.label104.Size = new System.Drawing.Size(58, 42);
             this.label104.TabIndex = 2;
@@ -1033,7 +1031,7 @@ namespace KoreanKibodeu
             // label103
             // 
             this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(573, 57);
+            this.label103.Location = new System.Drawing.Point(505, 57);
             this.label103.Name = "label103";
             this.label103.Size = new System.Drawing.Size(34, 24);
             this.label103.TabIndex = 2;
@@ -1043,7 +1041,7 @@ namespace KoreanKibodeu
             // 
             this.label102.AutoSize = true;
             this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label102.Location = new System.Drawing.Point(487, 15);
+            this.label102.Location = new System.Drawing.Point(419, 15);
             this.label102.Name = "label102";
             this.label102.Size = new System.Drawing.Size(58, 42);
             this.label102.TabIndex = 2;
@@ -1052,7 +1050,7 @@ namespace KoreanKibodeu
             // label101
             // 
             this.label101.AutoSize = true;
-            this.label101.Location = new System.Drawing.Point(504, 57);
+            this.label101.Location = new System.Drawing.Point(436, 57);
             this.label101.Name = "label101";
             this.label101.Size = new System.Drawing.Size(25, 24);
             this.label101.TabIndex = 2;
@@ -1062,7 +1060,7 @@ namespace KoreanKibodeu
             // 
             this.label100.AutoSize = true;
             this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label100.Location = new System.Drawing.Point(413, 15);
+            this.label100.Location = new System.Drawing.Point(345, 15);
             this.label100.Name = "label100";
             this.label100.Size = new System.Drawing.Size(58, 42);
             this.label100.TabIndex = 2;
@@ -1071,7 +1069,7 @@ namespace KoreanKibodeu
             // label99
             // 
             this.label99.AutoSize = true;
-            this.label99.Location = new System.Drawing.Point(428, 57);
+            this.label99.Location = new System.Drawing.Point(360, 57);
             this.label99.Name = "label99";
             this.label99.Size = new System.Drawing.Size(28, 24);
             this.label99.TabIndex = 2;
@@ -1081,7 +1079,7 @@ namespace KoreanKibodeu
             // 
             this.label98.AutoSize = true;
             this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label98.Location = new System.Drawing.Point(349, 15);
+            this.label98.Location = new System.Drawing.Point(281, 15);
             this.label98.Name = "label98";
             this.label98.Size = new System.Drawing.Size(48, 42);
             this.label98.TabIndex = 2;
@@ -1090,7 +1088,7 @@ namespace KoreanKibodeu
             // label97
             // 
             this.label97.AutoSize = true;
-            this.label97.Location = new System.Drawing.Point(357, 57);
+            this.label97.Location = new System.Drawing.Point(289, 57);
             this.label97.Name = "label97";
             this.label97.Size = new System.Drawing.Size(32, 24);
             this.label97.TabIndex = 2;
@@ -1100,7 +1098,7 @@ namespace KoreanKibodeu
             // 
             this.label96.AutoSize = true;
             this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label96.Location = new System.Drawing.Point(275, 15);
+            this.label96.Location = new System.Drawing.Point(207, 15);
             this.label96.Name = "label96";
             this.label96.Size = new System.Drawing.Size(58, 42);
             this.label96.TabIndex = 2;
@@ -1109,36 +1107,17 @@ namespace KoreanKibodeu
             // label95
             // 
             this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(289, 57);
+            this.label95.Location = new System.Drawing.Point(221, 57);
             this.label95.Name = "label95";
             this.label95.Size = new System.Drawing.Size(30, 24);
             this.label95.TabIndex = 2;
             this.label95.Text = "ye";
             // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label94.Location = new System.Drawing.Point(211, 15);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(48, 42);
-            this.label94.TabIndex = 2;
-            this.label94.Text = "ㅖ";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(220, 57);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(30, 24);
-            this.label93.TabIndex = 2;
-            this.label93.Text = "ye";
-            // 
             // label92
             // 
             this.label92.AutoSize = true;
             this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label92.Location = new System.Drawing.Point(83, 15);
+            this.label92.Location = new System.Drawing.Point(79, 15);
             this.label92.Name = "label92";
             this.label92.Size = new System.Drawing.Size(48, 42);
             this.label92.TabIndex = 2;
@@ -1147,7 +1126,7 @@ namespace KoreanKibodeu
             // label91
             // 
             this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(87, 57);
+            this.label91.Location = new System.Drawing.Point(83, 57);
             this.label91.Name = "label91";
             this.label91.Size = new System.Drawing.Size(40, 24);
             this.label91.TabIndex = 2;
@@ -1157,7 +1136,7 @@ namespace KoreanKibodeu
             // 
             this.label90.AutoSize = true;
             this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label90.Location = new System.Drawing.Point(147, 15);
+            this.label90.Location = new System.Drawing.Point(143, 15);
             this.label90.Name = "label90";
             this.label90.Size = new System.Drawing.Size(48, 42);
             this.label90.TabIndex = 2;
@@ -1166,7 +1145,7 @@ namespace KoreanKibodeu
             // label89
             // 
             this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(161, 57);
+            this.label89.Location = new System.Drawing.Point(157, 57);
             this.label89.Name = "label89";
             this.label89.Size = new System.Drawing.Size(21, 24);
             this.label89.TabIndex = 2;
@@ -1176,7 +1155,7 @@ namespace KoreanKibodeu
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F);
-            this.label4.Location = new System.Drawing.Point(19, 15);
+            this.label4.Location = new System.Drawing.Point(15, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 42);
             this.label4.TabIndex = 2;
@@ -1185,7 +1164,7 @@ namespace KoreanKibodeu
             // label88
             // 
             this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(28, 57);
+            this.label88.Location = new System.Drawing.Point(24, 57);
             this.label88.Name = "label88";
             this.label88.Size = new System.Drawing.Size(31, 24);
             this.label88.TabIndex = 2;
@@ -1263,9 +1242,7 @@ namespace KoreanKibodeu
             this.panel1.Controls.Add(this.label105);
             this.panel1.Controls.Add(this.label92);
             this.panel1.Controls.Add(this.label104);
-            this.panel1.Controls.Add(this.label93);
             this.panel1.Controls.Add(this.label103);
-            this.panel1.Controls.Add(this.label94);
             this.panel1.Controls.Add(this.label102);
             this.panel1.Controls.Add(this.label95);
             this.panel1.Controls.Add(this.label101);
@@ -1708,8 +1685,6 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Label label97;
         private System.Windows.Forms.Label label96;
         private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.Label label93;
         private System.Windows.Forms.Label label92;
         private System.Windows.Forms.Label label91;
         private System.Windows.Forms.Label label90;

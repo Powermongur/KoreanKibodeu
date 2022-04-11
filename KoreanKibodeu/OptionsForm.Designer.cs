@@ -47,6 +47,8 @@ namespace KoreanKibodeu
             this.commandsButton = new System.Windows.Forms.Button();
             this.keyMenuSelectlabel = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.kanaSpecialPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -57,7 +59,7 @@ namespace KoreanKibodeu
             this.inputLanguagelabel.AutoSize = true;
             this.inputLanguagelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.inputLanguagelabel.ForeColor = System.Drawing.Color.White;
-            this.inputLanguagelabel.Location = new System.Drawing.Point(138, 29);
+            this.inputLanguagelabel.Location = new System.Drawing.Point(203, 29);
             this.inputLanguagelabel.Name = "inputLanguagelabel";
             this.inputLanguagelabel.Size = new System.Drawing.Size(69, 20);
             this.inputLanguagelabel.TabIndex = 1;
@@ -77,8 +79,10 @@ namespace KoreanKibodeu
             // kanaSpecialPanel
             // 
             this.kanaSpecialPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.kanaSpecialPanel.Controls.Add(this.checkBox1);
             this.kanaSpecialPanel.Controls.Add(this.conversionModeCheckBox);
             this.kanaSpecialPanel.Controls.Add(this.label4);
+            this.kanaSpecialPanel.Controls.Add(this.label5);
             this.kanaSpecialPanel.Controls.Add(this.IXILanguageLabel);
             this.kanaSpecialPanel.Controls.Add(this.inputLanguagelabel);
             this.kanaSpecialPanel.Controls.Add(this.label2);
@@ -95,7 +99,7 @@ namespace KoreanKibodeu
             this.conversionModeCheckBox.AutoSize = true;
             this.conversionModeCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.conversionModeCheckBox.ForeColor = System.Drawing.Color.White;
-            this.conversionModeCheckBox.Location = new System.Drawing.Point(142, 95);
+            this.conversionModeCheckBox.Location = new System.Drawing.Point(207, 122);
             this.conversionModeCheckBox.Name = "conversionModeCheckBox";
             this.conversionModeCheckBox.Size = new System.Drawing.Size(15, 14);
             this.conversionModeCheckBox.TabIndex = 1027;
@@ -106,7 +110,7 @@ namespace KoreanKibodeu
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 91);
+            this.label4.Location = new System.Drawing.Point(14, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 20);
             this.label4.TabIndex = 1026;
@@ -117,7 +121,7 @@ namespace KoreanKibodeu
             this.IXILanguageLabel.AutoSize = true;
             this.IXILanguageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.IXILanguageLabel.ForeColor = System.Drawing.Color.White;
-            this.IXILanguageLabel.Location = new System.Drawing.Point(138, 59);
+            this.IXILanguageLabel.Location = new System.Drawing.Point(202, 59);
             this.IXILanguageLabel.Name = "IXILanguageLabel";
             this.IXILanguageLabel.Size = new System.Drawing.Size(55, 20);
             this.IXILanguageLabel.TabIndex = 1;
@@ -151,7 +155,7 @@ namespace KoreanKibodeu
             this.stayOnTopCheckBox.AutoSize = true;
             this.stayOnTopCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.stayOnTopCheckBox.ForeColor = System.Drawing.Color.White;
-            this.stayOnTopCheckBox.Location = new System.Drawing.Point(142, 37);
+            this.stayOnTopCheckBox.Location = new System.Drawing.Point(206, 37);
             this.stayOnTopCheckBox.Name = "stayOnTopCheckBox";
             this.stayOnTopCheckBox.Size = new System.Drawing.Size(15, 14);
             this.stayOnTopCheckBox.TabIndex = 1027;
@@ -261,6 +265,28 @@ namespace KoreanKibodeu
             this.panel10.Size = new System.Drawing.Size(965, 47);
             this.panel10.TabIndex = 1023;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(13, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 20);
+            this.label5.TabIndex = 1026;
+            this.label5.Text = "Switch input language:";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.checkBox1.ForeColor = System.Drawing.Color.White;
+            this.checkBox1.Location = new System.Drawing.Point(207, 92);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 1027;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +331,7 @@ namespace KoreanKibodeu
         private System.Windows.Forms.Button commandsButton;
         private System.Windows.Forms.Label keyMenuSelectlabel;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label5;
     }
 }
